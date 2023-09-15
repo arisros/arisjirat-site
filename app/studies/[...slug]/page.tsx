@@ -32,14 +32,12 @@ const getStudyContent = (path: string) => {
 export const generateStaticParams = async () => {
   const studies = getMetadataFiles("studies/");
 
-  const slugs = Object.keys(studies)
-    .filter((post) => studies[post].type === "file")
-    .map((post) => ({
-      slug: studies[post].path
-        .replace(/.md$/, "")
-        .replace(/^studies?\//, "")
-        .split("/"),
-    }));
+  const slugs = Object.keys(studies).map((post) => ({
+    slug: studies[post].path
+      .replace(/.md$/, "")
+      .replace(/^studies?\//, "")
+      .split("/"),
+  }));
 
   return slugs;
 };
