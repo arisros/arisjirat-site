@@ -41,3 +41,21 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+
+  deploy:
+    needs: build-and-push
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Deploy to homelab via VPS
+        uses: appleboy/ssh-action@v1
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: ${{ secrets.VPS_USER }}
+          key: ${{ secrets.VPS_SSH_KEY }}
+          script: |
+            ssh ${{ secrets.HOMELAB_USER }}@${{ secrets.HOMELAB_HOST }} "\
+              kubectl set image deployment/arisjirat-site \
+                site=${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ github.sha }} \
+              && kubectl rollout status deployment/arisjirat-site --timeout=120s"
