@@ -20,31 +20,47 @@ function categoryPath(category: string) {
   return category;
 }
 
+const studyCount = allPosts.filter(p => p.data.category === 'study').length;
+const projectCount = allPosts.filter(p => p.data.category === 'project').length;
+const researchCount = allPosts.filter(p => p.data.category === 'research').length;
+const toolCount = allPosts.filter(p => p.data.category === 'tool').length;
+const setupCount = allPosts.filter(p => p.data.category === 'setup').length;
+
+const stats = [
+  { label: 'Projects', value: projectCount },
+  { label: 'Studies', value: studyCount },
+  { label: 'Research', value: researchCount },
+  { label: 'Total Posts', value: allPosts.length },
+];
+
 const sections = [
-  { label: 'Studies', href: '/studies', description: 'Academic coursework and learning notes', count: allPosts.filter(p => p.data.category === 'study').length },
-  { label: 'Projects', href: '/projects', description: 'Software, hardware, and everything in between', count: allPosts.filter(p => p.data.category === 'project').length },
-  { label: 'Research', href: '/research', description: 'Deep dives and academic research', count: allPosts.filter(p => p.data.category === 'research').length },
-  { label: 'Tools', href: '/tools', description: 'Hardware, IoT, and dev tools', count: allPosts.filter(p => p.data.category === 'tool').length },
-  { label: 'Setup', href: '/setup', description: 'Workspace and infrastructure', count: allPosts.filter(p => p.data.category === 'setup').length },
+  { label: 'Studies', href: '/studies', description: 'Academic coursework and learning notes', count: studyCount },
+  { label: 'Projects', href: '/projects', description: 'Software, hardware, and everything in between', count: projectCount },
+  { label: 'Research', href: '/research', description: 'Deep dives and academic research', count: researchCount },
+  { label: 'Tools', href: '/tools', description: 'Hardware, IoT, and dev tools', count: toolCount },
+  { label: 'Setup', href: '/setup', description: 'Workspace and infrastructure', count: setupCount },
 ];
 ---
 
 <BaseLayout title="Home" description="Aris Kurniawan — Software Engineer. Studies, projects, research, tools, and setup.">
   <Header />
-  <main class="flex-1 w-full max-w-5xl mx-auto px-4 sm:px-6">
-    <Hero />
+  <main class="flex-1 w-full max-w-[1100px] mx-auto px-4 sm:px-8">
+    <Hero stats={stats} />
 
     <!-- Sections Overview -->
-    <section class="py-12 border-t border-slate-800">
-      <h2 class="text-xl font-semibold text-slate-100 mb-6">Explore</h2>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+    <section class="py-12 animate-fade-up-delay-2">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="font-mono text-[10px] uppercase tracking-[3px] text-slate-600">Explore</span>
+        <div class="flex-1 h-px bg-slate-800"></div>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-slate-800">
         {sections.filter(s => s.count > 0).map(section => (
-          <a href={section.href} class="group rounded-xl border border-slate-800 bg-slate-900/50 p-5 transition-all hover:border-amber-600/30 hover:bg-slate-900">
+          <a href={section.href} class="group bg-[#111118] p-5 transition-all hover:bg-[#14141c]">
             <div class="flex items-center justify-between">
-              <h3 class="font-semibold text-slate-100 group-hover:text-amber-400 transition-colors">{section.label}</h3>
-              <span class="text-xs text-slate-600">{section.count}</span>
+              <h3 class="font-semibold text-slate-100 group-hover:text-amber-400 transition-colors text-sm">{section.label}</h3>
+              <span class="font-mono text-xs text-slate-700">{section.count}</span>
             </div>
-            <p class="mt-1.5 text-sm text-slate-500">{section.description}</p>
+            <p class="mt-1.5 text-xs text-slate-600 leading-relaxed">{section.description}</p>
           </a>
         ))}
       </div>
@@ -52,8 +68,11 @@ const sections = [
 
     <!-- Featured -->
     {featured.length > 0 && (
-      <section class="py-12 border-t border-slate-800">
-        <h2 class="text-xl font-semibold text-slate-100 mb-6">Featured</h2>
+      <section class="py-12 animate-fade-up-delay-3">
+        <div class="flex items-center gap-3 mb-6">
+          <span class="font-mono text-[10px] uppercase tracking-[3px] text-slate-600">Featured</span>
+          <div class="flex-1 h-px bg-slate-800"></div>
+        </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {featured.map(post => (
             <Card
@@ -71,8 +90,11 @@ const sections = [
 
     <!-- Recent -->
     {recentPosts.length > 0 && (
-      <section class="py-12 border-t border-slate-800">
-        <h2 class="text-xl font-semibold text-slate-100 mb-6">Recent</h2>
+      <section class="py-12 animate-fade-up-delay-4">
+        <div class="flex items-center gap-3 mb-6">
+          <span class="font-mono text-[10px] uppercase tracking-[3px] text-slate-600">Recent</span>
+          <div class="flex-1 h-px bg-slate-800"></div>
+        </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {recentPosts.map(post => (
             <Card
