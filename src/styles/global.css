@@ -10,6 +10,6 @@
     @apply bg-slate-950 text-slate-300 antialiased;
   }
   ::selection {
-    @apply bg-green-600/30 text-green-100;
+    @apply bg-amber-600/30 text-amber-100;
   }
 }

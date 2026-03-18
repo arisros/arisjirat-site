@@ -39,9 +39,9 @@ const sections = [
       <h2 class="text-xl font-semibold text-slate-100 mb-6">Explore</h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {sections.filter(s => s.count > 0).map(section => (
-          <a href={section.href} class="group rounded-xl border border-slate-800 bg-slate-900/50 p-5 transition-all hover:border-green-600/30 hover:bg-slate-900">
+          <a href={section.href} class="group rounded-xl border border-slate-800 bg-slate-900/50 p-5 transition-all hover:border-amber-600/30 hover:bg-slate-900">
             <div class="flex items-center justify-between">
-              <h3 class="font-semibold text-slate-100 group-hover:text-green-400 transition-colors">{section.label}</h3>
+              <h3 class="font-semibold text-slate-100 group-hover:text-amber-400 transition-colors">{section.label}</h3>
               <span class="text-xs text-slate-600">{section.count}</span>
             </div>
             <p class="mt-1.5 text-sm text-slate-500">{section.description}</p>

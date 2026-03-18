@@ -13,16 +13,16 @@ const { title, description, href, tags = [], date, category, status } = Astro.pr
 
 const categoryColors: Record<string, string> = {
   study: 'bg-blue-500/10 text-blue-400',
-  project: 'bg-green-500/10 text-green-400',
+  project: 'bg-amber-500/10 text-amber-400',
   research: 'bg-purple-500/10 text-purple-400',
   tool: 'bg-orange-500/10 text-orange-400',
   setup: 'bg-cyan-500/10 text-cyan-400',
 };
 ---
 
-<a href={href} class="group block rounded-xl border border-slate-800 bg-slate-900/50 p-5 transition-all hover:border-green-600/30 hover:bg-slate-900">
+<a href={href} class="group block rounded-xl border border-slate-800 bg-slate-900/50 p-5 transition-all hover:border-amber-600/30 hover:bg-slate-900">
   <div class="flex items-start justify-between gap-3">
-    <h3 class="text-lg font-semibold text-slate-100 group-hover:text-green-400 transition-colors line-clamp-2">
+    <h3 class="text-lg font-semibold text-slate-100 group-hover:text-amber-400 transition-colors line-clamp-2">
       {title}
     </h3>
     {category && (
