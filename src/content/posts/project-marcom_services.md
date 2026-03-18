@@ -6,6 +6,7 @@ tags: ["auto-imported"]
 tech: ["bun", "elysia", "typescript"]
 status: "completed"
 draft: false
+repo: "https://github.com/TaskForgeRD/marcom_services"
 ---
 
 # Elysia with Bun runtime

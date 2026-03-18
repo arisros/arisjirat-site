@@ -6,6 +6,7 @@ tags: ["auto-imported"]
 tech: ["godot", "gdscript", "gamedev"]
 status: "completed"
 draft: false
+repo: "https://github.com/godotengine/godot-demo-projects"
 ---
 
 # Godot demo projects

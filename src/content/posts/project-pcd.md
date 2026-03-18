@@ -5,6 +5,7 @@ category: "research"
 tags: ["image-processing", "computer-vision", "python"]
 status: "completed"
 draft: false
+repo: "https://github.com/arisros/pcd"
 ---
 
 # Deteksi Lantai Keramik Kotor

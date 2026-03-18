@@ -1,5 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import { execSync } from 'node:child_process';
 
 const SITE_ROOT = path.resolve(import.meta.dirname, '..');
 const PARENT_DIR = path.resolve(SITE_ROOT, '..');
@@ -36,10 +37,31 @@ function extractDescription(content: string): string {
   return `README for ${path.basename(content)}`;
 }
 
-function buildFrontmatter(title: string, description: string): string {
+function getGitRemoteUrl(repoDir: string): string | null {
+  try {
+    const url = execSync('git remote get-url origin', {
+      cwd: repoDir,
+      encoding: 'utf-8',
+      timeout: 5000,
+      stdio: ['pipe', 'pipe', 'pipe'],
+    }).trim();
+
+    // Convert SSH URLs (git@host:org/repo) to HTTPS
+    const sshMatch = url.match(/^git@([^:]+):(.+)$/);
+    if (sshMatch) {
+      return `https://${sshMatch[1]}/${sshMatch[2]}`.replace(/\.git$/, '');
+    }
+    // Strip .git suffix from HTTPS URLs
+    return url.replace(/\.git$/, '');
+  } catch {
+    return null;
+  }
+}
+
+function buildFrontmatter(title: string, description: string, repo: string | null): string {
   const safeTitle = title.replace(/"/g, '\\"');
   const safeDesc = description.replace(/"/g, '\\"');
-  return [
+  const lines = [
     '---',
     `title: "${safeTitle}"`,
     `description: "${safeDesc}"`,
@@ -47,8 +69,12 @@ function buildFrontmatter(title: string, description: string): string {
     'tags: ["auto-imported"]',
     'status: "completed"',
     'draft: false',
-    '---',
-  ].join('\n');
+  ];
+  if (repo) {
+    lines.push(`repo: "${repo}"`);
+  }
+  lines.push('---');
+  return lines.join('\n');
 }
 
 function main() {
@@ -87,7 +113,8 @@ function main() {
       const content = fs.readFileSync(readmePath, 'utf-8');
       const title = extractTitle(content, dirname);
       const description = extractDescription(content);
-      const frontmatter = buildFrontmatter(title, description);
+      const repoUrl = getGitRemoteUrl(path.join(PARENT_DIR, dirname));
+      const frontmatter = buildFrontmatter(title, description, repoUrl);
       const output = `${frontmatter}\n\n${content}`;
 
       fs.writeFileSync(outFile, output, 'utf-8');

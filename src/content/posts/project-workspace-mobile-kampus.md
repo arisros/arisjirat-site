@@ -5,6 +5,7 @@ category: "study"
 tags: ["flutter", "mobile", "dart"]
 status: "completed"
 draft: false
+repo: "https://gitlab.com/kuliah-mobile1/workspace-mobile-kampus"
 ---
 
 # Workspacebook Mobile Flutter

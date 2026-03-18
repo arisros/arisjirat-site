@@ -5,6 +5,7 @@ category: "project"
 tags: ["attendance", "mobile"]
 status: "completed"
 draft: false
+repo: "https://github.com/ngulekkode/aplikasi_absen"
 ---
 
 # Aplikasi Absen

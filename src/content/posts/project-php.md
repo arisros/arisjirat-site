@@ -5,6 +5,7 @@ category: "study"
 tags: ["php", "web", "laravel"]
 status: "completed"
 draft: false
+repo: "https://github.com/arisros/pwtm"
 ---
 
 # 📚 Sistem Manajemen Mata Kuliah

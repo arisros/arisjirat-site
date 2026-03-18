@@ -6,6 +6,7 @@ tags: ["auto-imported"]
 tech: ["nextjs", "react", "typescript"]
 status: "completed"
 draft: false
+repo: "https://github.com/TaskForgeRD/marcom"
 ---
 
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).

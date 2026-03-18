@@ -7,6 +7,7 @@ tech: ["go", "rest-api"]
 featured: true
 status: "completed"
 draft: false
+repo: "https://github.com/arisros/busgo"
 ---
 
 # busgo

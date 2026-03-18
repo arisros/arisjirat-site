@@ -6,6 +6,7 @@ tags: ["auto-imported"]
 tech: ["go", "whatsapp", "bot"]
 status: "completed"
 draft: false
+repo: "https://github.com/emandor/fti-wa-bot"
 ---
 
 # wa-bot-notif

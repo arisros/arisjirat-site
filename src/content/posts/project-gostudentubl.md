@@ -7,6 +7,7 @@ tech: ["go"]
 featured: true
 status: "completed"
 draft: false
+repo: "https://github.com/emandor/gostudentubl"
 ---
 
 # gostudentubl

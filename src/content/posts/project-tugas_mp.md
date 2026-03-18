@@ -5,6 +5,7 @@ category: "study"
 tags: ["android", "mobile", "kotlin"]
 status: "completed"
 draft: false
+repo: "https://github.com/emandor/tugas_mp"
 ---
 
 # 📐 Android Mobile Programming App (CLI-friendly)

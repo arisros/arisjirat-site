@@ -60,6 +60,7 @@ tags: ["auto-imported"]
 tech: ["mobile"]
 status: "completed"
 draft: false
+repo: "https://github.com/arisros/beepresent"
 ---
 
 ## Build present project
