@@ -7,6 +7,7 @@ tech: ["godot", "gdscript", "gamedev"]
 status: "completed"
 draft: false
 repo: "https://github.com/godotengine/godot-demo-projects"
+image: "/images/banners/project-godot-demo-projects.png"
 ---
 
 # Godot demo projects

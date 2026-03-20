@@ -61,6 +61,7 @@ tech: ["mobile"]
 status: "completed"
 draft: false
 repo: "https://github.com/arisros/beepresent"
+image: "/images/banners/project-beepresent.png"
 ---
 
 ## Build present project

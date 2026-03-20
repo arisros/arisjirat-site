@@ -8,6 +8,7 @@ featured: true
 status: "completed"
 draft: false
 repo: "https://github.com/arisros/busgo"
+image: "/images/banners/project-busgo.png"
 ---
 
 # busgo

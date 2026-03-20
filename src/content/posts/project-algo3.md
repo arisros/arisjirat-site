@@ -5,6 +5,7 @@ category: "study"
 tags: ["algorithms", "graph", "c-programming"]
 status: "completed"
 draft: false
+image: "/images/banners/project-algo3.png"
 ---
 
 # ALGO3 - Graph (Adjacency Matrix, C)

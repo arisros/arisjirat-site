@@ -5,6 +5,7 @@ category: "study"
 tags: ["networking", "cisco", "packet-tracer"]
 status: "completed"
 draft: false
+image: "/images/banners/project-network.png"
 ---
 
 # Cisco Packet Tracer Learning Course

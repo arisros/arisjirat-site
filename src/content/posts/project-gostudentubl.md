@@ -8,6 +8,7 @@ featured: true
 status: "completed"
 draft: false
 repo: "https://github.com/emandor/gostudentubl"
+image: "/images/banners/project-gostudentubl.png"
 ---
 
 # gostudentubl

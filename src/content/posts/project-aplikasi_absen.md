@@ -6,6 +6,7 @@ tags: ["attendance", "mobile"]
 status: "completed"
 draft: false
 repo: "https://github.com/ngulekkode/aplikasi_absen"
+image: "/images/banners/project-aplikasi_absen.png"
 ---
 
 # Aplikasi Absen

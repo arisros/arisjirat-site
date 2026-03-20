@@ -6,6 +6,7 @@ tags: ["auto-imported"]
 tech: ["flutter", "ai", "ocr"]
 status: "completed"
 draft: false
+image: "/images/banners/project-lemme.png"
 ---
 
 # Lemme
