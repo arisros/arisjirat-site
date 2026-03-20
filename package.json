@@ -8,6 +8,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "sync": "tsx scripts/sync-readmes.ts",
+    "generate:banners": "tsx scripts/generate-banners.ts",
     "astro": "astro"
   },
   "dependencies": {
@@ -22,6 +23,7 @@
     "tailwindcss": "^3.4.17"
   },
   "devDependencies": {
+    "@google/genai": "^1.46.0",
     "@types/node": "^22.13.14",
     "tsx": "^4.19.3",
     "typescript": "^5.9.3"
