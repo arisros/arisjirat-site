@@ -9,6 +9,8 @@
     "preview": "astro preview",
     "sync": "tsx scripts/sync-readmes.ts",
     "generate:banners": "tsx scripts/generate-banners.ts",
+    "generate:inline-images": "tsx scripts/generate-inline-images.ts",
+    "improve": "tsx scripts/improve-content.ts",
     "astro": "astro"
   },
   "dependencies": {

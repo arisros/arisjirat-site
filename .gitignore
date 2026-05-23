@@ -20,3 +20,6 @@ Thumbs.db
 
 # debug
 npm-debug.log*
+
+# script state
+scripts/.content-state.json
