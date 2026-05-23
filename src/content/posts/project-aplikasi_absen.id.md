@@ -11,34 +11,49 @@ lang: "id"
 translationKey: "project-aplikasi_absen"
 ---
 
-# Aplikasi Absen
+## Tentang Aplikasi
 
-Aplikasi ini dibuat oleh kelompok Mobile Programming menggunakan Flutter.
+**Aplikasi Absen** adalah aplikasi absensi karyawan dan manager yang dikembangkan oleh kelompok mata kuliah Mobile Programming menggunakan **Flutter**.
 
-## Anggota kelompok:
+## Anggota Kelompok
 
 - Agus
 - Rilo
 - Wildan
 - Okra
 
-## Deskripsi
+## Fitur Utama
 
-Aplikasi Absensi Karyawan dan Manager:
+Aplikasi ini menyediakan alur absensi sederhana untuk dua peran pengguna:
 
-- Login dengan NIK dan password
-- Clock In dan Clock Out
-- Dashboard Manager untuk melihat rekap absen
+| Peran | Fitur |
+| --- | --- |
+| Karyawan | Login dengan NIK & password, Clock In, Clock Out |
+| Manager | Dashboard untuk melihat rekap absen karyawan |
+
+### Alur Karyawan
+
+- Login menggunakan **NIK** dan **password**.
+- Melakukan **Clock In** saat memulai jam kerja.
+- Melakukan **Clock Out** saat mengakhiri jam kerja.
+
+### Alur Manager
+
+- Login dengan akun manager.
+- Mengakses **Dashboard** untuk melihat rekap absen seluruh karyawan.
 
 ## Getting Started
 
-Proyek ini adalah titik awal untuk aplikasi Flutter.
+Proyek ini merupakan titik awal aplikasi Flutter. Ikuti langkah berikut untuk menjalankannya secara lokal.
 
-Langkah awal:
+### Langkah Menjalankan
 
-1. Clone repository ini
-2. Jalankan:
+1. Clone repository ini.
+2. Masuk ke direktori proyek, lalu jalankan perintah berikut:
+
    ```bash
    flutter pub get
    flutter run
    ```
+
+> **Catatan:** Pastikan Flutter SDK sudah terpasang dan perangkat (emulator atau device fisik) sudah terhubung sebelum menjalankan `flutter run`.

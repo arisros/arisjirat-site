@@ -66,57 +66,68 @@ lang: "en"
 translationKey: "project-beepresent"
 ---
 
-## Build present project
+## Overview
 
-API
+This project is a CLI and API for interacting with course data — listing courses, fetching details, retrieving assignments and quizzes, and submitting attendance ("present") records.
 
-- get list course
-- get detail by course {id}
-- get assignments {course_id}
-- get quizes {course_id}
-- post present {course_id} {present_id}
+## API
 
-CLI from those
+| Endpoint | Description |
+| --- | --- |
+| `GET /courses` | List all courses |
+| `GET /courses/{id}` | Get course details |
+| `GET /courses/{course_id}/assignments` | List assignments for a course |
+| `GET /courses/{course_id}/quizzes` | List quizzes for a course |
+| `POST /courses/{course_id}/present/{present_id}` | Submit attendance |
 
-- bl courses - get list course
-- bl courses {id} - get detail course
-- present
+## CLI
 
-Scheduler presen will be on this project??
+The CLI mirrors the API surface:
 
-- at 7pm to 8pm monday to friday
-- saturday on 9am, 11am, 2pm, 4pm
+- `bl courses` — list courses
+- `bl courses {id}` — show course details
+- `bl present` — submit attendance
 
-because data will not always changes, I think we can update
-perweek
+## Scheduling
 
-I think this no priority 0
-database invalidation for every access, we can invalidate per week
+Attendance submission should run on a fixed schedule:
 
-- set expired data a week
-- when data expired than need to crawl
+- **Monday – Friday:** 7 PM – 8 PM
+- **Saturday:** 9 AM, 11 AM, 2 PM, 4 PM
 
-## Implemenation
+> Open question: should the scheduler live inside this project, or be a separate concern?
+
+## Caching & Invalidation
+
+Course data rarely changes, so aggressive caching is fine.
+
+- Cache entries expire after **one week**
+- Re-crawl only when the cached data is expired
+- Avoid invalidating on every access — that's not a priority
+
+## Implementation
 
 ### Tech Stack
 
-- Typescript
-- Bun.js Runtime
-- Cheerio
+- TypeScript
+- Bun.js runtime
+- Cheerio (HTML parsing)
 
 ### Project Structure
 
-- src
-  - services
-    - get courses
-    - get courses detail
-    - get presention list
-    - post present
-  - repository
-    - courses
-    - assignments
-    - quiz
-  - utils
-    - log
-  - config
-    - creds
+```
+src/
+├── services/
+│   ├── getCourses
+│   ├── getCourseDetail
+│   ├── getPresentationList
+│   └── postPresent
+├── repository/
+│   ├── courses
+│   ├── assignments
+│   └── quiz
+├── utils/
+│   └── log
+└── config/
+    └── creds
+```

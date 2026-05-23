@@ -10,73 +10,67 @@ lang: "id"
 translationKey: "project-pcd"
 ---
 
-# Deteksi Lantai Keramik Kotor
-
-Proyek ini bertujuan untuk membedakan kondisi lantai keramik **bersih** dan **kotor** menggunakan teknik pengolahan citra digital.  
-Pendekatan yang digunakan berbasis analisis intensitas piksel dan variasi tekstur tanpa melibatkan pembelajaran mesin.
-
----
+Proyek ini bertujuan membedakan kondisi lantai keramik **bersih** dan **kotor** menggunakan teknik pengolahan citra digital. Pendekatan yang digunakan berbasis analisis intensitas piksel dan variasi tekstur, tanpa melibatkan pembelajaran mesin.
 
 ## Kebutuhan
 
-- Python 3.8 atau lebih baru
-- OpenCV
-- NumPy
-- Matplotlib
+| Komponen | Versi |
+|----------|-------|
+| Python | 3.8 atau lebih baru |
+| OpenCV | terbaru |
+| NumPy | terbaru |
+| Matplotlib | terbaru |
 
-Semua dependensi dapat dipasang melalui `requirements.txt`.
+> Semua dependensi dapat dipasang melalui `requirements.txt`.
 
----
-
-## Struktur Singkat
+## Struktur Proyek
 
 ```
-
 .
 ├── deteksi_lantai_kotor.py
 ├── requirements.txt
 ├── lantai.jpg
 └── docs/
-└── sequence-diagram.png
-
+    └── sequence-diagram.png
 ```
-
----
 
 ## Alur Sistem
 
 <!-- TODO: add sequence_diagram.png -->
 
-**Ringkas:**
+Secara ringkas, sistem bekerja melalui lima tahapan berikut:
 
-1. Sistem membaca citra lantai keramik.
-2. Citra dikonversi ke grayscale dan dilakukan reduksi noise.
-3. Sistem mengekstraksi fitur statistik (mean dan standar deviasi).
-4. Nilai standar deviasi dibandingkan dengan threshold.
-5. Sistem menentukan kondisi lantai (bersih atau kotor).
+1. Membaca citra lantai keramik.
+2. Mengonversi citra ke grayscale dan melakukan reduksi noise.
+3. Mengekstraksi fitur statistik berupa **mean** dan **standar deviasi**.
+4. Membandingkan nilai standar deviasi terhadap *threshold*.
+5. Menentukan kondisi lantai: **bersih** atau **kotor**.
 
----
+### Dasar Pengambilan Keputusan
+
+Keputusan klasifikasi didasarkan pada nilai standar deviasi intensitas piksel:
+
+$$\sigma = \sqrt{\frac{1}{N}\sum_{i=1}^{N}(x_i - \mu)^2}$$
+
+Semakin tinggi $\sigma$, semakin besar variasi tekstur pada permukaan — yang umumnya mengindikasikan adanya kotoran atau noda.
 
 ## Cara Menjalankan
 
 ```bash
 pip install -r requirements.txt
 python deteksi_lantai_kotor.py
-
 ```
 
-Pastikan file gambar (`lantai.jpg`) berada pada path yang sesuai dengan yang ditentukan di dalam kode.
-
----
+> Pastikan file gambar (`lantai.jpg`) berada pada path yang sesuai dengan yang ditentukan di dalam kode.
 
 ## Output
 
-- Tampilan visual citra asli, hasil preprocessing, dan hasil deteksi
-- Informasi nilai mean, standar deviasi, dan keputusan sistem ditampilkan melalui terminal
+Program menghasilkan dua jenis keluaran:
 
----
+- **Visual:** citra asli, hasil *preprocessing*, dan hasil deteksi.
+- **Terminal:** nilai mean, standar deviasi, dan keputusan akhir sistem.
 
 ## Catatan
 
 - Sistem bekerja optimal pada kondisi pencahayaan yang relatif stabil.
-- Nilai threshold dapat disesuaikan berdasarkan hasil pengujian pada lingkungan yang berbeda.
+- Nilai *threshold* dapat disesuaikan berdasarkan hasil pengujian pada lingkungan yang berbeda.

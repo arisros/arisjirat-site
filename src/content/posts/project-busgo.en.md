@@ -13,19 +13,17 @@ lang: "en"
 translationKey: "project-busgo"
 ---
 
-# busgo
+## Overview
 
-A new Flutter project.
+**busgo** is a new Flutter project — a starting point for a cross-platform mobile application.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+This project is a starting point for a Flutter application. If this is your first Flutter project, the following resources will help you get up to speed:
 
-A few resources to get you started if this is your first Flutter project:
+- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab) — a guided codelab walkthrough.
+- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook) — practical recipes for common tasks.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Further Reading
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+For broader help with Flutter development, see the [online documentation](https://docs.flutter.dev/), which offers tutorials, samples, guidance on mobile development, and a full API reference.

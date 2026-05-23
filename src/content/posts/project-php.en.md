@@ -1,34 +1,34 @@
 ---
-title: "📚 Sistem Manajemen Mata Kuliah"
-description: "Aplikasi web sederhana untuk mengelola data mata kuliah menggunakan PHP dan MySQL. Mendukung fitur **CRUD (Create, Read, Update, Delete)** dengan tampilan se..."
+title: "📚 Course Management System"
+description: "A simple web application for managing course data using PHP and MySQL. Supports **CRUD (Create, Read, Update, Delete)** features with a si..."
 category: "study"
 tags: ["php", "web", "laravel"]
 status: "completed"
 draft: false
 repo: "https://github.com/arisros/pwtm"
-lang: "id"
+lang: "en"
 translationKey: "project-php"
 ---
 
-Aplikasi web sederhana untuk mengelola data mata kuliah menggunakan **PHP** dan **MySQL**. Mendukung operasi **CRUD (Create, Read, Update, Delete)** dengan antarmuka responsif berbasis Tailwind CSS.
+A simple web application for managing course data using **PHP** and **MySQL**. Supports **CRUD (Create, Read, Update, Delete)** operations with a responsive interface built on Tailwind CSS.
 
-## Fitur
+## Features
 
-- Menambahkan data mata kuliah
-- Melihat daftar mata kuliah
-- Mengedit data mata kuliah
-- Menghapus data mata kuliah
-- Tampilan sederhana dan responsif
+- Add course data
+- View course list
+- Edit course data
+- Delete course data
+- Simple and responsive UI
 
-## Teknologi
+## Tech Stack
 
-| Lapisan | Teknologi |
+| Layer | Technology |
 | --- | --- |
 | Backend | PHP (Native) |
 | Database | MySQL |
 | Frontend | HTML + Tailwind CSS |
 
-## Struktur Folder
+## Folder Structure
 
 ```
 📁 config/
@@ -44,11 +44,11 @@ form.php
 index.php
 ```
 
-> Logika CRUD dipisah ke dalam folder `feature/`, sementara bagian tampilan yang dapat digunakan ulang (header dan footer) berada di folder `template/`.
+> CRUD logic is separated into the `feature/` folder, while reusable view components (header and footer) live in the `template/` folder.
 
-## Snippet Kode
+## Code Snippets
 
-### 1. Create — Tambah Data
+### 1. Create — Add Data
 
 ```php
 <?php
@@ -65,7 +65,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 ?>
 ```
 
-### 2. Read — Tampil Data
+### 2. Read — Display Data
 
 ```php
 <?php
@@ -110,46 +110,46 @@ if (isset($_GET['kd'])) {
 ?>
 ```
 
-> Seluruh query menggunakan **prepared statements** dengan `bind_param`, sehingga input pengguna tidak digabung langsung ke string SQL.
+> All queries use **prepared statements** with `bind_param`, so user input is never concatenated directly into SQL strings.
 
-## Screenshot
+## Screenshots
 
-- **Struktur Database** — <!-- TODO: add screenshots/db.png -->
-- **Daftar Mata Kuliah** — <!-- TODO: add screenshots/list.png -->
-- **Form Tambah / Edit** — <!-- TODO: add screenshots/form.png -->
-- **Sukses Tambah** — <!-- TODO: add screenshots/create_success.png -->
-- **Sukses Update** — <!-- TODO: add screenshots/update_success.png -->
-- **Sukses Hapus** — <!-- TODO: add screenshots/delete_success.png -->
+- **Database Schema** — <!-- TODO: add screenshots/db.png -->
+- **Course List** — <!-- TODO: add screenshots/list.png -->
+- **Add / Edit Form** — <!-- TODO: add screenshots/form.png -->
+- **Add Success** — <!-- TODO: add screenshots/create_success.png -->
+- **Update Success** — <!-- TODO: add screenshots/update_success.png -->
+- **Delete Success** — <!-- TODO: add screenshots/delete_success.png -->
 
-## Cara Menjalankan
+## How to Run
 
-### 1. Clone repositori
+### 1. Clone the repository
 
 ```bash
 git clone https://github.com/arisos/pwtm.git
 cd pwtm
 ```
 
-### 2. Import database
+### 2. Import the database
 
-Import file `db.sql` melalui phpMyAdmin atau MySQL CLI:
+Import the `db.sql` file via phpMyAdmin or the MySQL CLI:
 
 ```bash
 mysql -u root -p nama_database < db.sql
 ```
 
-### 3. Jalankan server lokal
+### 3. Run a local server
 
 ```bash
 php -S localhost:8000
 ```
 
-### 4. Buka di browser
+### 4. Open in your browser
 
 ```
 http://localhost:8000
 ```
 
-## Lisensi
+## License
 
-Proyek ini bebas digunakan untuk keperluan pembelajaran dan pengembangan pribadi.
+This project is free to use for learning and personal development purposes.

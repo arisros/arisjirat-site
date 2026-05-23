@@ -1,28 +1,28 @@
 ---
 title: "Lemme"
-description: "Lemme is an AI-assisted quiz application. Users upload quiz screenshots, OCR extracts question text, and multiple LLM providers generate answer and reasoning..."
+description: "Lemme adalah aplikasi kuis berbantuan AI. Pengguna mengunggah tangkapan layar kuis, OCR mengekstrak teks pertanyaan, dan beberapa penyedia LLM menghasilkan kandidat jawaban beserta penalarannya..."
 category: "project"
 tags: ["auto-imported"]
 tech: ["flutter", "ai", "ocr"]
 status: "completed"
 draft: false
 image: "/images/banners/project-lemme.png"
-lang: "en"
+lang: "id"
 translationKey: "project-lemme"
 ---
 
-Lemme is an AI-assisted quiz application. Users upload quiz screenshots; OCR extracts the question text, and multiple LLM providers generate answer and reasoning candidates.
+Lemme adalah aplikasi kuis berbantuan AI. Pengguna mengunggah tangkapan layar kuis; OCR mengekstrak teks pertanyaan, dan beberapa penyedia LLM menghasilkan kandidat jawaban beserta penalarannya.
 
 ## Stack
 
-| Layer | Technology |
+| Lapisan | Teknologi |
 |---|---|
 | Backend | Go 1.24, Fiber v2, MySQL, Redis, WebSocket, Google OAuth |
 | Frontend | Solid.js, Vite, PandaCSS / Park UI, TypeScript |
 | Reverse proxy / TLS | Caddy |
-| Deployment target | Debian homelab on `lemme.arisjirat.com` |
+| Target deployment | Homelab Debian di `lemme.arisjirat.com` |
 
-## Architecture
+## Arsitektur
 
 ```text
 Browser
@@ -34,47 +34,47 @@ Browser
            -> OCR + LLM providers (OpenAI/Anthropic/Gemini)
 ```
 
-> Caddy fronts everything and terminates TLS. The UI is a static Solid build served by Nginx; the API is a Go Fiber service that talks to MySQL, Redis, and external OCR/LLM providers.
+> Caddy berada di depan semuanya dan menangani terminasi TLS. UI adalah build Solid statis yang disajikan oleh Nginx; API adalah layanan Go Fiber yang berkomunikasi dengan MySQL, Redis, serta penyedia OCR/LLM eksternal.
 
-## Local Development
+## Pengembangan Lokal
 
-Spin up the full stack with Docker Compose.
+Jalankan seluruh stack menggunakan Docker Compose.
 
-### 1. Configure environment
+### 1. Konfigurasi environment
 
-Copy the root and backend env templates, then fill in required secrets:
+Salin template env root dan backend, lalu isi secret yang diperlukan:
 
 ```bash
 cp .env.example .env
 cp lemme_service/.env.production.example lemme_service/.env
 ```
 
-### 2. Start services
+### 2. Jalankan service
 
 ```bash
 make dev
 ```
 
-### 3. Run migrations (if needed)
+### 3. Jalankan migrasi (jika diperlukan)
 
 ```bash
 make migrate
 ```
 
-### 4. Verify
+### 4. Verifikasi
 
 - UI: `http://localhost:3000`
 - API health: `http://localhost:9090/healthz`
 
-## Production Deployment
+## Deployment Production
 
-1. **Provision the host.** On the Debian server, run the setup script:
+1. **Siapkan host.** Pada server Debian, jalankan script setup:
 
    ```bash
    ./scripts/setup-server.sh
    ```
 
-2. **Clone and configure.** Clone the repository to `/opt/lemme` and create the env files:
+2. **Clone dan konfigurasi.** Clone repository ke `/opt/lemme` dan buat file env:
 
    - `/opt/lemme/.env`
    - `/opt/lemme/lemme_service/.env`
@@ -85,28 +85,28 @@ make migrate
    ./deploy.sh
    ```
 
-4. **DNS and networking.** Point the `lemme.arisjirat.com` A record at the host's public IP and forward ports `80` and `443`.
+4. **DNS dan jaringan.** Arahkan A record `lemme.arisjirat.com` ke IP publik host dan teruskan port `80` dan `443`.
 
-5. **TLS.** Caddy provisions and renews certificates automatically.
+5. **TLS.** Caddy menyediakan dan memperbarui sertifikat secara otomatis.
 
 ## Environment Variables
 
-Templates:
+Template:
 
-- Root compose env — `.env.example`
-- Backend production env — `lemme_service/.env.production.example`
+- Env compose root — `.env.example`
+- Env production backend — `lemme_service/.env.production.example`
 
-### Core variables
+### Variabel inti
 
-| Group | Variables |
+| Grup | Variabel |
 |---|---|
 | Database | `MYSQL_ROOT_PASSWORD`, `MYSQL_DATABASE`, `MYSQL_USER`, `MYSQL_PASSWORD` |
 | Redis | `REDIS_PASSWORD` |
 | Backend | `DB_DSN`, `REDIS_ADDR`, `SESSION_COOKIE_SECRET`, `JWT_SECRET` |
 | OAuth | `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET`, `GOOGLE_REDIRECT_URL` |
-| Frontend build args | `VITE_API_URL`, `VITE_WS_URL`, `VITE_FRONTEND_URL`, `VITE_FEEDBACK_GFORMS_URL` |
+| Build args frontend | `VITE_API_URL`, `VITE_WS_URL`, `VITE_FRONTEND_URL`, `VITE_FEEDBACK_GFORMS_URL` |
 
-## Common Commands
+## Perintah Umum
 
 ```bash
 make dev       # build + up

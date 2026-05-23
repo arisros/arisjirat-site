@@ -12,18 +12,20 @@ lang: "en"
 translationKey: "project-marcom_services"
 ---
 
-# Elysia with Bun runtime
-
 ## Getting Started
-To get started with this template, simply paste this command into your terminal:
+
+To scaffold a new project from this template, run the following command in your terminal:
+
 ```bash
 bun create elysia ./elysia-example
 ```
 
 ## Development
-To start the development server run:
+
+Start the development server with:
+
 ```bash
 bun run dev
 ```
 
-Open http://localhost:3000/ with your browser to see the result.
+Then open [http://localhost:3000/](http://localhost:3000/) in your browser to see the result.

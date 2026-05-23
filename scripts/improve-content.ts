@@ -22,7 +22,7 @@ import * as fs from 'node:fs';
 import * as path from 'node:path';
 import * as crypto from 'node:crypto';
 import { spawn } from 'node:child_process';
-import { readPost, setFmField, stringifyPost } from './lib/frontmatter';
+import { readPost, setFmField, buildFrontmatter, stringifyPost } from './lib/frontmatter';
 
 const POSTS_DIR = 'src/content/posts';
 const STATE_FILE = 'scripts/.content-state.json';
@@ -213,14 +213,16 @@ async function doTranslate(canon: Canon, from: Lang) {
   const raw = await callClaudeRetry(translatePrompt(from, to), input);
   const parsed = parseTranslateOutput(raw);
 
-  // Build the new file's frontmatter by copying the source's, then patching
-  // title/description/lang. translationKey, category, tags, repo, image,
-  // featured, etc. all carry over unchanged.
-  let fm = src.fm;
-  fm = setFmField(fm, 'title', parsed.title);
-  if (parsed.desc) fm = setFmField(fm, 'description', parsed.desc);
-  fm = setFmField(fm, 'lang', to);
-
+  // Build the new file's frontmatter from a known field set so we never
+  // inherit any malformed multi-line YAML from the source.
+  const targetData: Record<string, any> = {
+    ...src.data,
+    title: parsed.title,
+    description: parsed.desc || src.data.description || '',
+    lang: to,
+    translationKey: src.data.translationKey ?? canon.key,
+  };
+  const fm = buildFrontmatter(targetData);
   const dstFile = path.join(POSTS_DIR, `${canon.key}.${to}.md`);
   fs.writeFileSync(dstFile, stringifyPost(fm, parsed.body));
   canon.files[to] = dstFile;

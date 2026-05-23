@@ -50,18 +50,66 @@ export function parseFrontmatter(fm: string): Record<string, any> {
 }
 
 /**
- * Replace one scalar field in a frontmatter string in place. If the key
- * doesn't exist it is appended. String values are double-quoted via
- * JSON.stringify so embedded quotes/colons/emoji round-trip safely.
+ * Replace one scalar field in a frontmatter string in place. Handles
+ * multi-line values: replaces from the key line through (but not including)
+ * the next key line — so an unterminated quoted string spanning many lines
+ * is collapsed back to a single, clean key. If the key doesn't exist it is
+ * appended. String values are double-quoted via JSON.stringify so embedded
+ * quotes/colons/emoji round-trip safely.
  */
 export function setFmField(fm: string, key: string, value: string | number | boolean): string {
   const formatted =
     typeof value === 'string'
       ? `${key}: ${JSON.stringify(value)}`
       : `${key}: ${value}`;
-  const re = new RegExp(`^${key}:.*$`, 'm');
-  if (re.test(fm)) return fm.replace(re, formatted);
-  return `${fm.replace(/\s*$/, '')}\n${formatted}`;
+  const lines = fm.split('\n');
+  const keyRe = /^([a-zA-Z][a-zA-Z0-9_-]*):/;
+
+  let startIdx = -1;
+  for (let i = 0; i < lines.length; i++) {
+    const m = lines[i].match(keyRe);
+    if (m && m[1] === key) { startIdx = i; break; }
+  }
+  if (startIdx === -1) {
+    return `${fm.replace(/\s*$/, '')}\n${formatted}`;
+  }
+  let endIdx = lines.length;
+  for (let j = startIdx + 1; j < lines.length; j++) {
+    if (keyRe.test(lines[j])) { endIdx = j; break; }
+  }
+  return [...lines.slice(0, startIdx), formatted, ...lines.slice(endIdx)].join('\n');
+}
+
+/**
+ * Build a clean, well-formed frontmatter from a known set of fields. Used by
+ * the translate pass to produce the target-language file with predictable YAML
+ * (avoids inheriting any malformed multi-line strings from the source).
+ */
+export function buildFrontmatter(data: Record<string, any>): string {
+  const lines: string[] = [];
+  const scalarKeys = ['title', 'description', 'date', 'category', 'lang', 'translationKey', 'image', 'repo', 'status', 'course', 'subtitle', 'demo'];
+  const boolKeys = ['featured', 'draft'];
+  const numberKeys = ['semester'];
+  const arrayKeys = ['tags', 'tech'];
+
+  for (const k of scalarKeys) {
+    const v = data[k];
+    if (v === undefined || v === null || v === '') continue;
+    lines.push(`${k}: ${JSON.stringify(String(v))}`);
+  }
+  for (const k of boolKeys) {
+    if (data[k] === true || data[k] === false) lines.push(`${k}: ${data[k]}`);
+  }
+  for (const k of numberKeys) {
+    if (typeof data[k] === 'number') lines.push(`${k}: ${data[k]}`);
+  }
+  for (const k of arrayKeys) {
+    const v = data[k];
+    if (Array.isArray(v) && v.length) {
+      lines.push(`${k}: [${v.map((t: string) => JSON.stringify(String(t))).join(', ')}]`);
+    }
+  }
+  return lines.join('\n');
 }
 
 export function stringifyPost(fm: string, body: string): string {

@@ -10,29 +10,35 @@ lang: "id"
 translationKey: "project-algo3"
 ---
 
-# ALGO3 - Graph (Adjacency Matrix, C)
+## Ringkasan
 
-Repository ini disiapkan untuk pola ajar ALGO3 berbasis:
+Repository ini disiapkan untuk pola ajar **ALGO3** berbasis representasi graph imperatif dalam C. Pendekatan yang dipakai sengaja sederhana agar fondasi struktur data dan translasi model terlihat eksplisit.
+
+Cakupan materi:
 
 - Representasi graph dengan `int M[n][n]`
-- Translasi model -> data -> operasi
-- Query langsung, query multi-langkah, traversal matrix
-- Enumerasi jalur brute force (tanpa DFS/BFS formal)
+- Translasi **model → data → operasi**
+- Query langsung, query multi-langkah, dan traversal matrix
+- Enumerasi jalur secara *brute force* (tanpa DFS/BFS formal)
 
-## Struktur
+## Struktur Direktori
 
-- `pertemuan1/graph_tak_berarah.c` - graph tak berarah, degree, query dasar
-- `pertemuan2/graph_berarah.c` - graph berarah, indegree/outdegree, query dua langkah
-- `pertemuan3/cetak_semua_path.c` - cetak semua jalur A -> D tanpa revisiting (brute force, sesuai `tugas3.png`)
-- `Makefile` - build dan run cepat
+| Berkas | Topik |
+| --- | --- |
+| `pertemuan1/graph_tak_berarah.c` | Graph tak berarah: degree dan query dasar |
+| `pertemuan2/graph_berarah.c` | Graph berarah: indegree/outdegree, query dua langkah |
+| `pertemuan3/cetak_semua_path.c` | Cetak semua jalur A → D tanpa revisiting (brute force, sesuai `tugas3.png`) |
+| `Makefile` | Build dan run cepat |
 
-## Build
+## Penggunaan
+
+### Build
 
 ```bash
 make all
 ```
 
-## Run
+### Run
 
 ```bash
 make run-p1
@@ -42,5 +48,11 @@ make run-p3
 
 ## Catatan Akademik
 
-Fokus repo ini adalah fondasi struktur data graph secara imperatif dan procedural.
-Belum masuk ke algoritma formal seperti DFS rekursif, BFS, Dijkstra, atau topological sort.
+> Fokus repo ini adalah fondasi struktur data graph secara imperatif dan prosedural.
+
+Materi **belum** mencakup algoritma formal seperti:
+
+- DFS rekursif
+- BFS
+- Dijkstra
+- Topological sort

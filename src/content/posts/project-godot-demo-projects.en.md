@@ -12,40 +12,37 @@ lang: "en"
 translationKey: "project-godot-demo-projects"
 ---
 
-# Godot demo projects
+Each folder containing a `project.godot` file is a demo project intended for use with [Godot Engine](https://godotengine.org), the open source 2D and 3D game engine.
 
-Each folder containing a `project.godot` file is a demo project meant to
-be used with [Godot Engine](https://godotengine.org), the open source
-2D and 3D game engine.
+## Godot Versions
 
-## Godot versions
+Pick the branch that matches your Godot install:
 
-- The [`master`](https://github.com/godotengine/godot-demo-projects) branch is compatible with Godot's `master` development branch (next 4.x release).
-- The [`3.x`](https://github.com/godotengine/godot-demo-projects/tree/3.x) branch is compatible with Godot's `3.x` development branch (next 3.x release).
-- The other branches are compatible with the matching stable versions of Godot.
-  - [Click here](https://github.com/godotengine/godot-demo-projects/branches) to see all branches.
-  - For example, the [`2.1`](https://github.com/godotengine/godot-demo-projects/tree/2.1)
-    branch is for demos compatible with Godot 2.1.x.
+| Branch | Compatible With |
+| --- | --- |
+| [`master`](https://github.com/godotengine/godot-demo-projects) | Godot's `master` development branch (next 4.x release) |
+| [`3.x`](https://github.com/godotengine/godot-demo-projects/tree/3.x) | Godot's `3.x` development branch (next 3.x release) |
+| [`2.1`](https://github.com/godotengine/godot-demo-projects/tree/2.1) | Godot 2.1.x |
+| Other stable branches | Their matching stable Godot versions |
 
-## Importing all demos
+See the [full list of branches](https://github.com/godotengine/godot-demo-projects/branches) for every available version.
 
-To import all demos at once in the project manager:
+## Importing All Demos
 
-- Clone this repository or [download a ZIP archive](https://github.com/godotengine/godot-demo-projects/archive/master.zip).
-  - If you've downloaded a ZIP archive, extract it somewhere.
-- Open the Godot project manager and click the **Scan** button on the right.
-- Choose the path to the folder containing all demos.
-- All demos should now appear in the project manager.
+To import every demo at once from the Godot project manager:
 
-## Try the demos in your browser
+1. Clone this repository, or [download a ZIP archive](https://github.com/godotengine/godot-demo-projects/archive/master.zip) and extract it.
+2. Open the Godot project manager and click the **Scan** button on the right.
+3. Choose the folder containing all the demos.
+4. All demos should now appear in the project manager.
 
-Most of the demos are exported to GitHub Pages. They can be viewed
-[here](https://godotengine.github.io/godot-demo-projects/).
+## Try the Demos in Your Browser
 
-**Note:** The performance of Godot in a browser is lower than natively on
-desktop. For the best performance, consider downloading the demos.
+Most demos are exported to GitHub Pages and can be viewed [here](https://godotengine.github.io/godot-demo-projects/).
 
-## Useful links
+> **Note:** Godot's performance in a browser is lower than natively on desktop. For the best experience, download the demos and run them locally.
+
+## Useful Links
 
 - [Main website](https://godotengine.org)
 - [Source code](https://github.com/godotengine/godot)
@@ -55,5 +52,4 @@ desktop. For the best performance, consider downloading the demos.
 
 ## License
 
-Those demos are distributed under the terms of the MIT license, as
-described in the [LICENSE.md](LICENSE.md) file.
+These demos are distributed under the terms of the MIT license. See the [LICENSE.md](LICENSE.md) file for full details.
