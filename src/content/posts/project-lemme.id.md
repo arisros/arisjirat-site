@@ -34,11 +34,14 @@ Browser
            -> OCR + LLM providers (OpenAI/Anthropic/Gemini)
 ```
 
-> Caddy berada di depan semuanya dan menangani terminasi TLS. UI adalah build Solid statis yang disajikan oleh Nginx; API adalah layanan Go Fiber yang berkomunikasi dengan MySQL, Redis, serta penyedia OCR/LLM eksternal.
+Caddy berada di depan semuanya dan menangani terminasi TLS. Di belakangnya:
+
+- **UI** — build Solid statis yang disajikan oleh Nginx.
+- **API** — layanan Go Fiber yang berbicara dengan MySQL, Redis, serta penyedia OCR/LLM eksternal.
 
 ## Pengembangan Lokal
 
-Jalankan seluruh stack menggunakan Docker Compose.
+Seluruh stack dijalankan menggunakan Docker Compose.
 
 ### 1. Konfigurasi environment
 
@@ -63,38 +66,48 @@ make migrate
 
 ### 4. Verifikasi
 
-- UI: `http://localhost:3000`
-- API health: `http://localhost:9090/healthz`
+| Endpoint | URL |
+|---|---|
+| UI | `http://localhost:3000` |
+| API health | `http://localhost:9090/healthz` |
 
 ## Deployment Production
 
-1. **Siapkan host.** Pada server Debian, jalankan script setup:
+### 1. Siapkan host
 
-   ```bash
-   ./scripts/setup-server.sh
-   ```
+Pada server Debian, jalankan script setup:
 
-2. **Clone dan konfigurasi.** Clone repository ke `/opt/lemme` dan buat file env:
+```bash
+./scripts/setup-server.sh
+```
 
-   - `/opt/lemme/.env`
-   - `/opt/lemme/lemme_service/.env`
+### 2. Clone dan konfigurasi
 
-3. **Deploy.**
+Clone repository ke `/opt/lemme` lalu buat file env:
 
-   ```bash
-   ./deploy.sh
-   ```
+- `/opt/lemme/.env`
+- `/opt/lemme/lemme_service/.env`
 
-4. **DNS dan jaringan.** Arahkan A record `lemme.arisjirat.com` ke IP publik host dan teruskan port `80` dan `443`.
+### 3. Deploy
 
-5. **TLS.** Caddy menyediakan dan memperbarui sertifikat secara otomatis.
+```bash
+./deploy.sh
+```
+
+### 4. DNS dan jaringan
+
+Arahkan A record `lemme.arisjirat.com` ke IP publik host, lalu teruskan port `80` dan `443`.
+
+### 5. TLS
+
+Caddy menyediakan dan memperbarui sertifikat secara otomatis — tidak ada langkah manual.
 
 ## Environment Variables
 
-Template:
+Template tersedia di:
 
-- Env compose root — `.env.example`
-- Env production backend — `lemme_service/.env.production.example`
+- `.env.example` — env compose root
+- `lemme_service/.env.production.example` — env production backend
 
 ### Variabel inti
 

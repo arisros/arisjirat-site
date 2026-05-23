@@ -10,46 +10,65 @@ tags: ["input-output", "peripherals", "keyboard", "mouse", "printer", "monitor"]
 lang: "id"
 translationKey: "study-device-input-output"
 ---
-Pada bagian pertama, artikel ini membahas komponen komputer yang digunakan untuk memasukkan data, seperti keyboard, perangkat pointing (misalnya, mouse), pen input (stilus dan tablet grafis), input berbasis gerakan, input suara (voice input), dan input video. Artikel ini juga mencakup perangkat pemindai (scanner) dan pembaca optik (optic reader) yang digunakan untuk membaca teks dan gambar.
 
-Bagian kedua dari artikel ini membahas komponen komputer yang digunakan untuk menampilkan informasi. Ini mencakup tampilan visual (display) seperti monitor dan televisi digital, serta printer yang menghasilkan teks dan gambar pada media fisik. Artikel ini juga menjelaskan printer ink-jet, printer laser, printer 3D, printer all-in-one, dan printer mobile. Selain itu, komponen output lain seperti headphone, data projector, interactive whiteboard, joystick, dan pengontrol permainan juga dibahas.
+## Ringkasan
 
-Tentu, saya akan memisahkan contoh berdasarkan komponen input dan output sesuai dengan artikel "Modul Pengantar Teknologi Informasi - Modul 7: Input dan Output":
+Artikel ini membahas dua kelompok besar komponen komputer: **perangkat input** yang digunakan untuk memasukkan data, dan **perangkat output** yang digunakan untuk menampilkan atau mengeluarkan informasi.
 
-**Komponen Input:**
+Bagian pertama mencakup keyboard, perangkat penunjuk (misalnya mouse), pen input (stilus dan tablet grafis), input berbasis gerakan, input suara, input video, serta pemindai (scanner) dan pembaca optik.
 
-1. **Keyboard Ergonomis**: Contoh input adalah keyboard ergonomis yang dirancang untuk mengurangi cedera regangan pergelangan tangan. Sebagai contoh, Microsoft Ergonomic Keyboard.
+Bagian kedua membahas tampilan visual seperti monitor dan televisi digital, berbagai jenis printer (ink-jet, laser, 3D, all-in-one, dan mobile), serta perangkat output lain seperti headphone, data projector, interactive whiteboard, joystick, dan pengontrol permainan.
 
-2. **Mouse Optik**: Mouse optik adalah perangkat penunjuk yang digunakan sebagai input. Contoh nyata adalah "Logitech MX Master 3."
+## Komponen Input
 
-3. **Scanner Flatbed**: Pemindai flatbed adalah perangkat input yang digunakan untuk memindai dokumen dan gambar. Contoh nyata adalah Epson Perfection V600.
+Berikut contoh nyata perangkat input berdasarkan kategori dalam *Modul Pengantar Teknologi Informasi - Modul 7: Input dan Output*.
 
-4. **Stylus dan Graphics Tablet**: Artikel menyebutkan penggunaan stylus pada graphics tablet sebagai perangkat input. Contoh contohnya adalah "Wacom Intuos Pro."
+| No | Kategori | Contoh Produk |
+|----|----------|---------------|
+| 1 | Keyboard ergonomis | Microsoft Ergonomic Keyboard |
+| 2 | Mouse optik | Logitech MX Master 3 |
+| 3 | Scanner flatbed | Epson Perfection V600 |
+| 4 | Stylus & graphics tablet | Wacom Intuos Pro |
+| 5 | Input gerakan (motion) | Leap Motion |
+| 6 | Input suara (voice input) | Amazon Alexa, Google Assistant |
+| 7 | Input video | Webcam |
+| 8 | Pemindai (scanner) | Flatbed scanner, handheld scanner |
+| 9 | Pembaca optik | Optical Character Recognition (OCR) |
+| 10 | RFID | Pelacakan barang ritel, kartu akses gedung |
 
-5. **Input Gerakan (Motion)**: Input gerakan atau gesture recognition memungkinkan pengguna untuk mengontrol elemen di layar dengan gerakan fisik. Contoh nyata adalah teknologi sensor gerakan seperti Leap Motion.
+### Catatan Tiap Kategori
 
-6. **Masukan Suara (Voice Input)**: Pengenalan suara atau speech recognition adalah contoh lain dari input. Contoh yang populer adalah asisten suara seperti Amazon Alexa atau Google Assistant.
+- **Keyboard ergonomis** dirancang untuk mengurangi cedera regangan pergelangan tangan saat mengetik dalam jangka waktu lama.
+- **Mouse optik** berfungsi sebagai perangkat penunjuk utama untuk navigasi antarmuka grafis.
+- **Scanner flatbed** memindai dokumen dan gambar berukuran lembaran ke bentuk digital.
+- **Stylus pada graphics tablet** digunakan untuk menggambar, menulis tangan digital, dan editing presisi.
+- **Input gerakan** memungkinkan pengguna mengontrol elemen di layar melalui gerakan fisik tanpa kontak.
+- **Input suara** menerjemahkan ucapan menjadi perintah atau teks melalui *speech recognition*.
+- **Input video** menangkap gambar bergerak, umumnya melalui webcam untuk konferensi atau perekaman.
+- **Pembaca optik** menggunakan cahaya untuk mengenali karakter, tanda, dan kode pada media cetak.
+- **RFID** memanfaatkan sinyal radio untuk berkomunikasi dengan tag pada objek tanpa kontak langsung.
 
-7. **Masukan Video (Video Input)**: Artikel menyebutkan masukan video yang memungkinkan pengambilan gambar dan rekaman video. Webcam adalah contoh umum dari masukan video.
+## Komponen Output
 
-8. **Pemindai (Scanners)**: Pemindai adalah perangkat input yang digunakan untuk membaca teks dan gambar tercetak dan mengubahnya menjadi data digital. Contoh adalah pemindai flatbed dan pemindai bergerak.
+| No | Kategori | Contoh Produk |
+|----|----------|---------------|
+| 1 | Monitor digital | Dell UltraSharp U2719DX |
+| 2 | Printer inkjet | HP OfficeJet Pro 9025 |
+| 3 | Printer laser | Brother HL-L2350DW |
+| 4 | Printer 3D | Creality Ender 3 |
+| 5 | Headphone | Sony WH-1000XM4 |
+| 6 | Data projector | Epson PowerLite 1781W |
+| 7 | Interactive whiteboard | SMART Board |
+| 8 | Pengontrol permainan | Xbox Wireless Controller, PlayStation DualShock |
 
-9. **Pembaca Optik (Optic Reader)**: Artikel menyebutkan pembaca optik yang menggunakan cahaya untuk membaca karakter, tanda, dan kode. Optical character recognition (OCR) adalah contoh dari pembaca optik.
+### Catatan Tiap Kategori
 
-10. **RFID (Radio Frequency Identification)**: Artikel menyebutkan RFID sebagai perangkat input yang menggunakan sinyal radio untuk berkomunikasi dengan tag pada objek. Contoh aplikasi RFID termasuk pelacakan barang di toko atau akses ke gedung dengan kartu pintar.
+- **Monitor digital** menampilkan keluaran visual dari komputer secara real-time.
+- **Printer** menghasilkan teks dan gambar pada media fisik; varian umum mencakup inkjet dan laser.
+- **Printer 3D** mencetak objek tiga dimensi lapis demi lapis dari model digital.
+- **Speaker dan headphone** menghasilkan keluaran audio untuk mendengarkan musik, panggilan, atau efek game.
+- **Data projector** memproyeksikan tampilan komputer ke layar berukuran besar untuk presentasi.
+- **Interactive whiteboard** menggabungkan tampilan dan input sentuh, banyak digunakan di lingkungan pendidikan dan bisnis.
+- **Pengontrol permainan** seperti joystick, gamepad, dan setir balap memberikan umpan balik haptik saat dimainkan.
 
-**Komponen Output:**
-
-1. **Monitor Digital**: Tampilan visual pada layar komputer adalah contoh komponen output. Contoh monitor digital termasuk "Dell Ultrasharp U2719DX."
-
-2. **Printer**: Printer adalah perangkat output yang menghasilkan teks dan gambar pada media fisik. Contoh printer termasuk "HP OfficeJet Pro 9025" (inkjet) dan "Brother HL-L2350DW" (laser).
-
-3. **Printer 3D**: Printer 3D adalah contoh unik dari perangkat output yang menciptakan objek tiga dimensi. "Creality Ender 3" adalah salah satu contoh printer 3D.
-
-4. **Speaker dan Headphone**: Speaker dan headphone adalah perangkat output audio. Contoh headphone termasuk "Sony WH-1000XM4."
-
-5. **Proyektor Data**: Data proyektor memproyeksikan tampilan komputer ke layar yang lebih besar. Contoh adalah "Epson PowerLite 1781W."
-
-6. **Interactive Whiteboard**: Interactive whiteboard adalah perangkat output yang responsif terhadap sentuhan dan digunakan dalam lingkungan pendidikan dan bisnis. Contoh adalah "SMART Board."
-
-7. **Pengendali Permainan**: Pengendali permainan seperti joystick, roda, gamepad, dan pengontrol permainan adalah contoh perangkat output saat mereka memberikan umpan balik saat bermain game. Contoh pengendali permainan termasuk "Xbox Wireless Controller" dan "PlayStation DualShock Controller."
+> **Catatan:** Pengontrol permainan sebenarnya berperan ganda — sebagai perangkat input (menerima perintah pemain) sekaligus output (memberikan getaran atau umpan balik haptik kepada pemain).

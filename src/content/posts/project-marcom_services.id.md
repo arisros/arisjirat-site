@@ -14,7 +14,7 @@ translationKey: "project-marcom_services"
 
 ## Memulai
 
-Untuk membuat proyek baru dari template ini, jalankan perintah berikut di terminal Anda:
+Untuk membuat proyek baru dari template ini, jalankan perintah berikut di terminal:
 
 ```bash
 bun create elysia ./elysia-example
@@ -22,10 +22,10 @@ bun create elysia ./elysia-example
 
 ## Pengembangan
 
-Jalankan server pengembangan dengan:
+Jalankan server pengembangan dengan perintah:
 
 ```bash
 bun run dev
 ```
 
-Lalu buka [http://localhost:3000/](http://localhost:3000/) di browser Anda untuk melihat hasilnya.
+Setelah server berjalan, buka [http://localhost:3000/](http://localhost:3000/) di browser untuk melihat hasilnya.

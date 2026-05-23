@@ -10,27 +10,29 @@ lang: "en"
 translationKey: "project-test_presence"
 ---
 
-# test_presence
+## Overview
 
-Presence management app with:
+A presence management application for tracking employee attendance with GPS-based check-ins and holiday request workflows.
 
-- **BE**: Go backend with SQLite database
-- **FE**: React frontend with GPS check-in flow
+- **Backend**: Go with SQLite database
+- **Frontend**: React with GPS check-in flow
 
 ## Features
 
-- Employee attendance (presence) is validated by office geolocation and radius.
-- Employees can submit holiday requests.
-- Admin can view report and approve/reject holiday requests.
-- Role-based login for employee/admin.
-- Map preview shows office center, allowed radius, and current employee GPS position.
+- Attendance validated against office geolocation and a configurable radius
+- Holiday request submission for employees
+- Admin dashboard for reports and holiday request approval/rejection
+- Role-based authentication for employees and admins
+- Map preview showing office center, allowed radius, and the employee's current GPS position
 
 ## Project Structure
 
-- `BE/` - REST API (Go + SQLite)
-- `FE/` - Web app (React + Vite)
+| Directory | Description |
+|-----------|-------------|
+| `BE/` | REST API (Go + SQLite) |
+| `FE/` | Web app (React + Vite) |
 
-## Run Backend
+## Running the Backend
 
 ```bash
 cd BE
@@ -38,15 +40,17 @@ go mod tidy
 go run .
 ```
 
-Backend runs at: `http://localhost:8080`
+The backend listens on `http://localhost:8080`.
 
-Default users:
+### Default Users
 
-- `andi` / `password123` (employee)
-- `budi` / `password123` (employee)
-- `citra` / `password123` (admin)
+| Username | Password | Role |
+|----------|-------------|----------|
+| `andi` | `password123` | Employee |
+| `budi` | `password123` | Employee |
+| `citra` | `password123` | Admin |
 
-## Run Frontend
+## Running the Frontend
 
 ```bash
 cd FE
@@ -54,9 +58,9 @@ npm install
 npm run dev
 ```
 
-Frontend runs at: `http://localhost:5173`
+The frontend is available at `http://localhost:5173`.
 
-If needed, set API endpoint (optional). By default FE uses `/api` and proxy:
+> By default, the FE uses `/api` with a Vite proxy. To override the API endpoint, set:
 
 ```bash
 VITE_API_BASE=http://localhost:8080/api
@@ -64,16 +68,26 @@ VITE_API_BASE=http://localhost:8080/api
 
 ## API Endpoints
 
-- `POST /api/login` (public)
-- `GET /api/config` (auth)
-- `GET /api/employees` (admin)
-- `POST /api/presence` (auth)
-- `POST /api/holiday-requests` (auth)
-- `GET /api/holiday-requests` (auth; employee sees own requests)
-- `PATCH /api/holiday-requests/{id}` (admin)
-- `GET /api/admin/report` (admin)
+### Public
 
-## Docker (One-command startup)
+- `POST /api/login`
+
+### Authenticated
+
+- `GET /api/config`
+- `POST /api/presence`
+- `POST /api/holiday-requests`
+- `GET /api/holiday-requests` — employees see only their own requests
+
+### Admin Only
+
+- `GET /api/employees`
+- `PATCH /api/holiday-requests/{id}`
+- `GET /api/admin/report`
+
+## Docker Setup
+
+Start the entire stack with a single command:
 
 ```bash
 docker compose up --build
@@ -82,7 +96,7 @@ docker compose up --build
 - Frontend: `http://localhost:5173`
 - Backend: `http://localhost:8080`
 
-Notes:
+### Notes
 
-- Docker FE proxies `/api` to backend container internally, so browser CORS is avoided.
-- Local Vite dev server also proxies `/api` to `http://localhost:8080`.
+- The Docker FE proxies `/api` to the backend container internally, avoiding browser CORS issues.
+- The local Vite dev server also proxies `/api` to `http://localhost:8080`.

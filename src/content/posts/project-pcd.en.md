@@ -10,16 +10,16 @@ lang: "en"
 translationKey: "project-pcd"
 ---
 
-This project aims to distinguish between **clean** and **dirty** ceramic floor conditions using digital image processing techniques. The approach is based on pixel intensity analysis and texture variation, without involving machine learning.
+This project distinguishes between **clean** and **dirty** ceramic floor conditions using classical digital image processing. It relies on pixel intensity analysis and texture variation — no machine learning involved.
 
 ## Requirements
 
-| Component | Version |
-|-----------|---------|
-| Python | 3.8 or later |
-| OpenCV | latest |
-| NumPy | latest |
-| Matplotlib | latest |
+| Component   | Version       |
+|-------------|---------------|
+| Python      | 3.8 or later  |
+| OpenCV      | latest        |
+| NumPy       | latest        |
+| Matplotlib  | latest        |
 
 > All dependencies can be installed via `requirements.txt`.
 
@@ -38,23 +38,25 @@ This project aims to distinguish between **clean** and **dirty** ceramic floor c
 
 <!-- TODO: add sequence_diagram.png -->
 
-In summary, the system works through the following five stages:
+The pipeline runs in five stages:
 
 1. Read the ceramic floor image.
-2. Convert the image to grayscale and perform noise reduction.
-3. Extract statistical features in the form of **mean** and **standard deviation**.
-4. Compare the standard deviation value against a *threshold*.
-5. Determine the floor condition: **clean** or **dirty**.
+2. Convert to grayscale and apply noise reduction.
+3. Extract statistical features — **mean** and **standard deviation**.
+4. Compare the standard deviation against a *threshold*.
+5. Classify the floor as **clean** or **dirty**.
 
 ### Decision-Making Basis
 
-The classification decision is based on the standard deviation of pixel intensity:
+Classification hinges on the standard deviation of pixel intensity:
 
 $$\sigma = \sqrt{\frac{1}{N}\sum_{i=1}^{N}(x_i - \mu)^2}$$
 
-The higher the $\sigma$, the greater the texture variation on the surface — which generally indicates the presence of dirt or stains.
+A higher $\sigma$ indicates greater texture variation on the surface, which typically signals the presence of dirt or stains.
 
 ## How to Run
+
+Install dependencies and launch the script:
 
 ```bash
 pip install -r requirements.txt
@@ -65,12 +67,12 @@ python deteksi_lantai_kotor.py
 
 ## Output
 
-The program produces two types of output:
+The program produces two kinds of output:
 
-- **Visual:** the original image, *preprocessing* result, and detection result.
-- **Terminal:** the mean value, standard deviation, and the system's final decision.
+- **Visual** — the original image, the *preprocessing* result, and the detection result.
+- **Terminal** — the mean value, the standard deviation, and the system's final decision.
 
 ## Notes
 
-- The system works optimally under relatively stable lighting conditions.
-- The *threshold* value can be adjusted based on testing results in different environments.
+- The system works best under relatively stable lighting conditions.
+- The *threshold* value can be tuned to suit different environments based on testing.

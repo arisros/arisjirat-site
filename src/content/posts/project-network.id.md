@@ -31,23 +31,25 @@ Folder ini merupakan kursus praktik untuk mempelajari jaringan komputer dengan C
 
 ## Cara Menggunakan Kursus Ini
 
-1. Mulailah dari `00-getting-started/README.md`.
+1. Mulai dari `00-getting-started/README.md`.
 2. Kerjakan modul secara berurutan, dari `01` hingga `05`.
 3. Untuk setiap lab:
    - Baca berkas instruksinya.
    - Bangun dan uji topologi di Cisco Packet Tracer.
    - Simpan berkas `.pkt` milikmu di `packet-tracer-files/`.
    - Tulis hasilnya menggunakan `templates/lab-report-template.md`.
-4. Pantau kemajuan mingguanmu dengan `resources/study-plan-8-weeks.md`.
+4. Pantau kemajuan mingguan dengan `resources/study-plan-8-weeks.md`.
 
-> **Tip:** Jangan lewati tahap penulisan laporan — mencatat apa yang kamu konfigurasi dan apa yang kamu amati adalah momen ketika sebagian besar pembelajaran benar-benar melekat.
+> **Tip:** Jangan lewati tahap penulisan laporan. Mencatat apa yang kamu konfigurasi dan apa yang kamu amati adalah momen ketika sebagian besar pembelajaran benar-benar melekat.
 
 ## Konvensi Penamaan
 
 Gunakan penamaan berkas yang konsisten agar lab dan laporan mudah dipasangkan.
 
-- **Berkas Packet Tracer:** `lab-<number>-<topic>-v<version>.pkt`
-- **Laporan:** `lab-<number>-report.md`
+| Jenis berkas | Pola |
+|---|---|
+| Berkas Packet Tracer | `lab-<number>-<topic>-v<version>.pkt` |
+| Laporan lab | `lab-<number>-report.md` |
 
 ### Contoh
 

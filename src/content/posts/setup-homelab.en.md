@@ -9,24 +9,34 @@ lang: "en"
 translationKey: "setup-homelab"
 ---
 
-My homelab runs a full SRE-grade observability stack on Kubernetes (k3d).
+My homelab runs a full SRE-grade observability stack on Kubernetes (k3d), with public exposure brokered through a VPS over WireGuard.
 
 ## Architecture
 
+The request path keeps the homelab off the public internet — Cloudflare terminates TLS at the edge, a VPS handles reverse proxying, and a WireGuard tunnel carries traffic the rest of the way into the cluster:
+
+```
 Internet → Cloudflare → VPS (Caddy reverse proxy) → WireGuard tunnel → Homelab K8s
+```
 
 ## Stack
 
-- **Orchestration**: Kubernetes via k3d
-- **Monitoring**: Prometheus + Grafana + Alertmanager
-- **Logging**: Loki + Grafana Alloy
-- **Tracing**: Tempo (OpenTelemetry)
-- **Secrets**: HashiCorp Vault
-- **Reverse Proxy**: Caddy on VPS
-- **VPN**: WireGuard tunnel
-- **DNS/CDN**: Cloudflare (mixed proxy mode)
-- **CI/CD**: GitHub Actions → GHCR → GitOps
+| Layer | Tool |
+| --- | --- |
+| Orchestration | Kubernetes via k3d |
+| Monitoring | Prometheus + Grafana + Alertmanager |
+| Logging | Loki + Grafana Alloy |
+| Tracing | Tempo (OpenTelemetry) |
+| Secrets | HashiCorp Vault |
+| Reverse proxy | Caddy on VPS |
+| VPN | WireGuard tunnel |
+| DNS / CDN | Cloudflare (mixed proxy mode) |
+| CI/CD | GitHub Actions → GHCR → GitOps |
 
 ## Monitoring
 
-All services report to Grafana with 35+ dashboards, alerting via Telegram, and SLO-based burn-rate policies.
+All services ship telemetry into Grafana, which fronts the three signals:
+
+- **Dashboards**: 35+ panels covering cluster, app, and infrastructure health.
+- **Alerting**: routed through Alertmanager to Telegram.
+- **SLOs**: burn-rate policies drive paging decisions instead of raw thresholds.

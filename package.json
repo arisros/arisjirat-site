@@ -11,6 +11,7 @@
     "generate:banners": "tsx scripts/generate-banners.ts",
     "generate:inline-images": "tsx scripts/generate-inline-images.ts",
     "improve": "tsx scripts/improve-content.ts",
+    "validate": "tsx scripts/validate-translations.ts",
     "astro": "astro"
   },
   "dependencies": {

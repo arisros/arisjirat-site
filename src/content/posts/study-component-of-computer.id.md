@@ -10,44 +10,55 @@ tags: ["hardware", "cpu", "memory", "binary", "data-representation"]
 lang: "id"
 translationKey: "study-component-of-computer"
 ---
-"Komponen Komputer Dalam Casing" dan "Representasi Data." Di bawah ini adalah rangkuman dari kedua topik tersebut:
 
-**1. Komponen Komputer Dalam Casing**
-   - Artikel ini memulai dengan menjelaskan bahwa casing komputer berfungsi sebagai wadah dan pelindung bagi berbagai komponen elektronik dalam sebuah komputer atau perangkat seluler.
-   - Beberapa komponen utama dalam casing komputer meliputi:
-     - **Motherboard:** Ini adalah papan sirkuit utama yang mengintegrasikan komponen-komponen seperti RAM, prosesor, dan lainnya.
-     - **Processor:** Juga dikenal sebagai CPU, processor adalah otak komputer yang mengeksekusi instruksi dasar untuk mengoperasikan komputer.
-     - **Memory:** Komponen ini menyimpan instruksi yang menunggu dieksekusi oleh prosesor, serta data yang diperlukan oleh instruksi tersebut.
-     - **Adapter:** Komponen ini berfungsi untuk menghubungkan komputer dengan perangkat lain, seperti kartu suara atau kartu video.
-     - **Baterai dan Power Supply:** Baterai dan power supply mengubah arus listrik dari AC menjadi DC dan memberikan daya ke berbagai komponen dalam komputer.
-   
-**2. Representasi Data**
-   - Artikel ini menjelaskan konsep representasi data dalam komputer dan bagaimana komputer menggunakan sistem bilangan biner (basis 2) sebagai bahasa alaminya.
-   - Beberapa basis bilangan yang digunakan dalam komputer termasuk:
-     - **Basis Bilangan 2 (Binary):** Hanya terdiri dari dua bilangan, 0 dan 1.
-     - **Basis Bilangan 8 (Octal):** Terdiri dari bilangan 0 hingga 7.
-     - **Basis Bilangan 16 (Hexadecimal):** Terdiri dari bilangan 0 hingga 9, serta huruf A hingga F.
-     - **Basis Bilangan 10 (Decimal):** Digunakan dalam bahasa manusia, terdiri dari bilangan 0 hingga 9.
-   - Artikel ini juga membahas konversi antara berbagai basis bilangan, seperti konversi dari biner ke desimal, oktal ke desimal, heksadesimal ke desimal, dan sebaliknya.
-   
-**Latihan / Contoh:**
+## Komponen Komputer dalam Casing
 
-**1. Konversi Desimal ke Biner:**
+Casing komputer berperan sebagai wadah dan pelindung bagi berbagai komponen elektronik di dalam komputer atau perangkat seluler. Di dalamnya terdapat sejumlah komponen utama yang bekerja sama agar sistem dapat berjalan.
 
-   - Konversi 45(10) ke basis biner (2).
-   - Konversi 95(10) ke basis biner (2).
+| Komponen | Fungsi |
+| --- | --- |
+| **Motherboard** | Papan sirkuit utama yang mengintegrasikan komponen seperti RAM, prosesor, dan lainnya. |
+| **Processor (CPU)** | Otak komputer yang mengeksekusi instruksi dasar untuk mengoperasikan sistem. |
+| **Memory** | Menyimpan instruksi yang menunggu dieksekusi oleh prosesor beserta data yang diperlukannya. |
+| **Adapter** | Menghubungkan komputer dengan perangkat lain, seperti kartu suara atau kartu video. |
+| **Baterai & Power Supply** | Mengubah arus listrik dari AC menjadi DC dan mendistribusikan daya ke setiap komponen. |
 
-**2. Konversi Biner ke Desimal:**
+## Representasi Data
 
-   - Konversi 101101(2) ke basis desimal (10).
-   - Konversi 10011(2) ke basis desimal (10).
+Komputer menggunakan sistem bilangan biner (basis 2) sebagai bahasa alaminya. Namun, dalam praktiknya beberapa basis bilangan lain juga sering digunakan untuk merepresentasikan data.
 
-**Analogi:**
+### Basis Bilangan yang Umum Dipakai
 
-Bayangkan Anda memiliki sebuah sekolah dan setiap siswa di sekolah ini memiliki nomor unik yang disebut "Nomor Identitas Sekolah" (NIS). Setiap NIS adalah angka desimal. Sekarang, Anda ingin membuat sistem identifikasi baru di mana setiap siswa memiliki nomor identifikasi baru yang hanya terdiri dari angka 0 dan 1, yaitu dalam bentuk biner. 
+- **Biner (basis 2):** hanya terdiri dari `0` dan `1`.
+- **Oktal (basis 8):** terdiri dari angka `0` hingga `7`.
+- **Desimal (basis 10):** basis yang digunakan manusia sehari-hari, terdiri dari `0` hingga `9`.
+- **Heksadesimal (basis 16):** terdiri dari `0`–`9` ditambah huruf `A`–`F`.
 
-1. Misalnya, siswa dengan NIS 45 ingin mengganti nomor identifikasi mereka ke bentuk biner. Anda harus mengonversi 45(10) menjadi bentuk biner, yang mungkin menjadi 101101(2).
+### Konversi Antar Basis
 
-2. Sebaliknya, jika Anda ingin mengidentifikasi siswa berdasarkan nomor biner, Anda harus mengonversi nomor biner tersebut kembali ke bentuk desimal. Misalnya, jika Anda melihat nomor biner 10011(2), Anda akan mengonversinya kembali menjadi 19(10) untuk mengidentifikasi siswa tersebut.
+Artikel ini juga membahas konversi antar basis bilangan, antara lain:
 
-Ini adalah analogi sederhana untuk konversi antara basis bilangan desimal dan biner, yang sering digunakan dalam pemrograman komputer dan sistem komputer.
+- Biner ↔ Desimal
+- Oktal ↔ Desimal
+- Heksadesimal ↔ Desimal
+
+## Latihan
+
+### 1. Konversi Desimal ke Biner
+
+- Konversi $45_{(10)}$ ke basis biner.
+- Konversi $95_{(10)}$ ke basis biner.
+
+### 2. Konversi Biner ke Desimal
+
+- Konversi $101101_{(2)}$ ke basis desimal.
+- Konversi $10011_{(2)}$ ke basis desimal.
+
+## Analogi: Nomor Identitas Sekolah
+
+Bayangkan Anda memiliki sebuah sekolah, dan setiap siswa memiliki nomor unik yang disebut **Nomor Identitas Sekolah (NIS)** dalam bentuk desimal. Anda ingin membuat sistem identifikasi baru yang hanya menggunakan angka `0` dan `1` — yaitu dalam bentuk biner.
+
+1. **Desimal → Biner.** Siswa dengan NIS $45$ ingin mengganti nomor identifikasinya ke bentuk biner. Anda mengonversi $45_{(10)}$ menjadi $101101_{(2)}$.
+2. **Biner → Desimal.** Sebaliknya, jika Anda melihat nomor biner $10011_{(2)}$, Anda mengonversinya kembali menjadi $19_{(10)}$ untuk mengidentifikasi siswa tersebut.
+
+> Analogi ini menggambarkan secara sederhana proses konversi antara basis desimal dan biner, yang banyak dipakai dalam pemrograman dan sistem komputer.

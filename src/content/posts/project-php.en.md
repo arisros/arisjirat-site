@@ -10,22 +10,22 @@ lang: "en"
 translationKey: "project-php"
 ---
 
-A simple web application for managing course data using **PHP** and **MySQL**. Supports **CRUD (Create, Read, Update, Delete)** operations with a responsive interface built on Tailwind CSS.
+A simple web application for managing course data, built with **PHP** and **MySQL**. It supports full **CRUD (Create, Read, Update, Delete)** operations behind a responsive interface styled with Tailwind CSS.
 
 ## Features
 
 - Add course data
-- View course list
-- Edit course data
-- Delete course data
-- Simple and responsive UI
+- View the course list
+- Edit existing courses
+- Delete courses
+- Simple, responsive UI
 
 ## Tech Stack
 
-| Layer | Technology |
-| --- | --- |
-| Backend | PHP (Native) |
-| Database | MySQL |
+| Layer    | Technology          |
+| -------- | ------------------- |
+| Backend  | PHP (Native)        |
+| Database | MySQL               |
 | Frontend | HTML + Tailwind CSS |
 
 ## Folder Structure
@@ -44,7 +44,7 @@ form.php
 index.php
 ```
 
-> CRUD logic is separated into the `feature/` folder, while reusable view components (header and footer) live in the `template/` folder.
+> CRUD logic lives under `feature/`, while reusable view fragments (header and footer) sit in `template/`. The top-level `index.php` and `form.php` tie everything together.
 
 ## Code Snippets
 
@@ -110,7 +110,7 @@ if (isset($_GET['kd'])) {
 ?>
 ```
 
-> All queries use **prepared statements** with `bind_param`, so user input is never concatenated directly into SQL strings.
+> Every query uses **prepared statements** with `bind_param`, so user input is never concatenated directly into SQL strings.
 
 ## Screenshots
 
@@ -123,28 +123,28 @@ if (isset($_GET['kd'])) {
 
 ## How to Run
 
-### 1. Clone the repository
+### 1. Clone the Repository
 
 ```bash
 git clone https://github.com/arisos/pwtm.git
 cd pwtm
 ```
 
-### 2. Import the database
+### 2. Import the Database
 
-Import the `db.sql` file via phpMyAdmin or the MySQL CLI:
+Import `db.sql` via phpMyAdmin or the MySQL CLI:
 
 ```bash
 mysql -u root -p nama_database < db.sql
 ```
 
-### 3. Run a local server
+### 3. Start a Local Server
 
 ```bash
 php -S localhost:8000
 ```
 
-### 4. Open in your browser
+### 4. Open in Your Browser
 
 ```
 http://localhost:8000
@@ -152,4 +152,4 @@ http://localhost:8000
 
 ## License
 
-This project is free to use for learning and personal development purposes.
+Free to use for learning and personal development.

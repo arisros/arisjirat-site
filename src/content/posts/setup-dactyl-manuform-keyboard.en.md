@@ -12,17 +12,17 @@ featured: true
 tech: ["QMK", "C", "Pro Micro ATmega32U4", "TRRS"]
 ---
 
-Hardware project: rebuilding a **Dactyl Manuform** keyboard — split, ergonomic, handwired — from the keymap reverse-engineering phase all the way to flashing QMK firmware. The repository is tracked as a _setup_ because this is part of an ergonomic workstation, not a product meant to be published.
+Hardware project: rebuilding a **Dactyl Manuform** keyboard — split, ergonomic, handwired — from keymap reverse-engineering all the way to flashing QMK firmware. The repository is tracked as a _setup_ because this is part of an ergonomic workstation, not a product meant to be published.
 
 ![Dactyl Manuform — top view](/images/setup-dactyl/dm.webp)
 
 ## Why Dactyl Manuform
 
-The Dactyl Manuform is a _curved_ variant of the original Dactyl: a 3D-printed case with key contours that follow finger length, plus a thumb cluster angled toward the thumb. The result:
+The Dactyl Manuform is a _curved_ variant of the original Dactyl: a 3D-printed case whose key contours follow finger length, with a thumb cluster angled toward the thumb. The ergonomic payoff:
 
-- The wrists don't need to twist.
+- Wrists don't need to twist.
 - Fingers travel shorter distances.
-- The load is absorbed by the large muscles of the hand instead of the small tendons in the palm.
+- Load is absorbed by the large muscles of the hand instead of the small tendons in the palm.
 
 > The trade-off is clear: no vendor sells a ready-made unit — everything has to be handwired, and the firmware is custom.
 
@@ -42,13 +42,13 @@ The Dactyl Manuform is a _curved_ variant of the original Dactyl: a 3D-printed c
 
 ### Matrix Capacity
 
-Theoretical maximum number of keys with this configuration:
+The theoretical maximum number of keys with this configuration:
 
 $$
 K_{\text{total}} = 2 \times (6 \times 6) = 72
 $$
 
-In practice it's fewer because not every matrix point is used — some are repurposed as a thumb cluster mapped onto the same rows/columns.
+In practice the count is lower, since not every matrix point is used — some are repurposed as a thumb cluster mapped onto the same rows and columns.
 
 ![Dactyl Manuform — side view](/images/setup-dactyl/dm2.webp)
 
@@ -64,7 +64,7 @@ The project is organized as a phased rebuild. Each phase has a verifiable output
 - [ ] **Phase 6** — Safe flashing (compile → flash → repeat for the other side)
 - [ ] **Phase 7** — Matrix debugging via `qmk console`
 
-> ⚠️ The QMK files are currently still placeholders. Pin assignments and matrix size have to be confirmed after the physical Phase 1 is done — if they're wrong, key events won't be detected or will register at the wrong positions.
+> ⚠️ The QMK files are currently still placeholders. Pin assignments and matrix size must be confirmed after the physical Phase 1 is done — if they're wrong, key events won't be detected or will register at the wrong positions.
 
 ## Repository Structure
 
@@ -114,7 +114,7 @@ qmk compile -kb handwired/dactyl_manuform_custom -km default
 qmk flash   -kb handwired/dactyl_manuform_custom -km default
 ```
 
-> Flashing is done **one side at a time**: plug in the side you want to flash, press the reset button when prompted, and repeat for the other side.
+> Flashing is done **one side at a time**: plug in the side you want to flash, press the reset button when prompted, then repeat for the other side.
 
 ## Tools
 
