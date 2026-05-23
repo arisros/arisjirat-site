@@ -1,33 +1,77 @@
 ---
 import '@/styles/global.css';
+import 'katex/dist/katex.min.css';
+import type { Lang } from '@/lib/content';
+import { langFromPath, DEFAULT_LANG, OTHER_LANG } from '@/lib/content';
 
 interface Props {
   title: string;
   description?: string;
   image?: string;
+  /** Page language (defaults to derived from URL). */
+  lang?: Lang;
+  /**
+   * Map of language → URL for hreflang alternates. Provide both when both
+   * translations exist so search engines surface the right one.
+   */
+  alternates?: Partial<Record<Lang, string>>;
 }
 
-const { title, description = 'Studies, projects, research, tools, and setup.', image } = Astro.props;
+const {
+  title,
+  description = 'Studies, projects, research, tools, and setup.',
+  image,
+  lang: explicitLang,
+  alternates,
+} = Astro.props;
+
+const lang: Lang = explicitLang ?? langFromPath(Astro.url.pathname);
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+
+// Build hreflang link list. We always emit the canonical (self) lang.
+const altEntries: { lang: Lang; href: string }[] = [];
+if (alternates) {
+  for (const [l, href] of Object.entries(alternates) as [Lang, string][]) {
+    if (href) altEntries.push({ lang: l, href: new URL(href, Astro.site).toString() });
+  }
+}
+const xDefault = alternates?.[DEFAULT_LANG] ?? alternates?.[OTHER_LANG[DEFAULT_LANG]];
 ---
 
 <!doctype html>
-<html lang="en" class="dark">
+<html lang={lang}>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} />
+
+    <!-- No-flash theme init — must run before any stylesheet paints. -->
+    <script is:inline>
+      (function () {
+        try {
+          var stored = localStorage.getItem('theme');
+          var t = stored || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+          if (t === 'dark') document.documentElement.classList.add('dark');
+        } catch (e) {}
+      })();
+    </script>
 
     <title>{title} | arisjirat</title>
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalURL} />
     <link rel="icon" type="image/x-icon" href="/favicon.ico" />
 
+    {altEntries.map(a => (
+      <link rel="alternate" hreflang={a.lang} href={a.href} />
+    ))}
+    {xDefault && <link rel="alternate" hreflang="x-default" href={new URL(xDefault, Astro.site).toString()} />}
+
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:title" content={`${title} | arisjirat`} />
     <meta property="og:description" content={description} />
+    <meta property="og:locale" content={lang === 'id' ? 'id_ID' : 'en_US'} />
     {image && <meta property="og:image" content={new URL(image, Astro.site)} />}
 
     <!-- Twitter -->
@@ -38,9 +82,9 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Sofia+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
   </head>
-  <body class="min-h-screen flex flex-col relative z-[1]">
+  <body class="min-h-screen flex flex-col relative z-[1] bg-bg text-ink-muted font-sans">
     <slot />
   </body>
 </html>

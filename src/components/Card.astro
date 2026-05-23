@@ -1,4 +1,7 @@
 ---
+import type { Lang } from '@/lib/content';
+import { DEFAULT_LANG } from '@/lib/content';
+
 interface Props {
   title: string;
   description?: string;
@@ -7,56 +10,53 @@ interface Props {
   date?: Date;
   category?: string;
   status?: string;
+  lang?: Lang;
 }
 
-const { title, description, href, tags = [], date, category, status } = Astro.props;
+const { title, description, href, tags = [], date, category, status, lang = DEFAULT_LANG } = Astro.props;
 
-const categoryColors: Record<string, string> = {
-  study: 'border-l-blue-500',
-  project: 'border-l-amber-500',
-  research: 'border-l-purple-500',
-  tool: 'border-l-orange-500',
-  setup: 'border-l-cyan-500',
+// Category accent — re-tuned to read cleanly on both cream and dark backgrounds.
+const categoryAccent: Record<string, { text: string; border: string; bar: string }> = {
+  study:    { text: 'text-sky-600 dark:text-sky-300',     border: 'border-sky-500/40',     bar: 'before:bg-sky-500' },
+  project:  { text: 'text-accent',                        border: 'border-accent/40',      bar: 'before:bg-accent' },
+  research: { text: 'text-violet-600 dark:text-violet-300', border: 'border-violet-500/40', bar: 'before:bg-violet-500' },
+  tool:     { text: 'text-orange-600 dark:text-orange-300', border: 'border-orange-500/40', bar: 'before:bg-orange-500' },
+  setup:    { text: 'text-teal-600 dark:text-teal-300',   border: 'border-teal-500/40',    bar: 'before:bg-teal-500' },
 };
-
-const categoryBadge: Record<string, string> = {
-  study: 'text-blue-400 border-blue-500/30',
-  project: 'text-amber-400 border-amber-500/30',
-  research: 'text-purple-400 border-purple-500/30',
-  tool: 'text-orange-400 border-orange-500/30',
-  setup: 'text-cyan-400 border-cyan-500/30',
-};
+const acc = categoryAccent[category || ''] ?? { text: 'text-ink-muted', border: 'border-border', bar: 'before:bg-border' };
+const dateLocale = lang === 'id' ? 'id-ID' : 'en-US';
 ---
 
 <a href={href} class:list={[
-  'group block border border-slate-800 border-l-[3px] bg-[#111118] p-5 transition-all duration-200 hover:bg-[#14141c] hover:translate-x-1',
-  categoryColors[category || ''] || 'border-l-slate-700',
+  'group relative block rounded-card border border-border bg-surface p-5 transition-all duration-200 hover:bg-surface-alt hover:-translate-y-0.5 hover:shadow-sm',
+  "before:absolute before:left-0 before:top-4 before:bottom-4 before:w-[3px] before:rounded-r-pill",
+  acc.bar,
 ]}>
-  <div class="flex items-start justify-between gap-3">
-    <h3 class="text-[15px] font-bold text-slate-100 group-hover:text-amber-400 transition-colors line-clamp-2 leading-snug">
+  <div class="flex items-start justify-between gap-3 pl-2">
+    <h3 class="text-[15px] font-bold text-ink group-hover:text-accent transition-colors line-clamp-2 leading-snug">
       {title}
     </h3>
     {category && (
       <span class:list={[
-        'shrink-0 font-mono text-[10px] uppercase tracking-wider border px-2 py-0.5',
-        categoryBadge[category] || 'text-slate-500 border-slate-700',
+        'shrink-0 font-mono text-[10px] uppercase tracking-wider border rounded-pill px-2 py-0.5',
+        acc.text, acc.border,
       ]}>
         {category}
       </span>
     )}
   </div>
   {description && (
-    <p class="mt-2 text-sm text-slate-500 line-clamp-2 leading-relaxed">{description}</p>
+    <p class="mt-2 pl-2 text-sm text-ink-muted line-clamp-2 leading-relaxed">{description}</p>
   )}
-  <div class="mt-3 flex flex-wrap items-center gap-2">
+  <div class="mt-3 pl-2 flex flex-wrap items-center gap-2">
     {tags.slice(0, 3).map(tag => (
-      <span class="font-mono text-[10px] px-2 py-0.5 bg-slate-950 border border-slate-800 text-slate-600">
+      <span class="font-mono text-[10px] px-2 py-0.5 rounded-pill bg-surface-alt border border-border text-ink-muted">
         {tag}
       </span>
     ))}
     {date && (
-      <time datetime={date.toISOString()} class="ml-auto font-mono text-[10px] text-slate-700 tracking-wider">
-        {date.toLocaleDateString('en-US', { year: 'numeric', month: 'short' })}
+      <time datetime={date.toISOString()} class="ml-auto font-mono text-[10px] text-ink-muted/70 tracking-wider">
+        {date.toLocaleDateString(dateLocale, { year: 'numeric', month: 'short' })}
       </time>
     )}
   </div>

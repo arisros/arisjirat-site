@@ -1,31 +1,41 @@
 ---
-const navItems = [
-  { label: 'Studies', href: '/studies' },
-  { label: 'Projects', href: '/projects' },
-  { label: 'Research', href: '/research' },
-  { label: 'Tools', href: '/tools' },
-  { label: 'Setup', href: '/setup' },
-];
+import LangSwitcher from '@components/LangSwitcher.astro';
+import ThemeToggle from '@components/ThemeToggle.astro';
+import { CATEGORY_LABELS, CATEGORY_TO_PATH, langFromPath, langPrefix, type Lang, UI_STRINGS } from '@/lib/content';
 
-const currentPath = Astro.url.pathname;
+interface Props {
+  /** Page language. If omitted, derived from URL. */
+  lang?: Lang;
+  /** Explicit "other language" link override (for article pages with optional translations). */
+  otherLangHref?: string | null;
+}
+
+const pathname = Astro.url.pathname;
+const lang: Lang = Astro.props.lang ?? langFromPath(pathname);
+const prefix = langPrefix(lang);
+
+const navItems = (['study', 'project', 'research', 'tool', 'setup'] as const).map(cat => ({
+  label: CATEGORY_LABELS[cat][lang],
+  href: `${prefix}/${CATEGORY_TO_PATH[cat]}`,
+}));
 ---
 
-<header class="sticky top-0 z-50 border-b border-slate-800/80 bg-slate-950/90 backdrop-blur-md">
-  <nav class="mx-auto flex max-w-[1100px] items-center h-12 px-4 sm:px-8 overflow-x-auto scrollbar-none">
-    <a href="/" class="flex items-center gap-2 text-amber-400 hover:text-amber-300 transition-colors mr-6 shrink-0">
-      <img src="/favicon.ico" alt="arisjirat" class="h-6 w-6" />
-      <span class="font-mono text-xs font-bold tracking-wider uppercase hidden sm:inline">arisjirat</span>
+<header class="sticky top-0 z-50 border-b border-border bg-bg/80 backdrop-blur-md">
+  <nav class="mx-auto flex max-w-[1100px] items-center h-12 px-4 sm:px-8 gap-4 overflow-x-auto scrollbar-none">
+    <a href={prefix || '/'} class="flex items-center gap-2 text-accent hover:text-accent-strong transition-colors mr-2 shrink-0">
+      <img src="/favicon.ico" alt={UI_STRINGS.siteName} class="h-6 w-6" />
+      <span class="font-mono text-xs font-bold tracking-wider uppercase hidden sm:inline">{UI_STRINGS.siteName}</span>
     </a>
-    <ul class="flex items-center h-full">
+    <ul class="flex items-center h-full flex-1 min-w-0">
       {navItems.map(item => (
         <li class="h-full">
           <a
             href={item.href}
             class:list={[
-              'h-full inline-flex items-center px-3 sm:px-4 font-mono text-[10px] sm:text-xs uppercase tracking-[1.5px] border-l border-slate-800/60 transition-colors',
-              currentPath.startsWith(item.href)
-                ? 'text-amber-400'
-                : 'text-slate-500 hover:text-amber-400',
+              'h-full inline-flex items-center px-3 sm:px-4 font-mono text-[10px] sm:text-xs uppercase tracking-[1.5px] border-l border-border transition-colors',
+              pathname === item.href || pathname.startsWith(item.href + '/')
+                ? 'text-accent'
+                : 'text-ink-muted hover:text-accent',
             ]}
           >
             {item.label}
@@ -33,5 +43,9 @@ const currentPath = Astro.url.pathname;
         </li>
       ))}
     </ul>
+    <div class="flex items-center gap-2 shrink-0 ml-auto pl-2 border-l border-border">
+      <LangSwitcher lang={lang} otherHref={Astro.props.otherLangHref} />
+      <ThemeToggle lang={lang} />
+    </div>
   </nav>
 </header>

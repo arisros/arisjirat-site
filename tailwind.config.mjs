@@ -7,74 +7,97 @@ export default {
   theme: {
     extend: {
       colors: {
-        amber: {
-          50: '#faf6f0',
-          100: '#f2ebe0',
-          200: '#e5d5be',
-          300: '#d4bc97',
-          400: '#c4a882',
-          500: '#a88b62',
-          600: '#8d714c',
-          700: '#725a3a',
-          800: '#5c472f',
-          900: '#4a3926',
-          950: '#2d2118',
-        },
-        brand: {
-          50: '#faf6f0',
-          100: '#f2ebe0',
-          200: '#e5d5be',
-          300: '#d4bc97',
-          400: '#c4a882',
-          500: '#a88b62',
-          600: '#8d714c',
-          700: '#725a3a',
-          800: '#5c472f',
-          900: '#4a3926',
-          950: '#2d2118',
+        // Semantic theme tokens — actual values come from CSS variables defined
+        // in src/styles/global.css (:root for light/cream, .dark for dark).
+        // Tokens use the `rgb(var(--token) / <alpha-value>)` pattern so Tailwind
+        // alpha utilities (`bg-accent/40`) work in both themes.
+        bg:           'rgb(var(--bg) / <alpha-value>)',
+        surface:      'rgb(var(--surface) / <alpha-value>)',
+        'surface-alt':'rgb(var(--surface-alt) / <alpha-value>)',
+        ink:          'rgb(var(--ink) / <alpha-value>)',
+        'ink-muted':  'rgb(var(--ink-muted) / <alpha-value>)',
+        border:       'rgb(var(--border) / <alpha-value>)',
+        accent: {
+          DEFAULT:    'rgb(var(--accent) / <alpha-value>)',
+          strong:     'rgb(var(--accent-strong) / <alpha-value>)',
         },
       },
       fontFamily: {
-        sans: ['JetBrains Mono', 'Fira Code', 'monospace'],
-        mono: ['JetBrains Mono', 'Fira Code', 'monospace'],
+        // Sofia Sans (geometric sans, close to Mastercard's proprietary MarkForMC)
+        // for prose and headlines; JetBrains Mono for labels and code.
+        sans: ['Sofia Sans', 'system-ui', '-apple-system', 'Segoe UI', 'Arial', 'sans-serif'],
+        mono: ['JetBrains Mono', 'Fira Code', 'ui-monospace', 'monospace'],
       },
-      typography: ({ theme }) => ({
+      letterSpacing: {
+        // Mastercard headline tracking: -2%.
+        tightish: '-0.02em',
+      },
+      borderRadius: {
+        // Mastercard motif: oversized pill radii and large card rounding.
+        pill:  '9999px',
+        card:  '1.25rem',
+        panel: '1.75rem',
+      },
+      typography: () => ({
         DEFAULT: {
           css: {
-            '--tw-prose-body': theme('colors.slate[300]'),
-            '--tw-prose-headings': theme('colors.slate[100]'),
-            '--tw-prose-lead': theme('colors.slate[300]'),
-            '--tw-prose-links': theme('colors.amber[400]'),
-            '--tw-prose-bold': theme('colors.slate[100]'),
-            '--tw-prose-counters': theme('colors.slate[400]'),
-            '--tw-prose-bullets': theme('colors.amber[500]'),
-            '--tw-prose-hr': theme('colors.slate[700]'),
-            '--tw-prose-quotes': theme('colors.slate[300]'),
-            '--tw-prose-quote-borders': theme('colors.amber[600]'),
-            '--tw-prose-captions': theme('colors.slate[400]'),
-            '--tw-prose-code': theme('colors.amber[400]'),
-            '--tw-prose-pre-code': theme('colors.slate[300]'),
-            '--tw-prose-pre-bg': theme('colors.slate[900]'),
-            '--tw-prose-th-borders': theme('colors.slate[600]'),
-            '--tw-prose-td-borders': theme('colors.slate[700]'),
+            '--tw-prose-body':          'rgb(var(--ink-muted))',
+            '--tw-prose-headings':      'rgb(var(--ink))',
+            '--tw-prose-lead':          'rgb(var(--ink-muted))',
+            '--tw-prose-links':         'rgb(var(--accent))',
+            '--tw-prose-bold':          'rgb(var(--ink))',
+            '--tw-prose-counters':      'rgb(var(--ink-muted))',
+            '--tw-prose-bullets':       'rgb(var(--accent))',
+            '--tw-prose-hr':            'rgb(var(--border))',
+            '--tw-prose-quotes':        'rgb(var(--ink))',
+            '--tw-prose-quote-borders': 'rgb(var(--accent))',
+            '--tw-prose-captions':      'rgb(var(--ink-muted))',
+            '--tw-prose-code':          'rgb(var(--accent-strong))',
+            '--tw-prose-pre-code':      'rgb(var(--ink))',
+            '--tw-prose-pre-bg':        'rgb(var(--surface-alt))',
+            '--tw-prose-th-borders':    'rgb(var(--border))',
+            '--tw-prose-td-borders':    'rgb(var(--border))',
             'code::before': { content: 'none' },
-            'code::after': { content: 'none' },
+            'code::after':  { content: 'none' },
             code: {
-              backgroundColor: theme('colors.slate[800]'),
+              backgroundColor: 'rgb(var(--surface-alt))',
+              color: 'rgb(var(--accent-strong))',
               padding: '0.2em 0.4em',
-              borderRadius: '0.25rem',
-              fontWeight: '400',
+              borderRadius: '0.4rem',
+              fontWeight: '500',
+            },
+            'pre code': {
+              backgroundColor: 'transparent',
+              color: 'inherit',
+              padding: 0,
+            },
+            pre: {
+              borderRadius: '1rem',
+              border: '1px solid rgb(var(--border))',
             },
             a: {
               textDecoration: 'underline',
-              textUnderlineOffset: '2px',
+              textUnderlineOffset: '3px',
+              textDecorationColor: 'rgb(var(--accent) / 0.4)',
               '&:hover': {
-                color: theme('colors.amber[300]'),
+                color: 'rgb(var(--accent-strong))',
+                textDecorationColor: 'rgb(var(--accent-strong))',
               },
             },
             img: {
-              borderRadius: '0.5rem',
+              borderRadius: '1rem',
+              border: '1px solid rgb(var(--border))',
             },
+            blockquote: {
+              fontStyle: 'normal',
+              borderLeftWidth: '3px',
+              borderLeftColor: 'rgb(var(--accent))',
+              backgroundColor: 'rgb(var(--surface))',
+              padding: '0.75rem 1rem',
+              borderRadius: '0.75rem',
+            },
+            'blockquote p:first-of-type::before': { content: 'none' },
+            'blockquote p:last-of-type::after':   { content: 'none' },
           },
         },
       }),

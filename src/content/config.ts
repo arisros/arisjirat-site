@@ -7,6 +7,12 @@ const posts = defineCollection({
     description: z.string().optional(),
     date: z.coerce.date().optional(),
     category: z.enum(['study', 'project', 'research', 'tool', 'setup']),
+    // Bilingual fields. `lang` is the language of this file's content.
+    // `translationKey` pairs translations of the same canonical post; it doubles
+    // as the route slug (e.g. "/studies/<translationKey>") so URLs stay stable
+    // across languages and across renames.
+    lang: z.enum(['id', 'en']).default('id'),
+    translationKey: z.string().optional(),
     tags: z.array(z.string()).default([]),
     image: z.string().optional(),
     repo: z.string().url().optional(),

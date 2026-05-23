@@ -9,10 +9,10 @@ const { images } = Astro.props;
 {images.length > 0 && (
   <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 my-8">
     {images.map(img => (
-      <figure class="rounded-lg overflow-hidden border border-slate-800">
+      <figure class="rounded-card overflow-hidden border border-border bg-surface">
         <img src={img.src} alt={img.alt} class="w-full h-auto" loading="lazy" />
         {img.alt && (
-          <figcaption class="px-3 py-2 text-xs text-slate-500 bg-slate-900">{img.alt}</figcaption>
+          <figcaption class="px-3 py-2 text-xs text-ink-muted bg-surface-alt">{img.alt}</figcaption>
         )}
       </figure>
     ))}

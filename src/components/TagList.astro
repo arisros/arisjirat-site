@@ -10,11 +10,11 @@ const { tags, linked = false } = Astro.props;
 <div class="flex flex-wrap gap-1.5">
   {tags.map(tag => (
     linked ? (
-      <a href={`/tags/${tag}`} class="rounded-md bg-slate-800 px-2 py-0.5 text-xs text-slate-400 hover:text-amber-400 hover:bg-slate-700 transition-colors">
+      <a href={`/tags/${tag}`} class="rounded-pill bg-surface-alt border border-border px-2 py-0.5 text-xs text-ink-muted hover:text-accent hover:border-accent/40 transition-colors">
         {tag}
       </a>
     ) : (
-      <span class="rounded-md bg-slate-800 px-2 py-0.5 text-xs text-slate-400">
+      <span class="rounded-pill bg-surface-alt border border-border px-2 py-0.5 text-xs text-ink-muted">
         {tag}
       </span>
     )

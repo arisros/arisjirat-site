@@ -1,0 +1,131 @@
+---
+import Header from '@components/Header.astro';
+import Footer from '@components/Footer.astro';
+import Hero from '@components/Hero.astro';
+import Card from '@components/Card.astro';
+import {
+  CATEGORIES,
+  CATEGORY_LABELS,
+  CATEGORY_DESCRIPTIONS,
+  UI_STRINGS,
+  categoryHref,
+  getPosts,
+  postHref,
+  type Lang,
+} from '@/lib/content';
+
+interface Props {
+  lang: Lang;
+}
+const { lang } = Astro.props;
+
+const allPosts = await getPosts({ lang });
+const featured = allPosts.filter(p => p.data.featured);
+const recentPosts = allPosts
+  .filter(p => p.data.date)
+  .sort((a, b) => (b.data.date!.getTime() - a.data.date!.getTime()))
+  .slice(0, 6);
+
+const counts: Record<string, number> = Object.fromEntries(
+  CATEGORIES.map(c => [c, allPosts.filter(p => p.data.category === c).length]),
+);
+
+const stats = [
+  { label: CATEGORY_LABELS.project[lang], value: counts.project },
+  { label: CATEGORY_LABELS.study[lang],   value: counts.study },
+  { label: CATEGORY_LABELS.research[lang], value: counts.research },
+  { label: UI_STRINGS.total[lang],         value: allPosts.length },
+];
+
+const iconFor: Record<string, string> = {
+  study: 'book', project: 'code', research: 'beaker', tool: 'wrench', setup: 'server',
+};
+const sections = CATEGORIES.map(c => ({
+  key: c,
+  label: CATEGORY_LABELS[c][lang],
+  description: CATEGORY_DESCRIPTIONS[c][lang],
+  href: categoryHref(c, lang),
+  count: counts[c],
+  icon: iconFor[c],
+}));
+---
+
+<Header lang={lang} />
+<main class="flex-1 w-full max-w-[1100px] mx-auto px-4 sm:px-8">
+  <Hero stats={stats} lang={lang} />
+
+  <!-- Sections Overview -->
+  <section class="py-12 animate-fade-up-delay-2">
+    <div class="flex items-center gap-3 mb-6">
+      <span class="font-mono text-[10px] uppercase tracking-[3px] text-ink-muted">{UI_STRINGS.explore[lang]}</span>
+      <div class="flex-1 h-px bg-border"></div>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      {sections.filter(s => s.count > 0).map(section => (
+        <a href={section.href} class="group rounded-card border border-border bg-surface p-5 transition-all hover:bg-surface-alt hover:-translate-y-0.5 hover:shadow-sm">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center gap-2">
+              <span class="inline-flex h-7 w-7 items-center justify-center rounded-pill bg-accent/10 text-accent group-hover:bg-accent group-hover:text-bg transition-colors">
+                {section.icon === 'book' && <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" /></svg>}
+                {section.icon === 'code' && <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5" /></svg>}
+                {section.icon === 'beaker' && <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.75 3.104v5.714a2.25 2.25 0 0 1-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 0 1 4.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0 1 12 15a9.065 9.065 0 0 0-6.23.693L5 14.5m14.8.8 1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0 1 12 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5" /></svg>}
+                {section.icon === 'wrench' && <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17 17.25 21A2.652 2.652 0 0 0 21 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 1 1-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 0 0 4.486-6.336l-3.276 3.277a3.004 3.004 0 0 1-2.25-2.25l3.276-3.276a4.5 4.5 0 0 0-6.336 4.486c.049.58.025 1.192-.14 1.743" /></svg>}
+                {section.icon === 'server' && <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5.25 14.25h13.5m-13.5 0a3 3 0 0 1-3-3m3 3a3 3 0 1 0 0 6h13.5a3 3 0 1 0 0-6m-16.5-3a3 3 0 0 1 3-3h13.5a3 3 0 0 1 3 3m-19.5 0a4.5 4.5 0 0 1 .9-2.7L5.737 5.1a3.375 3.375 0 0 1 2.7-1.35h7.126c1.062 0 2.062.5 2.7 1.35l2.587 3.45a4.5 4.5 0 0 1 .9 2.7m0 0a3 3 0 0 1-3 3m0 3h.008v.008h-.008v-.008Zm0-6h.008v.008h-.008v-.008Zm-3 6h.008v.008h-.008v-.008Zm0-6h.008v.008H15v-.008Z" /></svg>}
+              </span>
+              <h3 class="font-semibold text-ink group-hover:text-accent transition-colors text-sm">{section.label}</h3>
+            </div>
+            <span class="font-mono text-xs text-ink-muted rounded-pill bg-surface-alt border border-border px-2">{section.count}</span>
+          </div>
+          <p class="mt-2.5 text-xs text-ink-muted leading-relaxed">{section.description}</p>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <!-- Featured -->
+  {featured.length > 0 && (
+    <section class="py-12 animate-fade-up-delay-3">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="font-mono text-[10px] uppercase tracking-[3px] text-ink-muted">{UI_STRINGS.featured[lang]}</span>
+        <div class="flex-1 h-px bg-border"></div>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        {featured.map(post => (
+          <Card
+            title={post.data.title}
+            description={post.data.description}
+            href={postHref(post, lang)}
+            tags={post.data.tags}
+            date={post.data.date}
+            category={post.data.category}
+            lang={lang}
+          />
+        ))}
+      </div>
+    </section>
+  )}
+
+  <!-- Recent -->
+  {recentPosts.length > 0 && (
+    <section class="py-12 animate-fade-up-delay-4">
+      <div class="flex items-center gap-3 mb-6">
+        <span class="font-mono text-[10px] uppercase tracking-[3px] text-ink-muted">{UI_STRINGS.recent[lang]}</span>
+        <div class="flex-1 h-px bg-border"></div>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        {recentPosts.map(post => (
+          <Card
+            title={post.data.title}
+            description={post.data.description}
+            href={postHref(post, lang)}
+            tags={post.data.tags}
+            date={post.data.date}
+            category={post.data.category}
+            lang={lang}
+          />
+        ))}
+      </div>
+    </section>
+  )}
+</main>
+<Footer />

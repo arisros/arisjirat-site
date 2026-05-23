@@ -1,0 +1,57 @@
+---
+import type { Lang } from '@/lib/content';
+import { LANGS } from '@/lib/content';
+
+interface Props {
+  /** Current page language. */
+  lang: Lang;
+  /**
+   * Override for the "other language" link target.
+   * - `string`: explicit URL
+   * - `null`: explicitly disabled (no translation exists for this page)
+   * - `undefined`: auto-mirror current pathname (default; correct for static pages)
+   */
+  otherHref?: string | null;
+}
+
+const { lang, otherHref: explicitOther } = Astro.props;
+const pathname = Astro.url.pathname.replace(/\/$/, '') || '/';
+
+const autoOther =
+  lang === 'en'
+    ? pathname.replace(/^\/en/, '') || '/'
+    : pathname === '/'
+      ? '/en'
+      : `/en${pathname}`;
+
+const otherHref = explicitOther === undefined ? autoOther : explicitOther;
+const disabled = otherHref === null;
+const otherLang: Lang = lang === 'id' ? 'en' : 'id';
+
+const labelFor: Record<Lang, string> = { id: 'ID', en: 'EN' };
+---
+
+<div class="inline-flex items-center rounded-pill border border-border bg-surface/60 backdrop-blur-sm overflow-hidden" role="group" aria-label="Language">
+  {LANGS.map(l => {
+    const isActive = l === lang;
+    if (isActive) {
+      return (
+        <span class="px-2.5 py-1 font-mono text-[10px] tracking-[1.5px] bg-accent text-bg" aria-current="true">
+          {labelFor[l]}
+        </span>
+      );
+    }
+    if (disabled) {
+      return (
+        <span class="px-2.5 py-1 font-mono text-[10px] tracking-[1.5px] text-ink-muted/40 cursor-not-allowed" title="No translation available" aria-disabled="true">
+          {labelFor[l]}
+        </span>
+      );
+    }
+    return (
+      <a href={otherHref!} class="px-2.5 py-1 font-mono text-[10px] tracking-[1.5px] text-ink-muted hover:text-accent transition-colors">
+        {labelFor[l]}
+      </a>
+    );
+  })}
+</div>
