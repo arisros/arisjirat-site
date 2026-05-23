@@ -30,7 +30,10 @@ jobs:
         uses: docker/metadata-action@v5
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          # `format=long,prefix=` emits the full 40-char SHA so the deploy step's
+          # `${{ github.sha }}` reference matches an actual tag in GHCR.
           tags: |
+            type=sha,format=long,prefix=
             type=sha,prefix=
             type=raw,value=latest
 
