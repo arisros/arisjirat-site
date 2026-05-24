@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-label="Diagram alur data antara perangkat input, komputer, dan perangkat output">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0,0 L10,5 L0,10 z" fill="#F37338"/>
+    </marker>
+  </defs>
+  <g font-family="sans-serif" fill="#525252">
+    <rect x="60" y="240" width="260" height="320" rx="8" fill="none" stroke="#525252" stroke-width="3"/>
+    <text x="190" y="285" text-anchor="middle" font-size="20" font-weight="bold">Perangkat Input</text>
+    <line x1="90" y1="305" x2="290" y2="305" stroke="#A3A3A3" stroke-width="2"/>
+    <text x="190" y="345" text-anchor="middle" font-size="16">Keyboard</text>
+    <text x="190" y="380" text-anchor="middle" font-size="16">Mouse</text>
+    <text x="190" y="415" text-anchor="middle" font-size="16">Scanner</text>
+    <text x="190" y="450" text-anchor="middle" font-size="16">Microphone</text>
+    <text x="190" y="485" text-anchor="middle" font-size="16">Webcam</text>
+    <text x="190" y="535" text-anchor="middle" font-size="14" fill="#A3A3A3">(sumber data)</text>
+
+    <rect x="470" y="220" width="260" height="360" rx="8" fill="none" stroke="#525252" stroke-width="3"/>
+    <text x="600" y="270" text-anchor="middle" font-size="20" font-weight="bold">Komputer</text>
+    <text x="600" y="295" text-anchor="middle" font-size="16">(CPU &amp; Memori)</text>
+    <line x1="500" y1="315" x2="700" y2="315" stroke="#A3A3A3" stroke-width="2"/>
+    <rect x="510" y="345" width="180" height="60" rx="4" fill="none" stroke="#525252" stroke-width="2"/>
+    <text x="600" y="382" text-anchor="middle" font-size="16">CPU</text>
+    <rect x="510" y="425" width="180" height="60" rx="4" fill="none" stroke="#525252" stroke-width="2"/>
+    <text x="600" y="462" text-anchor="middle" font-size="16">Memori</text>
+    <text x="600" y="535" text-anchor="middle" font-size="14" fill="#A3A3A3">memproses data</text>
+
+    <rect x="880" y="240" width="260" height="320" rx="8" fill="none" stroke="#525252" stroke-width="3"/>
+    <text x="1010" y="285" text-anchor="middle" font-size="20" font-weight="bold">Perangkat Output</text>
+    <line x1="910" y1="305" x2="1110" y2="305" stroke="#A3A3A3" stroke-width="2"/>
+    <text x="1010" y="350" text-anchor="middle" font-size="16">Monitor</text>
+    <text x="1010" y="390" text-anchor="middle" font-size="16">Printer</text>
+    <text x="1010" y="430" text-anchor="middle" font-size="16">Speaker</text>
+    <text x="1010" y="470" text-anchor="middle" font-size="16">Projector</text>
+    <text x="1010" y="535" text-anchor="middle" font-size="14" fill="#A3A3A3">(hasil informasi)</text>
+
+    <line x1="320" y1="400" x2="470" y2="400" stroke="#F37338" stroke-width="3" marker-end="url(#a)"/>
+    <text x="395" y="385" text-anchor="middle" font-size="16" fill="#F37338">Data masuk</text>
+
+    <line x1="730" y1="400" x2="880" y2="400" stroke="#F37338" stroke-width="3" marker-end="url(#a)"/>
+    <text x="805" y="385" text-anchor="middle" font-size="16" fill="#F37338">Informasi keluar</text>
+
+    <text x="600" y="120" text-anchor="middle" font-size="22" font-weight="bold">Alur Data: Input → Proses → Output</text>
+  </g>
+</svg>

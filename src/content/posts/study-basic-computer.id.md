@@ -11,11 +11,11 @@ lang: "id"
 translationKey: "study-basic-computer"
 ---
 
-Komputer telah menjadi bagian tak terpisahkan dari kehidupan sehari-hari. Modul 1 ini memperkenalkan konsep dasar komputer serta menguraikan peran dan jenis-jenis komputer yang digunakan dalam beragam situasi.
+Komputer telah menjadi bagian tak terpisahkan dari kehidupan sehari-hari. Modul 1 ini memperkenalkan konsep dasar komputer serta menguraikan peran dan jenis-jenisnya dalam beragam situasi.
 
 ## Jenis-Jenis Komputer
 
-Modul ini memperkenalkan berbagai jenis komputer yang digunakan di seluruh dunia, dari yang sederhana hingga yang canggih:
+Komputer hadir dalam berbagai bentuk, dari yang sederhana hingga yang canggih, masing-masing dirancang untuk kebutuhan tertentu.
 
 | Perangkat | Karakteristik Utama |
 | --- | --- |
@@ -31,13 +31,24 @@ Modul ini memperkenalkan berbagai jenis komputer yang digunakan di seluruh dunia
 
 ## Input, Output, Memori, dan Penyimpanan
 
-Bagian ini membahas cara komputer berinteraksi dengan pengguna serta memproses dan menyimpan data:
+
+![Diagram alur data: Input, Proses (CPU + Memori), Output, dan Penyimpanan](/images/inline/study-basic-computer-1.svg)
+
+Bagian ini membahas cara komputer berinteraksi dengan pengguna serta memproses dan menyimpan data.
+
+### Interaksi dengan Pengguna
 
 - Cara memasukkan data dan perintah ke dalam komputer.
 - Bagaimana komputer menghasilkan output dan mengelola memori.
-- Perbedaan antara perangkat penyimpanan data, termasuk hard drive dan SSD.
+
+### Penyimpanan Data
+
+- Perbedaan antara perangkat penyimpanan, termasuk hard drive dan SSD.
 
 ## Internet dan Jejaring Sosial
+
+
+![Diagram koneksi perangkat pengguna ke internet melalui router, ISP, dan server web](/images/inline/study-basic-computer-2.svg)
 
 Internet adalah jendela ke dunia informasi dan konektivitas. Pada bagian ini Anda akan mempelajari:
 
@@ -47,7 +58,7 @@ Internet adalah jendela ke dunia informasi dan konektivitas. Pada bagian ini And
 
 ## Keamanan Digital
 
-Dalam era digital, keamanan menjadi prioritas. Modul ini mengajarkan:
+Di era digital, keamanan menjadi prioritas. Modul ini mengajarkan:
 
 - Potensi risiko online dan cara mengidentifikasinya.
 - Tindakan pencegahan untuk melindungi diri secara digital.
@@ -56,8 +67,8 @@ Dalam era digital, keamanan menjadi prioritas. Modul ini mengajarkan:
 
 ## Aplikasi Teknologi dalam Masyarakat
 
-Bagian terakhir membahas berbagai jenis program, aplikasi, sistem komunikasi, dan jaringan. Anda akan memahami bagaimana teknologi digunakan dalam berbagai aspek kehidupan masyarakat serta siapa saja penggunanya.
+Bagian terakhir membahas berbagai jenis program, aplikasi, sistem komunikasi, dan jaringan. Anda akan memahami bagaimana teknologi digunakan dalam berbagai aspek kehidupan masyarakat, serta siapa saja penggunanya.
 
 ## Penutup
 
-Modul 1 adalah langkah awal dalam memahami dunia komputer dan teknologi. Dengan fondasi ini, Anda siap menjelajahi lebih jauh dan memanfaatkan potensi komputer dalam berbagai aspek kehidupan. Mari bergabung dalam perjalanan menuju pemahaman yang lebih dalam tentang dunia digital yang berkembang pesat.
+Modul 1 adalah langkah awal dalam memahami dunia komputer dan teknologi. Dengan fondasi ini, Anda siap menjelajahi lebih jauh dan memanfaatkan potensi komputer dalam berbagai aspek kehidupan. Mari melanjutkan perjalanan menuju pemahaman yang lebih dalam tentang dunia digital yang berkembang pesat.

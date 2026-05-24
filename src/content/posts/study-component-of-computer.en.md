@@ -13,15 +13,18 @@ tags: ["hardware", "cpu", "memory", "binary", "data-representation"]
 
 ## Computer Components Inside the Casing
 
-The computer casing serves as the housing and protector for the various electronic components inside a computer or mobile device. Within it are several main components that work together to keep the system running.
+
+![Diagram komponen utama di dalam casing komputer dan hubungannya](/images/inline/study-component-of-computer-1.svg)
+
+A computer casing serves as both a container and a protective enclosure for the various electronic components inside a computer or mobile device. It houses several main components that work together to keep the system running properly.
 
 | Component | Function |
 | --- | --- |
 | **Motherboard** | The main circuit board that integrates components such as RAM, the processor, and others. |
 | **Processor (CPU)** | The brain of the computer, which executes the basic instructions needed to operate the system. |
 | **Memory** | Stores instructions waiting to be executed by the processor along with the data they require. |
-| **Adapter** | Connects the computer to other devices, such as sound cards or video cards. |
-| **Battery & Power Supply** | Converts AC electrical current into DC and distributes power to each component. |
+| **Adapter** | Connects the computer to other devices, such as a sound card or video card. |
+| **Battery & Power Supply** | Converts AC electrical current into DC and distributes power to every component. |
 
 ## Data Representation
 
@@ -31,12 +34,15 @@ Computers use the binary number system (base 2) as their native language. In pra
 
 - **Binary (base 2):** consists only of `0` and `1`.
 - **Octal (base 8):** consists of the digits `0` through `7`.
-- **Decimal (base 10):** the base humans use every day, consisting of `0` through `9`.
+- **Decimal (base 10):** the base humans use day to day, consisting of `0` through `9`.
 - **Hexadecimal (base 16):** consists of `0`–`9` plus the letters `A`–`F`.
 
 ### Conversion Between Bases
 
-This article also covers conversion between number bases, including:
+
+![Diagram konversi antar basis bilangan: biner, oktal, desimal, heksadesimal](/images/inline/study-component-of-computer-2.svg)
+
+Some conversions commonly studied include:
 
 - Binary ↔ Decimal
 - Octal ↔ Decimal
@@ -54,11 +60,11 @@ This article also covers conversion between number bases, including:
 - Convert $101101_{(2)}$ to decimal.
 - Convert $10011_{(2)}$ to decimal.
 
-## Analogy: School Identity Number
+## Analogy: School Identification Number
 
-Imagine you run a school, and every student has a unique number called a **School Identity Number (NIS)** in decimal form. You want to create a new identification system that only uses the digits `0` and `1` — that is, in binary form.
+Imagine you manage a school, and every student has a unique number called a **School Identification Number (NIS)** in decimal form. You want to design a new identification system that uses only the digits `0` and `1` — that is, in binary form.
 
-1. **Decimal → Binary.** A student with NIS $45$ wants to switch their ID number to binary. You convert $45_{(10)}$ into $101101_{(2)}$.
-2. **Binary → Decimal.** Conversely, when you see the binary number $10011_{(2)}$, you convert it back into $19_{(10)}$ to identify that student.
+1. **Decimal → Binary.** A student with NIS $45$ wants to switch their identification number to binary form. You convert $45_{(10)}$ into $101101_{(2)}$.
+2. **Binary → Decimal.** Conversely, when you see the binary number $10011_{(2)}$, you convert it back into $19_{(10)}$ to identify the student.
 
-> This analogy provides a simple illustration of the conversion process between decimal and binary bases, which is widely used in programming and computer systems.
+> This analogy offers a simple illustration of the conversion process between the decimal and binary bases, which is widely used in programming and computer systems.

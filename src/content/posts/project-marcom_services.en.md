@@ -1,20 +1,20 @@
 ---
-title: "Elysia with Bun runtime"
-description: "To get started with this template, simply paste this command into your terminal:"
+title: "Elysia with the Bun runtime"
+description: "To get started with this template, just paste the following command into your terminal:"
 category: "project"
-tags: ["auto-imported"]
-tech: ["bun", "elysia", "typescript"]
-status: "completed"
-draft: false
-repo: "https://github.com/TaskForgeRD/marcom_services"
-image: "/images/banners/project-marcom_services.png"
 lang: "en"
 translationKey: "project-marcom_services"
+image: "/images/banners/project-marcom_services.png"
+repo: "https://github.com/TaskForgeRD/marcom_services"
+status: "completed"
+draft: false
+tags: ["auto-imported"]
+tech: ["bun", "elysia", "typescript"]
 ---
 
 ## Getting Started
 
-To scaffold a new project from this template, run the following command in your terminal:
+To create a new project from this template, run the following command in your terminal:
 
 ```bash
 bun create elysia ./elysia-example
@@ -28,4 +28,4 @@ Start the development server with:
 bun run dev
 ```
 
-Then open [http://localhost:3000/](http://localhost:3000/) in your browser to see the result.
+Once the server is running, open [http://localhost:3000/](http://localhost:3000/) in your browser to see the result.

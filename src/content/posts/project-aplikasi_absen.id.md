@@ -24,7 +24,10 @@ translationKey: "project-aplikasi_absen"
 
 ## Fitur Utama
 
-Aplikasi ini menyediakan alur absensi sederhana untuk dua peran pengguna:
+
+![Diagram peran Karyawan dan Manager beserta fitur masing-masing](/images/inline/project-aplikasi_absen-1.svg)
+
+Aplikasi ini menyediakan alur absensi sederhana untuk dua peran pengguna.
 
 | Peran | Fitur |
 | --- | --- |
@@ -39,12 +42,20 @@ Aplikasi ini menyediakan alur absensi sederhana untuk dua peran pengguna:
 
 ### Alur Manager
 
+
+![Diagram alur kerja Karyawan dan Manager dalam aplikasi absen](/images/inline/project-aplikasi_absen-2.svg)
+
 - Login dengan akun manager.
 - Mengakses **Dashboard** untuk melihat rekap absen seluruh karyawan.
 
 ## Getting Started
 
 Proyek ini merupakan titik awal aplikasi Flutter. Ikuti langkah berikut untuk menjalankannya secara lokal.
+
+### Prasyarat
+
+- **Flutter SDK** sudah terpasang di mesin pengembang.
+- Emulator atau perangkat fisik sudah terhubung dan terdeteksi.
 
 ### Langkah Menjalankan
 

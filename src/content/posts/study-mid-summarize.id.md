@@ -128,6 +128,9 @@ translationKey: "study-mid-summarize"
 
 ## 16. Anatomi sebuah URL
 
+
+![Diagram anatomi URL: protokol, subdomain, domain, TLD, path](/images/inline/study-mid-summarize-1.svg)
+
 Mengacu pada contoh URL seperti `http://www.republika.co.id`:
 
 - **a. `http://`** — Protokol yang digunakan untuk mengakses situs web.
@@ -164,6 +167,9 @@ Mengacu pada contoh URL seperti `http://www.republika.co.id`:
 - **d. Bar Code Reader** — Lihat nomor 2. *(Catatan: barcode reader sebenarnya merupakan perangkat input.)*
 
 ## 21. Komponen Internal CPU
+
+
+![Diagram komponen internal CPU: ALU, CU, register, dan bus](/images/inline/study-mid-summarize-2.svg)
 
 - **a. Control Unit (CU)** — Bagian CPU yang mengoordinasikan operasi komputer. *Contoh:* control unit dalam prosesor.
 - **b. Buffer** — Area penyimpanan sementara untuk menampung data selama proses transfer atau pemrosesan. *Contoh:* buffer dalam memori komputer.

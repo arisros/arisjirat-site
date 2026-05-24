@@ -26,15 +26,15 @@ Runner absensi otomatis untuk mata kuliah berbasis Moodle dengan eksekusi terjad
    ```
 
 2. Isi nilai-nilai yang diperlukan di `.env`.
-3. Jalankan secara lokal:
+3. Jalankan:
 
    ```bash
    make run
    ```
 
-## Deployment Docker Agent
+## Deployment Docker
 
-Proyek ini dapat berjalan sebagai service Docker yang berumur panjang (`attendance-agent`) yang mengeksekusi scheduled jobs secara internal.
+Proyek ini berjalan sebagai service Docker berumur panjang (`attendance-agent`) yang mengeksekusi scheduled jobs secara internal.
 
 ### Deploy
 
@@ -48,29 +48,6 @@ Perintah setara:
 docker compose up -d --build
 ```
 
-### Integrasi WhatsApp Lintas Proyek (Host yang Sama)
-
-Jika `wa-bot-notif` berjalan sebagai proyek Docker terpisah pada mesin yang sama, hubungkan kedua stack melalui jaringan eksternal bersama.
-
-1. Buat jaringan bersama sekali saja:
-
-   ```bash
-   docker network create homelab_integration
-   ```
-
-2. Atur hal berikut di `.env`:
-
-   ```env
-   INTEGRATION_NETWORK=homelab_integration
-   WA_ENDPOINT=http://wa-bot-notif-api:5000/send
-   ```
-
-   Jika `wa-bot-notif` menggunakan `PORT` non-default (misalnya `5001`), sesuaikan di `WA_ENDPOINT`.
-
-3. Jalankan stack `wa-bot-notif` terlebih dahulu, kemudian stack ini.
-
-> Jangan gunakan `localhost` untuk panggilan antar-container — gunakan DNS service/container pada jaringan bersama.
-
 ### Operasional
 
 | Aksi | Perintah |
@@ -81,7 +58,7 @@ Jika `wa-bot-notif` berjalan sebagai proyek Docker terpisah pada mesin yang sama
 
 ### Memicu Manual Run di Dalam Container
 
-Aplikasi mendengarkan `SIGUSR1` dan mengeksekusi attendance run langsung saat menerimanya.
+Aplikasi mendengarkan `SIGUSR1` dan langsung mengeksekusi attendance run saat menerimanya.
 
 ```bash
 make docker-signal-run
@@ -93,6 +70,32 @@ Perintah setara:
 docker compose kill -s SIGUSR1 attendance-agent
 ```
 
+## Integrasi WhatsApp Lintas Proyek
+
+
+![Diagram jaringan Docker bersama menghubungkan stack gostudentubl dan WhatsApp](/images/inline/project-gostudentubl-1.svg)
+
+Jika `wa-bot-notif` berjalan sebagai proyek Docker terpisah pada host yang sama, hubungkan kedua stack melalui jaringan eksternal bersama.
+
+1. Buat jaringan bersama (satu kali saja):
+
+   ```bash
+   docker network create homelab_integration
+   ```
+
+2. Atur konfigurasi berikut di `.env`:
+
+   ```env
+   INTEGRATION_NETWORK=homelab_integration
+   WA_ENDPOINT=http://wa-bot-notif-api:5000/send
+   ```
+
+   Sesuaikan `WA_ENDPOINT` jika `wa-bot-notif` menggunakan `PORT` non-default (misalnya `5001`).
+
+3. Jalankan stack `wa-bot-notif` terlebih dahulu, kemudian stack ini.
+
+> Jangan gunakan `localhost` untuk panggilan antar-container — selalu gunakan DNS service/container pada jaringan bersama.
+
 ## Catatan Operasional
 
 - Timezone scheduler dikontrol oleh `TIMEZONE`.
@@ -102,13 +105,16 @@ docker compose kill -s SIGUSR1 attendance-agent
 
 ## Pelacakan Quiz dan Assignment
 
-Runner kini melacak metadata assignment/quiz yang lebih kaya dan mengirim notifikasi yang lebih cerdas.
+
+![Pipeline pelacakan quiz dan assignment dari Moodle ke notifikasi WhatsApp](/images/inline/project-gostudentubl-2.svg)
+
+Runner melacak metadata assignment/quiz yang lebih kaya dan mengirim notifikasi yang lebih cerdas.
 
 ### Fitur
 
-- **Parsing daftar assignment**: tanggal jatuh tempo, status submission, nilai.
-- **Parsing daftar quiz**: tanggal penutupan, nilai.
-- **Pipeline fetch halaman detail** untuk assignment dan quiz (dibatasi per run).
+- **Parsing daftar assignment**: tanggal jatuh tempo, status submission, dan nilai.
+- **Parsing daftar quiz**: tanggal penutupan dan nilai.
+- **Pipeline fetch halaman detail** untuk assignment dan quiz, dengan batas per run.
 - **Pengingat deadline** pada jendela 24 jam dan 12 jam untuk item yang belum selesai.
 - **Pipeline saran AI opsional** via OpenRouter untuk tugas yang masih tertunda.
 
@@ -116,19 +122,19 @@ Runner kini melacak metadata assignment/quiz yang lebih kaya dan mengirim notifi
 
 | Variable | Default | Catatan |
 | --- | --- | --- |
-| `DETAIL_FETCH_ENABLED` | `true` | Mengaktifkan/menonaktifkan fetch halaman detail. |
+| `DETAIL_FETCH_ENABLED` | `true` | Mengaktifkan atau menonaktifkan fetch halaman detail. |
 | `DETAIL_FETCH_LIMIT` | `10` | Batas maksimum fetch detail per run. |
 | `OPENROUTER_ENDPOINT` | `https://openrouter.ai/api/v1/chat/completions` | URL chat completions OpenRouter. |
 | `OPENROUTER_API_KEY` | — | Wajib saat `SUGGESTION_ENABLED=true`. |
 | `OPENROUTER_MODEL` | `anthropic/claude-sonnet-4-20250514` | Model yang digunakan untuk saran. |
 | `SUGGESTION_ENABLED` | `false` | Mengaktifkan saran AI. |
-| `SUGGESTION_LIMIT` | `5` | Maksimum saran yang dihasilkan per run. |
+| `SUGGESTION_LIMIT` | `5` | Jumlah maksimum saran per run. |
 
 ## Mode Periode
 
 Proyek ini mendukung filter periode dinamis, sehingga update konfigurasi manual bulanan menjadi opsional.
 
-### Mode
+### Mode yang Tersedia
 
 - **`PERIODE_MODE=auto`** (direkomendasikan): menerima bulan berjalan dan bulan berikutnya (`MMYY`) secara otomatis.
   - Contoh pada Februari 2026: `0226` dan `0326` diterima.
@@ -138,4 +144,4 @@ Proyek ini mendukung filter periode dinamis, sehingga update konfigurasi manual 
 ### Pengaturan Keamanan
 
 - `MAX_COURSES_PER_RUN`: batas keras untuk mencegah over-selection yang tidak disengaja.
-  - `0` menonaktifkan batas tersebut (default).
+  - Setel ke `0` untuk menonaktifkan batas (default).

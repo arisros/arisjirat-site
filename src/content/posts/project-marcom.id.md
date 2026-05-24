@@ -14,13 +14,13 @@ translationKey: "project-marcom"
 
 ## Ikhtisar
 
-Ini adalah proyek [Next.js](https://nextjs.org) yang dibuat menggunakan [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Proyek [Next.js](https://nextjs.org) yang di-bootstrap dengan [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Memulai
 
 ### Menjalankan Development Server
 
-Jalankan salah satu perintah berikut sesuai package manager pilihan kamu:
+Pilih salah satu perintah berikut sesuai package manager yang kamu pakai:
 
 ```bash
 npm run dev
@@ -36,15 +36,15 @@ Setelah server berjalan, buka [http://localhost:3000](http://localhost:3000) di 
 
 ### Mengedit Halaman
 
-Mulai dengan memodifikasi `app/page.tsx`. Halaman akan otomatis diperbarui setiap kali kamu menyimpan perubahan, berkat hot reload bawaan Next.js.
+Mulai dari `app/page.tsx`. Halaman akan diperbarui otomatis setiap kali kamu menyimpan perubahan, berkat hot reload bawaan Next.js.
 
 ### Font
 
-Proyek ini menggunakan [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) untuk mengoptimalkan dan memuat [Geist](https://vercel.com/font) secara otomatis — keluarga font baru dari Vercel.
+Proyek ini memanfaatkan [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) untuk mengoptimalkan dan memuat [Geist](https://vercel.com/font) secara otomatis — keluarga font terbaru dari Vercel.
 
 ## Pelajari Lebih Lanjut
 
-Untuk mendalami Next.js, lihat sumber-sumber berikut:
+Untuk memperdalam Next.js, lihat sumber-sumber berikut:
 
 | Sumber | Deskripsi |
 | --- | --- |
@@ -54,6 +54,6 @@ Untuk mendalami Next.js, lihat sumber-sumber berikut:
 
 ## Deploy di Vercel
 
-Cara termudah untuk men-deploy aplikasi Next.js adalah lewat [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme), yang dibuat oleh para pencipta Next.js.
+Cara termudah untuk men-deploy aplikasi Next.js adalah lewat [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) — dibangun oleh tim yang sama dengan pembuat Next.js.
 
 > Untuk panduan lengkap, baca [dokumentasi deployment Next.js](https://nextjs.org/docs/app/building-your-application/deploying).

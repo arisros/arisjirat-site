@@ -15,6 +15,9 @@ Artikel ini membahas berbagai media penyimpanan dalam komputer serta penyimpanan
 
 ## Konsep Dasar Penyimpanan Data
 
+
+![Diagram perbandingan storage non-volatile dan RAM volatile](/images/inline/study-storage-1.svg)
+
 Sebelum membahas jenis-jenis perangkatnya, penting untuk memahami beberapa istilah inti:
 
 - **Media penyimpanan** adalah materi fisik tempat komputer menyimpan data, informasi, program, dan aplikasi.
@@ -23,15 +26,18 @@ Sebelum membahas jenis-jenis perangkatnya, penting untuk memahami beberapa istil
 
 > Data pada media penyimpanan tetap utuh meskipun komputer dimatikan — inilah yang membedakan penyimpanan (storage) dari memori (RAM) yang bersifat sementara.
 
-Secara umum, komponen penyimpanan data pada komputer modern mencakup **hard disk drive (HDD)** dan **solid state drive (SSD)**, yang akan dibahas pada bagian berikutnya.
+Secara umum, komponen penyimpanan pada komputer modern mencakup **hard disk drive (HDD)** dan **solid state drive (SSD)**, yang dibahas pada bagian berikutnya.
 
 ## Hard Disk Drive (HDD)
+
+
+![Diagram struktur internal HDD: piringan, trek, sektor, dan head](/images/inline/study-storage-2.svg)
 
 Hard disk berisi piringan sirkular yang menggunakan partikel magnetik untuk menyimpan data.
 
 ### Karakteristik HDD
 
-- Kapasitas penyimpanan ditentukan oleh beberapa faktor, termasuk **jumlah piringan** dan **massa jenis** partikel magnetik.
+- Kapasitas penyimpanan ditentukan oleh beberapa faktor, di antaranya **jumlah piringan** dan **massa jenis** partikel magnetik.
 - Sebelum digunakan, hard disk perlu **diformat** agar terbagi menjadi trek dan sektor.
 
 ### Risiko Kerusakan
@@ -58,7 +64,7 @@ Optical disc berbentuk cakram portabel datar dan bundar yang ditulis serta dibac
 
 | Jenis | Kemampuan Umum |
 | --- | --- |
-| CD | Kapasitas paling kecil; varian *read-only*, *recordable*, dan *rewritable* |
+| CD | Kapasitas paling kecil; tersedia varian *read-only*, *recordable*, dan *rewritable* |
 | DVD | Kapasitas lebih besar dari CD; mendukung video berkualitas standar |
 | Blu-ray | Kapasitas terbesar; mendukung video definisi tinggi |
 

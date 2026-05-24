@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-label="Diagram aliran tiga sinyal observability menuju Grafana dan Alertmanager">
+<g font-family="sans-serif" font-size="14" fill="#525252">
+<rect x="40" y="340" width="150" height="120" rx="6" fill="none" stroke="#525252" stroke-width="2"/>
+<text x="115" y="395" text-anchor="middle" font-size="16">Kubernetes</text>
+<text x="115" y="415" text-anchor="middle">Services</text>
+<text x="115" y="435" text-anchor="middle" font-size="12">(OpenTelemetry SDK)</text>
+
+<text x="115" y="320" text-anchor="middle" font-size="12" fill="#A3A3A3">cluster workloads</text>
+
+<line x1="190" y1="370" x2="380" y2="180" stroke="#525252" stroke-width="2" marker-end="url(#a)"/>
+<text x="240" y="260" font-size="13">metrics scrape</text>
+
+<line x1="190" y1="400" x2="380" y2="400" stroke="#525252" stroke-width="2" marker-end="url(#a)"/>
+<text x="240" y="390" font-size="13">logs (stdout)</text>
+
+<line x1="190" y1="430" x2="380" y2="620" stroke="#525252" stroke-width="2" marker-end="url(#a)"/>
+<text x="240" y="555" font-size="13">traces (OTLP)</text>
+
+<rect x="380" y="150" width="170" height="70" rx="6" fill="none" stroke="#525252" stroke-width="2"/>
+<text x="465" y="180" text-anchor="middle" font-size="16">Prometheus</text>
+<text x="465" y="200" text-anchor="middle" font-size="12">metrics TSDB</text>
+
+<rect x="380" y="365" width="170" height="70" rx="6" fill="none" stroke="#525252" stroke-width="2"/>
+<text x="465" y="395" text-anchor="middle" font-size="16">Grafana Alloy</text>
+<text x="465" y="415" text-anchor="middle" font-size="12">log collector</text>
+
+<rect x="380" y="585" width="170" height="70" rx="6" fill="none" stroke="#525252" stroke-width="2"/>
+<text x="465" y="615" text-anchor="middle" font-size="16">Tempo</text>
+<text x="465" y="635" text-anchor="middle" font-size="12">trace store</text>
+
+<line x1="550" y1="400" x2="630" y2="400" stroke="#525252" stroke-width="2" marker-end="url(#a)"/>
+<rect x="630" y="365" width="140" height="70" rx="6" fill="none" stroke="#525252" stroke-width="2"/>
+<text x="700" y="395" text-anchor="middle" font-size="16">Loki</text>
+<text x="700" y="415" text-anchor="middle" font-size="12">log store</text>
+
+<line x1="550" y1="185" x2="900" y2="370" stroke="#525252" stroke-width="2" marker-end="url(#a)"/>
+<line x1="770" y1="400" x2="900" y2="400" stroke="#525252" stroke-width="2" marker-end="url(#a)"/>
+<line x1="550" y1="620" x2="900" y2="430" stroke="#525252" stroke-width="2" marker-end="url(#a)"/>
+
+<rect x="900" y="340" width="180" height="120" rx="6" fill="none" stroke="#F37338" stroke-width="3"/>
+<text x="990" y="385" text-anchor="middle" font-size="18" fill="#F37338">Grafana</text>
+<text x="990" y="410" text-anchor="middle" font-size="13">unified</text>
+<text x="990" y="428" text-anchor="middle" font-size="13">dashboard pane</text>
+<text x="990" y="448" text-anchor="middle" font-size="12" fill="#A3A3A3">metrics · logs · traces</text>
+
+<line x1="465" y1="150" x2="465" y2="90" stroke="#525252" stroke-width="2"/>
+<line x1="465" y1="90" x2="690" y2="90" stroke="#525252" stroke-width="2"/>
+<line x1="690" y1="90" x2="690" y2="150" stroke="#525252" stroke-width="2" marker-end="url(#a)"/>
+<text x="475" y="80" font-size="12" fill="#A3A3A3">alerting rules</text>
+
+<rect x="610" y="150" width="170" height="70" rx="6" fill="none" stroke="#525252" stroke-width="2"/>
+<text x="695" y="180" text-anchor="middle" font-size="16">Alertmanager</text>
+<text x="695" y="200" text-anchor="middle" font-size="12">route · dedupe</text>
+
+<rect x="840" y="40" width="240" height="70" rx="6" fill="none" stroke="#F37338" stroke-width="2" stroke-dasharray="5 4"/>
+<text x="960" y="68" text-anchor="middle" font-size="14" fill="#F37338">SLO burn-rate policies</text>
+<text x="960" y="88" text-anchor="middle" font-size="12">fast + slow window</text>
+<line x1="900" y1="110" x2="780" y2="170" stroke="#F37338" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#b)"/>
+<text x="810" y="135" font-size="12" fill="#F37338">paging policy</text>
+
+<line x1="780" y1="185" x2="900" y2="185" stroke="#F37338" stroke-width="3" marker-end="url(#b)"/>
+<rect x="900" y="150" width="180" height="70" rx="6" fill="none" stroke="#F37338" stroke-width="3"/>
+<text x="990" y="180" text-anchor="middle" font-size="16" fill="#F37338">Telegram</text>
+<text x="990" y="200" text-anchor="middle" font-size="12">on-call channel</text>
+<text x="815" y="178" font-size="12" fill="#F37338">page</text>
+
+<text x="465" y="510" text-anchor="middle" font-size="12" fill="#A3A3A3">— three parallel telemetry streams —</text>
+</g>
+<defs>
+<marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+<path d="M0,0 L10,5 L0,10 z" fill="#525252"/>
+</marker>
+<marker id="b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+<path d="M0,0 L10,5 L0,10 z" fill="#F37338"/>
+</marker>
+</defs>
+</svg>

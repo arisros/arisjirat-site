@@ -16,6 +16,9 @@ Folder ini merupakan kursus praktik untuk mempelajari jaringan komputer dengan C
 
 ## Struktur Kursus
 
+
+![Diagram struktur folder kursus dari modul dasar hingga laporan akhir](/images/inline/project-network-1.svg)
+
 | Folder | Isi |
 |---|---|
 | `00-getting-started/` | Persiapan, tujuan, dan alur kerja |
@@ -30,6 +33,9 @@ Folder ini merupakan kursus praktik untuk mempelajari jaringan komputer dengan C
 | `submissions/` | Laporan akhir dan deliverable yang diekspor |
 
 ## Cara Menggunakan Kursus Ini
+
+
+![Alur kerja siklus belajar lab: baca, bangun, simpan, tulis laporan](/images/inline/project-network-2.svg)
 
 1. Mulai dari `00-getting-started/README.md`.
 2. Kerjakan modul secara berurutan, dari `01` hingga `05`.

@@ -1,48 +1,48 @@
 ---
 title: "Godot demo projects"
-description: "Each folder containing a `project.godot` file is a demo project meant to"
+description: "Every folder containing a `project.godot` file is a demo project intended"
 category: "project"
-tags: ["auto-imported"]
-tech: ["godot", "gdscript", "gamedev"]
-status: "completed"
-draft: false
-repo: "https://github.com/godotengine/godot-demo-projects"
-image: "/images/banners/project-godot-demo-projects.png"
 lang: "en"
 translationKey: "project-godot-demo-projects"
+image: "/images/banners/project-godot-demo-projects.png"
+repo: "https://github.com/godotengine/godot-demo-projects"
+status: "completed"
+draft: false
+tags: ["auto-imported"]
+tech: ["godot", "gdscript", "gamedev"]
 ---
 
-Each folder containing a `project.godot` file is a demo project intended for use with [Godot Engine](https://godotengine.org), the open source 2D and 3D game engine.
+Every folder containing a `project.godot` file is a demo project intended for use with the [Godot Engine](https://godotengine.org), an open source 2D and 3D game engine.
 
-## Godot Versions
+## Godot versions
 
-Pick the branch that matches your Godot install:
+Pick the branch that matches your Godot installation:
 
-| Branch | Compatible With |
+| Branch | Compatible with |
 | --- | --- |
 | [`master`](https://github.com/godotengine/godot-demo-projects) | Godot's `master` development branch (next 4.x release) |
 | [`3.x`](https://github.com/godotengine/godot-demo-projects/tree/3.x) | Godot's `3.x` development branch (next 3.x release) |
 | [`2.1`](https://github.com/godotengine/godot-demo-projects/tree/2.1) | Godot 2.1.x |
-| Other stable branches | Their matching stable Godot versions |
+| Other stable branches | The matching stable Godot version |
 
 See the [full list of branches](https://github.com/godotengine/godot-demo-projects/branches) for every available version.
 
-## Importing All Demos
+## Importing all the demos
 
-To import every demo at once from the Godot project manager:
+To import every demo at once from Godot's project manager:
 
-1. Clone this repository, or [download a ZIP archive](https://github.com/godotengine/godot-demo-projects/archive/master.zip) and extract it.
-2. Open the Godot project manager and click the **Scan** button on the right.
-3. Choose the folder containing all the demos.
-4. All demos should now appear in the project manager.
+1. Clone this repository, or [download the ZIP archive](https://github.com/godotengine/godot-demo-projects/archive/master.zip) and extract it.
+2. Open the Godot project manager and click the **Scan** button on the right side.
+3. Select the folder that contains all the demos.
+4. All the demos will now show up in the project manager.
 
-## Try the Demos in Your Browser
+## Trying the demos in your browser
 
-Most demos are exported to GitHub Pages and can be viewed [here](https://godotengine.github.io/godot-demo-projects/).
+Most of the demos have been exported to GitHub Pages and can be run directly [here](https://godotengine.github.io/godot-demo-projects/).
 
-> **Note:** Godot's performance in a browser is lower than natively on desktop. For the best experience, download the demos and run them locally.
+> **Note:** Godot's performance in the browser is lower than running natively on the desktop. For the best experience, download the demos and run them locally.
 
-## Useful Links
+## Useful links
 
 - [Main website](https://godotengine.org)
 - [Source code](https://github.com/godotengine/godot)

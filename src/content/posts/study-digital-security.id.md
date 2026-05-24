@@ -13,15 +13,15 @@ translationKey: "study-digital-security"
 
 ## Pengantar
 
-Artikel ini membahas tiga pilar utama dalam dunia teknologi informasi modern: **keamanan digital**, **etika**, dan **privasi**. Pembaca akan memperoleh pemahaman tentang berbagai jenis ancaman siber—mulai dari malware seperti virus, worm, dan spyware, hingga praktik phishing yang membahayakan privasi pengguna—serta isu etika seperti hak kekayaan intelektual, manajemen hak digital, dan kode etik penggunaan teknologi.
+Artikel ini membahas tiga pilar utama teknologi informasi modern: **keamanan digital**, **etika**, dan **privasi**. Pembaca akan memahami berbagai ancaman siber—mulai dari malware seperti virus, worm, dan spyware, hingga praktik phishing yang membahayakan privasi pengguna—serta isu etika seperti hak kekayaan intelektual, manajemen hak digital, dan kode etik penggunaan teknologi.
 
-Selain itu, dibahas pula praktik berkelanjutan seperti *green computing*, yang bertujuan mengurangi dampak lingkungan dari penggunaan komputer dan perangkat seluler. Di dunia yang semakin terhubung, pemahaman dan tindakan yang tepat menjadi kunci untuk menjaga keamanan digital pribadi dan privasi online.
+Dibahas pula praktik berkelanjutan seperti *green computing* yang bertujuan mengurangi dampak lingkungan dari penggunaan komputer dan perangkat seluler. Di dunia yang semakin terhubung, pemahaman dan tindakan yang tepat menjadi kunci untuk menjaga keamanan digital pribadi dan privasi online.
 
 ## Risiko Keamanan Digital
 
-Risiko keamanan digital merujuk pada setiap kejadian atau tindakan yang dapat mengakibatkan hilangnya atau rusaknya perangkat keras, perangkat lunak, data, atau informasi. Tindakan ilegal yang melibatkan komputer atau perangkat terkait umumnya disebut sebagai **kejahatan komputer** (*computer crime*).
+Risiko keamanan digital merujuk pada setiap kejadian atau tindakan yang dapat mengakibatkan hilangnya atau rusaknya perangkat keras, perangkat lunak, data, maupun informasi. Tindakan ilegal yang melibatkan komputer atau perangkat terkait umumnya disebut **kejahatan komputer** (*computer crime*).
 
-Beberapa contoh risiko keamanan digital meliputi:
+Contoh risiko keamanan digital meliputi:
 
 - Serangan oleh peretas (*hackers*)
 - Pencurian perangkat lunak
@@ -30,6 +30,9 @@ Beberapa contoh risiko keamanan digital meliputi:
 ## Serangan Internet dan Jaringan Komputer
 
 ### Malware
+
+
+![Diagram jenis-jenis malware dan karakteristiknya](/images/inline/study-digital-security-1.svg)
 
 **Malware** (singkatan dari *malicious software*) adalah perangkat lunak berbahaya yang bertindak tanpa sepengetahuan pengguna dan merusak komputer atau perangkat seluler. Jenis-jenis malware yang umum:
 
@@ -44,7 +47,10 @@ Beberapa contoh risiko keamanan digital meliputi:
 
 ### Serangan Jaringan
 
-Selain malware, terdapat juga berbagai bentuk serangan terhadap jaringan komputer:
+
+![Ilustrasi serangan jaringan: Botnet, DoS, Back door, Spoofing](/images/inline/study-digital-security-2.svg)
+
+Selain malware, terdapat berbagai bentuk serangan terhadap jaringan komputer:
 
 - **Botnet** — jaringan komputer yang dikendalikan dari jarak jauh
 - **Denial of Service (DoS)** — membanjiri layanan hingga tidak dapat diakses
@@ -55,11 +61,11 @@ Selain malware, terdapat juga berbagai bentuk serangan terhadap jaringan kompute
 
 Pencurian perangkat lunak terjadi ketika seseorang mencuri, menghapus, atau menggunakan perangkat lunak tanpa izin atau lisensi yang sah.
 
-> **Lisensi perangkat lunak** mengatur hak penggunaan, sementara **aktivasi produk** mengikat perangkat lunak dengan komputer atau perangkat seluler tertentu agar tidak digunakan di luar lisensi yang diberikan.
+> **Lisensi perangkat lunak** mengatur hak penggunaan, sedangkan **aktivasi produk** mengikat perangkat lunak dengan komputer atau perangkat seluler tertentu agar tidak digunakan di luar lisensi yang diberikan.
 
 ## Etika Teknologi
 
-**Etika teknologi** adalah panduan moral yang mengatur penggunaan komputer, perangkat bergerak, sistem informasi, dan teknologi terkait. Beberapa isu utama dalam etika teknologi:
+**Etika teknologi** adalah panduan moral yang mengatur penggunaan komputer, perangkat bergerak, sistem informasi, dan teknologi terkait. Isu-isu utamanya:
 
 - **Hak kekayaan intelektual** dan **hak cipta**
 - **Manajemen hak digital (DRM)**
@@ -68,7 +74,7 @@ Pencurian perangkat lunak terjadi ketika seseorang mencuri, menghapus, atau meng
 
 ## Privasi
 
-Privasi dalam konteks teknologi mengacu pada hak individu dan perusahaan untuk membatasi pengumpulan, penggunaan, dan penyebaran informasi tentang diri mereka. Topik-topik utama yang berkaitan:
+Privasi dalam konteks teknologi mengacu pada hak individu dan perusahaan untuk membatasi pengumpulan, penggunaan, dan penyebaran informasi tentang diri mereka. Topik-topik yang berkaitan:
 
 - **Cookies** — penyimpanan data aktivitas pengguna oleh situs web
 - **Phishing** — penipuan untuk mencuri informasi pribadi
@@ -77,11 +83,11 @@ Privasi dalam konteks teknologi mengacu pada hak individu dan perusahaan untuk m
 
 ## Contoh dan Analogi
 
-Untuk mempermudah pemahaman, berikut beberapa analogi yang relevan dengan topik-topik di atas.
+Berikut beberapa analogi yang dapat mempermudah pemahaman topik-topik di atas.
 
 ### 1. Malware: Virus dan Worm
 
-> Bayangkan komputer Anda sebagai sebuah rumah, dan malware seperti virus dan worm adalah penyakit yang dapat menyebar di antara penghuninya. Untuk mencegah penyebaran, diperlukan langkah keamanan seperti **vaksinasi** (antivirus) dan **menjaga kebersihan rumah** (firewall).
+> Bayangkan komputer Anda sebagai sebuah rumah, dan malware seperti virus dan worm adalah penyakit yang dapat menyebar di antara penghuninya. Pencegahannya membutuhkan langkah keamanan seperti **vaksinasi** (antivirus) dan **menjaga kebersihan rumah** (firewall).
 
 ### 2. Etika Teknologi dan Hak Kekayaan Intelektual
 
@@ -97,8 +103,8 @@ Saat Anda mengunjungi sebuah situs web dan diminta menerima cookies, situasinya 
 
 ### 5. Serangan Phishing
 
-> Bayangkan seseorang menyamar sebagai petugas bank dan menghubungi Anda lewat telepon atau email, lalu meminta data pribadi dan nomor kartu kredit. Itulah inti dari **serangan phishing**: penipu menyamar sebagai entitas yang sah untuk mendapatkan informasi sensitif Anda.
+> Bayangkan seseorang menyamar sebagai petugas bank dan menghubungi Anda lewat telepon atau email, lalu meminta data pribadi dan nomor kartu kredit. Itulah inti dari **serangan phishing**: penipu menyamar sebagai entitas sah untuk mendapatkan informasi sensitif Anda.
 
 ## Penutup
 
-Keamanan digital, etika teknologi, dan privasi adalah tiga aspek yang saling terkait dalam era digital. Memahami ancaman, menerapkan etika penggunaan teknologi, dan melindungi privasi merupakan tanggung jawab bersama—baik bagi individu, organisasi, maupun pengembang teknologi—untuk menciptakan ekosistem digital yang lebih aman dan berkelanjutan.
+Keamanan digital, etika teknologi, dan privasi adalah tiga aspek yang saling terkait dalam era digital. Memahami ancaman, menerapkan etika penggunaan teknologi, dan melindungi privasi merupakan tanggung jawab bersama—bagi individu, organisasi, maupun pengembang teknologi—untuk menciptakan ekosistem digital yang lebih aman dan berkelanjutan.

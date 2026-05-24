@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-label="Alur translasi: model graph menjadi matriks lalu operasi query">
+<defs>
+<marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+<path d="M0,0 L10,5 L0,10 z" fill="#525252"/>
+</marker>
+<marker id="b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+<path d="M0,0 L10,5 L0,10 z" fill="#F37338"/>
+</marker>
+</defs>
+<g font-family="sans-serif" font-size="16" fill="#525252">
+<rect x="40" y="180" width="240" height="120" rx="8" fill="none" stroke="#525252" stroke-width="2"/>
+<text x="160" y="230" text-anchor="middle" font-size="17">Model Graph</text>
+<text x="160" y="258" text-anchor="middle" font-size="14" fill="#A3A3A3">(simpul &amp; sisi)</text>
+<g stroke="#525252" stroke-width="2" fill="none">
+<circle cx="110" cy="285" r="6"/>
+<circle cx="150" cy="285" r="6"/>
+<circle cx="190" cy="285" r="6"/>
+<line x1="116" y1="285" x2="144" y2="285"/>
+<line x1="156" y1="285" x2="184" y2="285"/>
+</g>
+<path d="M280,240 L340,240" stroke="#525252" stroke-width="3" fill="none" marker-end="url(#a)"/>
+<rect x="340" y="180" width="240" height="120" rx="8" fill="none" stroke="#525252" stroke-width="2"/>
+<text x="460" y="220" text-anchor="middle" font-size="17">Adjacency Matrix</text>
+<text x="460" y="242" text-anchor="middle" font-size="14" fill="#A3A3A3">(array 2D di C)</text>
+<g font-size="13" fill="#A3A3A3" text-anchor="middle">
+<text x="430" y="270">0 1 1 0</text>
+<text x="430" y="287">1 0 0 1</text>
+<text x="490" y="270" fill="#F37338">int g[N][N]</text>
+<text x="490" y="290" font-size="12">// 0 / 1</text>
+</g>
+<path d="M580,240 L640,240" stroke="#525252" stroke-width="3" fill="none" marker-end="url(#a)"/>
+<rect x="640" y="180" width="240" height="120" rx="8" fill="none" stroke="#525252" stroke-width="2"/>
+<text x="760" y="225" text-anchor="middle" font-size="17">Operasi</text>
+<text x="760" y="255" text-anchor="middle" font-size="14" fill="#A3A3A3">degree</text>
+<text x="760" y="275" text-anchor="middle" font-size="14" fill="#A3A3A3">indegree / outdegree</text>
+<path d="M880,240 L940,240" stroke="#525252" stroke-width="3" fill="none" marker-end="url(#a)"/>
+<rect x="940" y="180" width="220" height="120" rx="8" fill="none" stroke="#F37338" stroke-width="3"/>
+<text x="1050" y="225" text-anchor="middle" font-size="17" fill="#F37338">Enumerasi jalur</text>
+<text x="1050" y="250" text-anchor="middle" font-size="14">brute force</text>
+<text x="1050" y="278" text-anchor="middle" font-size="15" fill="#F37338">A → D</text>
+<path d="M700,300 L580,420" stroke="#525252" stroke-width="2" fill="none" marker-end="url(#a)"/>
+<path d="M820,300 L940,420" stroke="#525252" stroke-width="2" fill="none" marker-end="url(#a)"/>
+<rect x="380" y="420" width="280" height="100" rx="8" fill="none" stroke="#525252" stroke-width="2"/>
+<text x="520" y="460" text-anchor="middle" font-size="16">Query langsung</text>
+<text x="520" y="485" text-anchor="middle" font-size="14" fill="#A3A3A3">(1 langkah)</text>
+<g stroke="#525252" stroke-width="2" fill="none">
+<circle cx="470" cy="505" r="5"/>
+<circle cx="570" cy="505" r="5"/>
+<path d="M475,505 L563,505" marker-end="url(#a)"/>
+</g>
+<rect x="860" y="420" width="280" height="100" rx="8" fill="none" stroke="#525252" stroke-width="2"/>
+<text x="1000" y="460" text-anchor="middle" font-size="16">Query multi-langkah</text>
+<text x="1000" y="485" text-anchor="middle" font-size="14" fill="#A3A3A3">(2 langkah)</text>
+<g stroke="#525252" stroke-width="2" fill="none">
+<circle cx="920" cy="505" r="5"/>
+<circle cx="1000" cy="505" r="5"/>
+<circle cx="1080" cy="505" r="5"/>
+<path d="M925,505 L993,505" marker-end="url(#a)"/>
+<path d="M1005,505 L1073,505" marker-end="url(#a)"/>
+</g>
+<text x="600" y="100" text-anchor="middle" font-size="20" fill="#525252">Alur translasi: graph → matriks → query</text>
+<text x="600" y="700" text-anchor="middle" font-size="14" fill="#A3A3A3">representasi data berkembang menjadi operasi yang dapat ditanyakan</text>
+</g>
+</svg>

@@ -11,7 +11,7 @@ lang: "id"
 translationKey: "study-digital-era"
 ---
 
-Era digital telah mengubah cara kita berkomunikasi, berbelanja, belajar, dan mengakses informasi. Namun, di balik kecanggihan teknologi ini, ada tantangan nyata yang perlu kita hadapi — terutama kejahatan digital dan penyebaran berita palsu (hoax). Artikel ini membahas bagaimana tetap waspada di dunia digital, menghindari hoax, dan melindungi diri dari potensi ancaman siber.
+Era digital telah mengubah cara kita berkomunikasi, berbelanja, belajar, dan mengakses informasi. Di balik kecanggihannya, ada tantangan nyata yang perlu dihadapi — terutama kejahatan digital dan penyebaran berita palsu (hoax). Tulisan ini membahas cara tetap waspada di dunia digital, menghindari hoax, dan melindungi diri dari ancaman siber.
 
 ## Tantangan di Era Digital
 
@@ -19,20 +19,25 @@ Internet memungkinkan kita terhubung dengan siapa pun di seluruh dunia, belajar 
 
 Dua tantangan utama yang paling sering dihadapi pengguna:
 
-- **Penyebaran hoax.** Berita palsu menyebar cepat lewat media sosial dan aplikasi pesan instan. Pesan atau artikel yang terdengar menarik belum tentu benar.
-- **Kejahatan digital.** Pencurian identitas, penipuan online, dan serangan siber adalah ancaman yang bisa menimpa siapa saja.
+| Tantangan | Bentuk Umum |
+| --- | --- |
+| **Penyebaran hoax** | Berita palsu menyebar cepat lewat media sosial dan aplikasi pesan instan. Pesan yang terdengar menarik belum tentu benar. |
+| **Kejahatan digital** | Pencurian identitas, penipuan online, dan serangan siber dapat menimpa siapa saja. |
 
 ## Menghadapi Kejahatan Digital
 
-Kejahatan digital dapat mengancam keamanan dan privasi kita. Beberapa langkah dasar untuk melindungi diri:
+Kejahatan digital mengancam keamanan dan privasi kita. Beberapa langkah dasar untuk melindungi diri:
 
-- **Pahami dasar keamanan.** Pelajari berbagai jenis ancaman digital, gunakan kata sandi yang kuat, dan pastikan perangkat lunak selalu diperbarui.
-- **Verifikasi sebelum berbagi.** Jangan terburu-buru meneruskan informasi tanpa memeriksa keabsahannya terlebih dahulu.
-- **Manfaatkan sumber daya tepercaya.** Gunakan panduan keamanan dari pemerintah atau organisasi yang fokus pada keamanan digital.
+- **Pahami dasar keamanan.** Pelajari jenis-jenis ancaman digital, gunakan kata sandi yang kuat, dan pastikan perangkat lunak selalu diperbarui.
+- **Verifikasi sebelum berbagi.** Jangan terburu-buru meneruskan informasi tanpa memeriksa keabsahannya.
+- **Manfaatkan sumber tepercaya.** Gunakan panduan keamanan dari pemerintah atau organisasi yang fokus pada keamanan digital.
 
 ## Verifikasi Berita: Kunci Menghindari Hoax
 
-Verifikasi adalah langkah paling penting dalam memerangi hoax. Berikut cara melakukannya:
+
+![Diagram alur tiga langkah verifikasi berita untuk menghindari hoax](/images/inline/study-digital-era-1.svg)
+
+Verifikasi adalah langkah paling penting dalam memerangi hoax. Tiga kebiasaan yang perlu dibangun:
 
 ### Periksa Sumber Berita
 
@@ -44,14 +49,17 @@ Manfaatkan situs atau aplikasi pengecekan fakta untuk menguji kebenaran sebuah i
 
 ### Baca Artikel Secara Utuh
 
-Jangan hanya terpaku pada judul. Baca seluruh isi artikel dan pertimbangkan apakah informasinya masuk akal sebelum membagikannya.
+Jangan terpaku pada judul. Baca seluruh isi artikel dan pertimbangkan apakah informasinya masuk akal sebelum membagikannya.
 
 > **Tip:** Judul yang terlalu sensasional sering kali menjadi tanda awal hoax. Jika sebuah berita memancing emosi kuat, berhenti sejenak dan verifikasi sebelum bertindak.
 
 ## Peran Individu dalam Mencegah Penyebaran Hoax
 
-Setiap orang memiliki peran penting dalam memutus rantai penyebaran hoax. Berpikir kritis sebelum membagikan informasi adalah kebiasaan yang harus dibangun. Jangan mudah terpancing oleh judul menarik tanpa verifikasi.
+
+![Diagram rantai penyebaran hoax dan bagaimana individu memutusnya](/images/inline/study-digital-era-2.svg)
+
+Setiap orang berperan penting dalam memutus rantai penyebaran hoax. Berpikir kritis sebelum membagikan informasi adalah kebiasaan yang harus dibangun. Jangan mudah terpancing oleh judul menarik tanpa verifikasi terlebih dahulu.
 
 ## Kesimpulan
 
-Era digital membawa manfaat besar, tetapi juga tantangan yang harus kita hadapi dengan bijak. Pemahaman dan kewaspadaan adalah kunci dalam menghadapi kejahatan digital dan hoax. Dengan melindungi diri dan menjadi konsumen informasi yang cerdas, kita dapat menjalani kehidupan digital dengan lebih aman dan produktif.
+Era digital membawa manfaat besar sekaligus tantangan yang harus dihadapi dengan bijak. Pemahaman dan kewaspadaan adalah kunci dalam menghadapi kejahatan digital dan hoax. Dengan melindungi diri dan menjadi konsumen informasi yang cerdas, kita dapat menjalani kehidupan digital dengan lebih aman dan produktif.

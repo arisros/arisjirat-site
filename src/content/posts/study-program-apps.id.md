@@ -17,19 +17,24 @@ Artikel ini membahas berbagai aspek **program** dan **aplikasi** dalam konteks t
 
 ## Program dan Aplikasi
 
-Program dan aplikasi (apps) adalah dua istilah yang sering digunakan dalam konteks perangkat lunak (software) pada komputer dan perangkat seluler. Berikut penjelasan singkat keduanya.
+Program dan aplikasi (apps) adalah dua istilah yang sering digunakan dalam konteks perangkat lunak (software) pada komputer dan perangkat seluler. Keduanya berkaitan erat, tetapi memiliki cakupan dan tujuan yang berbeda.
 
-### 1. Program (Perangkat Lunak)
+### Program (Perangkat Lunak)
 
-- **Deskripsi:** Program, atau perangkat lunak, adalah serangkaian instruksi atau kode komputer yang dirancang untuk menjalankan tugas tertentu pada komputer atau perangkat seluler. Cakupannya luas, mulai dari sistem operasi, pengolah kata, spreadsheet, peramban web, dan banyak lagi.
-- **Fungsi Utama:** Program bertugas memberi tahu komputer atau perangkat seluler apa yang harus dilakukan dan bagaimana melakukannya. Misalnya, program pengolah kata membantu menulis dan mengedit dokumen, sementara sistem operasi mengatur seluruh operasi dasar perangkat keras dan perangkat lunak di komputer.
+**Deskripsi.** Program, atau perangkat lunak, adalah serangkaian instruksi atau kode komputer yang dirancang untuk menjalankan tugas tertentu pada komputer atau perangkat seluler. Cakupannya luas, mulai dari sistem operasi, pengolah kata, spreadsheet, peramban web, dan banyak lagi.
 
-### 2. Aplikasi (Apps)
+**Fungsi utama.** Program bertugas memberi tahu komputer atau perangkat seluler apa yang harus dilakukan dan bagaimana melakukannya. Misalnya, program pengolah kata membantu menulis dan mengedit dokumen, sementara sistem operasi mengatur seluruh operasi dasar perangkat keras dan perangkat lunak di komputer.
 
-- **Deskripsi:** Aplikasi, atau "apps," adalah program yang dirancang khusus untuk tujuan tertentu, seperti membantu pengguna menyelesaikan tugas atau aktivitas spesifik. Aplikasi umumnya lebih sempit fungsinya dibanding program yang bersifat umum.
-- **Fungsi Utama:** Aplikasi dibuat untuk meningkatkan produktivitas, memberikan hiburan, atau memenuhi kebutuhan khusus. Contohnya meliputi permainan, aplikasi produktivitas (kalender atau pengingat), media sosial, perbankan, dan lain-lain.
+### Aplikasi (Apps)
+
+**Deskripsi.** Aplikasi, atau "apps", adalah program yang dirancang khusus untuk tujuan tertentu, seperti membantu pengguna menyelesaikan tugas atau aktivitas spesifik. Aplikasi umumnya lebih sempit fungsinya dibandingkan program yang bersifat umum.
+
+**Fungsi utama.** Aplikasi dibuat untuk meningkatkan produktivitas, memberikan hiburan, atau memenuhi kebutuhan khusus. Contohnya meliputi permainan, aplikasi produktivitas (kalender atau pengingat), media sosial, perbankan, dan lain-lain.
 
 ### Perbedaan Utama
+
+
+![Diagram perbandingan cakupan program dan aplikasi](/images/inline/study-program-apps-1.svg)
 
 Perbedaan utama antara program dan aplikasi terletak pada **tingkat abstraksi** dan **tujuan penggunaannya**.
 
@@ -39,33 +44,38 @@ Perbedaan utama antara program dan aplikasi terletak pada **tingkat abstraksi** 
 | Tujuan | Mengelola seluruh aspek komputer | Membantu aktivitas pengguna |
 | Hubungan | Menyediakan kerangka kerja | Berjalan di atas kerangka tersebut |
 
-Dalam banyak kasus, aplikasi adalah bagian dari perangkat lunak yang lebih besar atau sistem operasi yang menyediakan kerangka kerja bagi aplikasi untuk berjalan.
+Dalam banyak kasus, aplikasi adalah bagian dari perangkat lunak yang lebih besar atau berjalan di atas sistem operasi yang menyediakan kerangka kerja untuknya.
 
 ## Contoh dan Analogi
 
 Beberapa analogi berikut dapat membantu memahami konsep di atas.
 
-### 1. Program vs. Aplikasi
+### Program vs. Aplikasi
 
 Bayangkan komputer atau perangkat seluler sebagai sebuah **mobil**. Program adalah **mesin** di dalam mobil, sedangkan aplikasi adalah **fitur tambahan** seperti radio, GPS, atau kontrol iklim. Mesin (program) memberi tahu mobil (komputer) bagaimana harus berjalan, sementara fitur tambahan (aplikasi) membuat pengguna lebih nyaman dan produktif selama perjalanan.
 
-### 2. Sistem Operasi
+### Sistem Operasi
+
+
+![Diagram lapisan sistem operasi sebagai penghubung perangkat keras dan aplikasi](/images/inline/study-program-apps-2.svg)
 
 Sistem operasi dapat dibayangkan sebagai **jantung** komputer atau perangkat seluler. Ia memastikan semua bagian berfungsi bersama dan mengoordinasikan setiap aktivitas — layaknya denyut jantung yang menjaga tubuh tetap bergerak.
 
-### 3. Jenis Perangkat Lunak
+### Jenis Perangkat Lunak
 
 Ragam perangkat lunak dapat dibandingkan dengan jenis-jenis makanan di supermarket:
 
-- **Makanan siap saji** → perangkat lunak ritel
-- **Makanan pesanan khusus** → perangkat lunak kustom
-- **Makanan yang dinikmati di toko** → aplikasi web
-- **Makanan untuk dibawa pulang** → aplikasi seluler
-- **Sampel makanan gratis** → freeware
-- **Makanan yang dapat dimodifikasi** → open source
-- **Makanan gratis tanpa pembatasan** → domain publik
+| Analogi Makanan | Jenis Perangkat Lunak |
+|---|---|
+| Makanan siap saji | Perangkat lunak ritel |
+| Makanan pesanan khusus | Perangkat lunak kustom |
+| Makanan yang dinikmati di toko | Aplikasi web |
+| Makanan untuk dibawa pulang | Aplikasi seluler |
+| Sampel makanan gratis | Freeware |
+| Makanan yang dapat dimodifikasi | Open source |
+| Makanan gratis tanpa pembatasan | Domain publik |
 
-### 4. Aplikasi Produktivitas
+### Aplikasi Produktivitas
 
 Aplikasi produktivitas mirip dengan **kotak perkakas**. Di dalamnya terdapat berbagai alat dengan peran masing-masing:
 
@@ -75,7 +85,7 @@ Aplikasi produktivitas mirip dengan **kotak perkakas**. Di dalamnya terdapat ber
 
 Setiap alat memiliki peran berbeda dalam menyelesaikan tugas.
 
-### 5. Aplikasi Grafis dan Media
+### Aplikasi Grafis dan Media
 
 Aplikasi grafis dan media dapat diibaratkan sebagai **peralatan studio seni**:
 
@@ -86,7 +96,7 @@ Aplikasi grafis dan media dapat diibaratkan sebagai **peralatan studio seni**:
 
 Semuanya digunakan untuk menciptakan karya seni digital.
 
-### 6. Alat Keamanan
+### Alat Keamanan
 
 > **Firewall pribadi** ibarat pagar di sekitar rumah yang melindungi dari intrusi tidak diinginkan.
 >
@@ -94,7 +104,7 @@ Semuanya digunakan untuk menciptakan karya seni digital.
 >
 > **Adware dan spyware** seperti iklan mengganggu yang sebaiknya dihilangkan dari lingkungan.
 
-### 7. Alat Manajemen Sistem
+### Alat Manajemen Sistem
 
 Alat manajemen sistem dapat dibandingkan dengan pengelolaan **lemari pakaian**:
 

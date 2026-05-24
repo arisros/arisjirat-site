@@ -17,8 +17,8 @@ Aplikasi Android sederhana yang dibuat untuk tujuan edukasi. Aplikasi ini menghi
 ## Fitur
 
 - ✍️ UI sederhana yang didefinisikan dalam layout XML
-- ⚙️ Workflow CLI: build, install, run, dan capture screenshot melalui script
-- 📸 Auto-screenshot source code dengan [`carbon-now-cli`](https://www.npmjs.com/package/carbon-now-cli)
+- ⚙️ Workflow CLI untuk build, install, run, dan capture screenshot lewat script
+- 📸 Auto-screenshot source code menggunakan [`carbon-now-cli`](https://www.npmjs.com/package/carbon-now-cli)
 
 ## Struktur Proyek
 
@@ -39,7 +39,10 @@ build.gradle # Root-level Gradle
 settings.gradle
 ```
 
-## Panduan Penggunaan CLI
+## Workflow CLI
+
+
+![Diagram alur workflow CLI: build, install, run, uninstall APK](/images/inline/project-tugas_mp-1.svg)
 
 ### Build APK
 
@@ -47,19 +50,19 @@ settings.gradle
 ./gradlew assembleDebug
 ```
 
-### Install ke Emulator atau Device
+### Install ke emulator atau device
 
 ```bash
 adb install -r app/build/outputs/apk/debug/app-debug.apk
 ```
 
-### Jalankan Aplikasi
+### Jalankan aplikasi
 
 ```bash
 adb shell monkey -p com.ubl.tugas_mp -c android.intent.category.LAUNCHER 1
 ```
 
-### Uninstall Aplikasi
+### Uninstall aplikasi
 
 ```bash
 adb uninstall com.ubl.tugas_mp
@@ -67,7 +70,10 @@ adb uninstall com.ubl.tugas_mp
 
 ## Mengambil Screenshot Kode
 
-### 1. Install tool CLI-nya
+
+![Diagram pipeline screenshot kode: source files ke PNG via carbon-now-cli](/images/inline/project-tugas_mp-2.svg)
+
+### 1. Install tool CLI
 
 ```bash
 npm install -g carbon-now-cli
@@ -84,7 +90,7 @@ Script tersebut akan:
 - Menyalin semua file `.java`, `.kt`, dan `.xml` ke dalam `screenshots/`
 - Menghasilkan screenshot PNG dengan syntax highlighting dari source `.kt` dan `.java`
 
-### Struktur Output
+### Struktur output
 
 Setelah script selesai dijalankan, kamu akan menemukan:
 
@@ -108,6 +114,6 @@ screenshots/
 
 Beberapa kemungkinan pengembangan untuk proyek ini:
 
-- Menambahkan **custom CLI commands** (misalnya `make run`, `make screenshot`)
+- Menambahkan **custom CLI commands** seperti `make run` atau `make screenshot`
 - Membungkus workflow ke dalam `Makefile` atau shell alias helper
-- Menghasilkan arsip `.zip` atau `.tar.gz` yang siap untuk dikumpulkan
+- Menghasilkan arsip `.zip` atau `.tar.gz` yang siap dikumpulkan

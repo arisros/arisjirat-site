@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-label="Struktur proyek test_presence: backend Go/SQLite dan frontend React/Vite">
+  <rect x="60" y="80" width="1080" height="600" rx="12" fill="none" stroke="#525252" stroke-width="2" stroke-dasharray="10 8"/>
+  <text x="90" y="115" font-family="sans-serif" font-size="18" fill="#F37338">Docker Compose</text>
+  <text x="90" y="138" font-family="sans-serif" font-size="14" fill="#525252">menjalankan keduanya bersama lewat docker</text>
+
+  <rect x="120" y="220" width="420" height="380" rx="10" fill="none" stroke="#525252" stroke-width="3"/>
+  <text x="140" y="260" font-family="sans-serif" font-size="22" fill="#525252">Backend</text>
+
+  <rect x="160" y="300" width="340" height="100" rx="8" fill="#A3A3A3" stroke="#525252" stroke-width="2"/>
+  <text x="180" y="340" font-family="sans-serif" font-size="18" fill="#525252">Go REST API</text>
+  <text x="180" y="370" font-family="sans-serif" font-size="14" fill="#525252">handler HTTP, routing, autentikasi</text>
+
+  <rect x="160" y="440" width="340" height="100" rx="8" fill="#A3A3A3" stroke="#525252" stroke-width="2"/>
+  <text x="180" y="480" font-family="sans-serif" font-size="18" fill="#525252">SQLite database</text>
+  <text x="180" y="510" font-family="sans-serif" font-size="14" fill="#525252">penyimpanan presensi &amp; pengguna</text>
+
+  <line x1="330" y1="400" x2="330" y2="440" stroke="#525252" stroke-width="2"/>
+
+  <rect x="660" y="220" width="420" height="380" rx="10" fill="none" stroke="#525252" stroke-width="3"/>
+  <text x="680" y="260" font-family="sans-serif" font-size="22" fill="#525252">Frontend</text>
+
+  <rect x="700" y="300" width="340" height="100" rx="8" fill="#A3A3A3" stroke="#525252" stroke-width="2"/>
+  <text x="720" y="340" font-family="sans-serif" font-size="18" fill="#525252">React</text>
+  <text x="720" y="370" font-family="sans-serif" font-size="14" fill="#525252">komponen UI &amp; state</text>
+
+  <rect x="700" y="440" width="340" height="100" rx="8" fill="#A3A3A3" stroke="#525252" stroke-width="2"/>
+  <text x="720" y="480" font-family="sans-serif" font-size="18" fill="#525252">Vite dev server</text>
+  <text x="720" y="510" font-family="sans-serif" font-size="14" fill="#525252">HMR, bundling, proxy</text>
+
+  <line x1="870" y1="400" x2="870" y2="440" stroke="#525252" stroke-width="2"/>
+
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#F37338"/>
+    </marker>
+  </defs>
+
+  <line x1="700" y1="490" x2="500" y2="490" stroke="#F37338" stroke-width="3" marker-end="url(#arr)"/>
+  <text x="540" y="475" font-family="sans-serif" font-size="14" fill="#F37338">Vite proxy / API calls</text>
+</svg>

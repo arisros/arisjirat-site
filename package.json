@@ -10,6 +10,7 @@
     "sync": "tsx scripts/sync-readmes.ts",
     "generate:banners": "tsx scripts/generate-banners.ts",
     "generate:inline-images": "tsx scripts/generate-inline-images.ts",
+    "generate:inline-images-claude": "tsx scripts/generate-inline-images-claude.ts",
     "improve": "tsx scripts/improve-content.ts",
     "validate": "tsx scripts/validate-translations.ts",
     "astro": "astro"

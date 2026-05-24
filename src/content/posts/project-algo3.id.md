@@ -12,6 +12,9 @@ translationKey: "project-algo3"
 
 ## Ringkasan
 
+
+![Adjacency matrix representasi graph berarah 4 simpul](/images/inline/project-algo3-1.svg)
+
 Repository ini disiapkan untuk pola ajar **ALGO3** berbasis representasi graph imperatif dalam C. Pendekatan yang dipakai sengaja sederhana agar fondasi struktur data dan translasi model terlihat eksplisit.
 
 Cakupan materi:
@@ -22,6 +25,9 @@ Cakupan materi:
 - Enumerasi jalur secara *brute force* (tanpa DFS/BFS formal)
 
 ## Struktur Direktori
+
+
+![Alur translasi: model graph menjadi matriks lalu operasi query](/images/inline/project-algo3-2.svg)
 
 | Berkas | Topik |
 | --- | --- |

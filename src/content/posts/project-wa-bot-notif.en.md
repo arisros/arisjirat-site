@@ -2,30 +2,33 @@
 title: "wa-bot-notif"
 description: "WhatsApp notification service — Go + whatsmeow."
 category: "project"
-tags: ["auto-imported"]
-tech: ["go", "whatsapp", "bot"]
-status: "completed"
-draft: false
-repo: "https://github.com/emandor/fti-wa-bot"
 lang: "en"
 translationKey: "project-wa-bot-notif"
+repo: "https://github.com/emandor/fti-wa-bot"
+status: "completed"
+draft: false
+tags: ["auto-imported"]
+tech: ["go", "whatsapp", "bot"]
 ---
 
 ## Overview
 
-WhatsApp notification service built with **Go** and [whatsmeow](https://github.com/tulir/whatsmeow). Exposes a small HTTP API for sending messages, inspecting contacts, and health checking.
+A WhatsApp notification service built with **Go** and [whatsmeow](https://github.com/tulir/whatsmeow). Provides a compact HTTP API for sending messages, checking contacts, and running health checks.
 
 ## API
 
 | Method | Path | Auth | Description |
 |--------|------|------|-------------|
 | `POST` | `/send` | Bearer | Send a WhatsApp message |
-| `GET` | `/contacts` | Bearer | List synced contacts |
+| `GET` | `/contacts` | Bearer | List synchronized contacts |
 | `GET` | `/messages` | Bearer | Recent message cache (runtime memory) |
 | `GET` | `/healthz` | — | Always returns `200 OK` |
 | `GET` | `/readyz` | — | `200` when WA is connected, `503` otherwise |
 
 ### POST /send
+
+
+![Alur permintaan POST /send dari klien ke WhatsApp melalui layanan](/images/inline/project-wa-bot-notif-1.svg)
 
 Request body:
 
@@ -33,7 +36,7 @@ Request body:
 { "message": "hello", "userId": "628xxx", "groupId": "120363...@g.us" }
 ```
 
-Target resolution priority: `userId` → `groupId` → `GROUP_JID` env fallback.
+Target resolution priority: `userId` → `groupId` → fallback to the `GROUP_JID` env var.
 
 Response:
 
@@ -45,14 +48,14 @@ Response:
 
 | Variable | Default | Required | Description |
 |----------|---------|----------|-------------|
-| `AUTH_TOKEN` | — | ✅ | Bearer token for all authenticated endpoints |
+| `AUTH_TOKEN` | — | ✅ | Bearer token for every authenticated endpoint |
 | `PORT` | `5000` | — | HTTP listen port (1–65535) |
-| `GROUP_JID` | — | — | Default send target when request omits `userId`/`groupId` |
-| `AUTH_DB_DSN` | `file:auth.db?_foreign_keys=on` | — | WhatsApp session SQLite DSN |
-| `LOGS_DB_DSN` | `file:logs.db?_foreign_keys=on` | — | Audit log SQLite DSN |
+| `GROUP_JID` | — | — | Default send target when the request omits `userId`/`groupId` |
+| `AUTH_DB_DSN` | `file:auth.db?_foreign_keys=on` | — | SQLite DSN for the WhatsApp session |
+| `LOGS_DB_DSN` | `file:logs.db?_foreign_keys=on` | — | SQLite DSN for the audit log |
 | `LOG_LEVEL` | `info` | — | Zerolog level: `trace`, `debug`, `info`, `warn`, `error` |
 
-> Copy `.env.example` to `.env` and fill in `AUTH_TOKEN` and `GROUP_JID` before first run.
+> Copy `.env.example` to `.env`, then fill in `AUTH_TOKEN` and `GROUP_JID` before the first run.
 
 ## Running Locally
 
@@ -64,13 +67,13 @@ Response:
   - **macOS:** Xcode Command Line Tools
   - **Debian/Ubuntu:** `build-essential libsqlite3-dev`
 
-### Start the service
+### Running the service
 
 ```bash
 GOTOOLCHAIN=auto go run ./cmd/api
 ```
 
-### Development checks
+### Development-time checks
 
 ```bash
 GOTOOLCHAIN=auto go test ./...
@@ -88,11 +91,11 @@ docker compose -f deploy/docker-compose.yml up --build -d
 docker compose -f deploy/docker-compose.yml logs -f api
 ```
 
-SQLite files are persisted in the Docker volume `wa_bot_notif_data`.
+The SQLite files are persisted via the `wa_bot_notif_data` Docker volume.
 
-### Shared-network deployments
+### Shared-network deployment
 
-For shared-network deployments, the service is reachable at `http://wa-bot-notif-api:5000` on the `homelab_integration` network:
+In a shared-network deployment, the service is reachable at `http://wa-bot-notif-api:5000` through the `homelab_integration` network:
 
 ```bash
 docker network create homelab_integration
@@ -101,6 +104,9 @@ docker network create homelab_integration
 Then set `INTEGRATION_NETWORK=homelab_integration` in `.env`.
 
 ## Project Structure
+
+
+![Struktur komponen layanan wa-bot-notif dan dependensinya](/images/inline/project-wa-bot-notif-2.svg)
 
 ```
 .
@@ -118,10 +124,10 @@ Then set `INTEGRATION_NETWORK=homelab_integration` in `.env`.
 
 ## Further Reading
 
-### AI documentation
+### AI Documentation
 
 - `AGENTS.md` — agent entrypoint
-- `docs/ai/README.md` — full AI docs index
+- `docs/ai/README.md` — complete index of AI documentation
 
 ### Deployment
 

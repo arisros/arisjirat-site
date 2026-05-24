@@ -18,9 +18,9 @@ tech: ["flutter", "dart"]
 
 Proyek ini adalah titik awal untuk aplikasi Flutter. Jika ini pertama kalinya Anda bekerja dengan Flutter, sumber-sumber berikut adalah tempat yang baik untuk memulai:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab) — codelab terpandu yang memandu Anda membangun aplikasi pertama Anda.
+- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab) — codelab terpandu untuk membangun aplikasi pertama Anda.
 - [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook) — resep praktis untuk tugas-tugas umum di Flutter.
 
 ## Bacaan Lanjutan
 
-Untuk bantuan yang lebih luas mengenai pengembangan Flutter, lihat [dokumentasi online](https://docs.flutter.dev/), yang menyediakan tutorial, contoh, panduan pengembangan mobile, dan referensi API yang lengkap.
+Untuk panduan yang lebih luas mengenai pengembangan Flutter, lihat [dokumentasi resmi](https://docs.flutter.dev/) yang menyediakan tutorial, contoh kode, panduan pengembangan mobile, serta referensi API yang lengkap.

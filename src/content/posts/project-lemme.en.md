@@ -1,17 +1,17 @@
 ---
 title: "Lemme"
-description: "Lemme is an AI-assisted quiz application. Users upload quiz screenshots, OCR extracts question text, and multiple LLM providers generate answer and reasoning..."
+description: "Lemme is an AI-assisted quiz app. Users upload screenshots of quizzes, OCR extracts the question text, and multiple LLM providers generate candidate answers along with their reasoning..."
 category: "project"
-tags: ["auto-imported"]
-tech: ["flutter", "ai", "ocr"]
-status: "completed"
-draft: false
-image: "/images/banners/project-lemme.png"
 lang: "en"
 translationKey: "project-lemme"
+image: "/images/banners/project-lemme.png"
+status: "completed"
+draft: false
+tags: ["auto-imported"]
+tech: ["flutter", "ai", "ocr"]
 ---
 
-Lemme is an AI-assisted quiz application. Users upload quiz screenshots; OCR extracts the question text, and multiple LLM providers generate answer and reasoning candidates.
+Lemme is an AI-assisted quiz app. Users upload screenshots of quizzes; OCR extracts the question text, then multiple LLM providers generate candidate answers along with their reasoning.
 
 ## Stack
 
@@ -20,9 +20,12 @@ Lemme is an AI-assisted quiz application. Users upload quiz screenshots; OCR ext
 | Backend | Go 1.24, Fiber v2, MySQL, Redis, WebSocket, Google OAuth |
 | Frontend | Solid.js, Vite, PandaCSS / Park UI, TypeScript |
 | Reverse proxy / TLS | Caddy |
-| Deployment target | Debian homelab on `lemme.arisjirat.com` |
+| Deployment target | Debian homelab at `lemme.arisjirat.com` |
 
 ## Architecture
+
+
+![Diagram arsitektur Lemme: Caddy di depan UI Nginx dan API Go Fiber](/images/inline/project-lemme-1.svg)
 
 ```text
 Browser
@@ -34,22 +37,28 @@ Browser
            -> OCR + LLM providers (OpenAI/Anthropic/Gemini)
 ```
 
-> Caddy fronts everything and terminates TLS. The UI is a static Solid build served by Nginx; the API is a Go Fiber service that talks to MySQL, Redis, and external OCR/LLM providers.
+Caddy sits in front of the entire stack and handles TLS termination. Behind it:
+
+- **UI** — a static Solid build served by Nginx.
+- **API** — a Go Fiber service that talks to MySQL, Redis, and external OCR/LLM providers.
 
 ## Local Development
 
-Spin up the full stack with Docker Compose.
 
-### 1. Configure environment
+![Alur pengembangan lokal Lemme dengan Docker Compose](/images/inline/project-lemme-2.svg)
 
-Copy the root and backend env templates, then fill in required secrets:
+The whole stack runs via Docker Compose.
+
+### 1. Configure the environment
+
+Copy the root and backend env templates, then fill in the required secrets:
 
 ```bash
 cp .env.example .env
 cp lemme_service/.env.production.example lemme_service/.env
 ```
 
-### 2. Start services
+### 2. Start the services
 
 ```bash
 make dev
@@ -63,38 +72,48 @@ make migrate
 
 ### 4. Verify
 
-- UI: `http://localhost:3000`
-- API health: `http://localhost:9090/healthz`
+| Endpoint | URL |
+|---|---|
+| UI | `http://localhost:3000` |
+| API health | `http://localhost:9090/healthz` |
 
 ## Production Deployment
 
-1. **Provision the host.** On the Debian server, run the setup script:
+### 1. Prepare the host
 
-   ```bash
-   ./scripts/setup-server.sh
-   ```
+On the Debian server, run the setup script:
 
-2. **Clone and configure.** Clone the repository to `/opt/lemme` and create the env files:
+```bash
+./scripts/setup-server.sh
+```
 
-   - `/opt/lemme/.env`
-   - `/opt/lemme/lemme_service/.env`
+### 2. Clone and configure
 
-3. **Deploy.**
+Clone the repository into `/opt/lemme`, then create the following env files:
 
-   ```bash
-   ./deploy.sh
-   ```
+- `/opt/lemme/.env`
+- `/opt/lemme/lemme_service/.env`
 
-4. **DNS and networking.** Point the `lemme.arisjirat.com` A record at the host's public IP and forward ports `80` and `443`.
+### 3. Deploy
 
-5. **TLS.** Caddy provisions and renews certificates automatically.
+```bash
+./deploy.sh
+```
+
+### 4. DNS and networking
+
+Point the `lemme.arisjirat.com` A record at the host's public IP, then forward ports `80` and `443`.
+
+### 5. TLS
+
+Caddy provisions and renews certificates automatically — no manual steps required.
 
 ## Environment Variables
 
-Templates:
+Templates are available at:
 
-- Root compose env — `.env.example`
-- Backend production env — `lemme_service/.env.production.example`
+- `.env.example` — root compose env
+- `lemme_service/.env.production.example` — backend production env
 
 ### Core variables
 

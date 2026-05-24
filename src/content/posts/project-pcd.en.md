@@ -2,24 +2,24 @@
 title: "Dirty Ceramic Floor Detection"
 description: "This project aims to distinguish between **clean** and **dirty** ceramic floor conditions using digital image processing techniques."
 category: "research"
-tags: ["image-processing", "computer-vision", "python"]
-status: "completed"
-draft: false
-repo: "https://github.com/arisros/pcd"
 lang: "en"
 translationKey: "project-pcd"
+repo: "https://github.com/arisros/pcd"
+status: "completed"
+draft: false
+tags: ["image-processing", "computer-vision", "python"]
 ---
 
-This project distinguishes between **clean** and **dirty** ceramic floor conditions using classical digital image processing. It relies on pixel intensity analysis and texture variation — no machine learning involved.
+This project aims to distinguish between **clean** and **dirty** ceramic floor conditions using digital image processing techniques. The approach is based on pixel intensity analysis and texture variation, without involving machine learning.
 
 ## Requirements
 
-| Component   | Version       |
-|-------------|---------------|
-| Python      | 3.8 or later  |
-| OpenCV      | latest        |
-| NumPy       | latest        |
-| Matplotlib  | latest        |
+| Component | Version |
+|-----------|---------|
+| Python | 3.8 or newer |
+| OpenCV | latest |
+| NumPy | latest |
+| Matplotlib | latest |
 
 > All dependencies can be installed via `requirements.txt`.
 
@@ -36,27 +36,31 @@ This project distinguishes between **clean** and **dirty** ceramic floor conditi
 
 ## System Flow
 
+
+![Diagram alur lima tahap deteksi lantai keramik kotor](/images/inline/project-pcd-1.svg)
+
 <!-- TODO: add sequence_diagram.png -->
 
-The pipeline runs in five stages:
+In short, the system works through five stages:
 
-1. Read the ceramic floor image.
-2. Convert to grayscale and apply noise reduction.
-3. Extract statistical features — **mean** and **standard deviation**.
-4. Compare the standard deviation against a *threshold*.
-5. Classify the floor as **clean** or **dirty**.
+1. Reading the ceramic floor image.
+2. Converting the image to grayscale and reducing noise.
+3. Extracting statistical features in the form of **mean** and **standard deviation**.
+4. Comparing the standard deviation value against a *threshold*.
+5. Determining the floor condition: **clean** or **dirty**.
 
 ### Decision-Making Basis
 
-Classification hinges on the standard deviation of pixel intensity:
+
+![Ilustrasi perbandingan standar deviasi piksel lantai bersih vs kotor](/images/inline/project-pcd-2.svg)
+
+The classification decision relies on the standard deviation value of pixel intensity:
 
 $$\sigma = \sqrt{\frac{1}{N}\sum_{i=1}^{N}(x_i - \mu)^2}$$
 
-A higher $\sigma$ indicates greater texture variation on the surface, which typically signals the presence of dirt or stains.
+The higher the $\sigma$, the greater the texture variation on the surface — which generally indicates the presence of dirt or stains.
 
 ## How to Run
-
-Install dependencies and launch the script:
 
 ```bash
 pip install -r requirements.txt
@@ -67,12 +71,12 @@ python deteksi_lantai_kotor.py
 
 ## Output
 
-The program produces two kinds of output:
+The program produces two types of output:
 
-- **Visual** — the original image, the *preprocessing* result, and the detection result.
-- **Terminal** — the mean value, the standard deviation, and the system's final decision.
+- **Visual:** the original image, *preprocessing* results, and detection results.
+- **Terminal:** the mean value, standard deviation, and the system's final decision.
 
 ## Notes
 
-- The system works best under relatively stable lighting conditions.
-- The *threshold* value can be tuned to suit different environments based on testing.
+- The system works optimally under relatively stable lighting conditions.
+- The *threshold* value can be adjusted based on testing results in different environments.

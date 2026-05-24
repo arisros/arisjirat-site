@@ -84,18 +84,33 @@ async function callClaudeRetry(prompt: string, input: string, attempts = 3): Pro
   throw err;
 }
 
-/** Strip a single outer fence if Claude wrapped the body in ```markdown ... ```. */
+/**
+ * Strip AI artifacts from a Claude response:
+ *   - outer markdown code fence
+ *   - common preambles ("Here is the improved version:", "I've rewritten...")
+ *   - common closings  ("Let me know if...", "Hope this helps", "—Claude")
+ * Belt-and-braces in addition to the no-preamble clause in the prompt.
+ */
 function cleanResponse(s: string): string {
   s = s.trim();
   const fence = s.match(/^```(?:markdown|md|mdx)?\r?\n([\s\S]*?)\r?\n```$/);
   if (fence) s = fence[1].trim();
+
+  // Strip leading AI preamble (one or two opener lines + blank).
+  const preamble = /^(?:(?:here(?:'s| is| are)|i(?:'ve| have| am| 'm)|below is|the (?:improved|rewritten|revised|edited))[^\n]{0,200}[:.]\s*\n+){1,2}/i;
+  s = s.replace(preamble, '').trimStart();
+
+  // Strip trailing AI closing.
+  const closing = /\n+(?:(?:let me know|hope (?:this|that) helps|feel free to|i hope|please let me|—\s*claude|--?\s*claude)[^\n]{0,200})\s*$/i;
+  s = s.replace(closing, '').trimEnd();
+
   return s + '\n';
 }
 
 // ---------- Prompts ----------
 const IMPROVE_PROMPT = `You are editing a markdown blog-post body. The BODY ONLY arrives via stdin (no frontmatter).
 
-Rewrite for clarity and structure. Output ONLY the improved markdown body. Rules:
+Rewrite for clarity and structure. Output ONLY the improved markdown body — no preamble, no commentary, no closing remarks, no signature. The first character of your output is the first character of the article. The last character of your output is the last character of the article. Rules:
 
 - Keep the SAME language as the input. Do NOT translate.
 - Do NOT add or change frontmatter.
@@ -105,6 +120,8 @@ Rewrite for clarity and structure. Output ONLY the improved markdown body. Rules
 - If a concept is genuinely mathematical, you MAY express it with KaTeX ($inline$ or $$block$$). Do NOT invent equations.
 - Do NOT add a top-level "# " heading — the title comes from frontmatter.
 - Do NOT wrap the whole output in code fences.
+- Do NOT introduce yourself, narrate the rewrite, or reference "the article", "the improved version", "the user", or yourself. Just write the article.
+- NEVER include text like "Here is...", "I've rewritten...", "Let me know if...", "Hope this helps", or any AI signature. Such content has caused production incidents.
 - Output ONLY the finished markdown body.`;
 
 function translatePrompt(src: 'id' | 'en', dst: 'id' | 'en') {

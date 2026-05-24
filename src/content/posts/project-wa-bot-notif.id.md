@@ -13,19 +13,22 @@ tech: ["go", "whatsapp", "bot"]
 
 ## Ikhtisar
 
-Layanan notifikasi WhatsApp yang dibangun dengan **Go** dan [whatsmeow](https://github.com/tulir/whatsmeow). Menyediakan HTTP API ringkas untuk mengirim pesan, memeriksa kontak, dan health check.
+Layanan notifikasi WhatsApp yang dibangun dengan **Go** dan [whatsmeow](https://github.com/tulir/whatsmeow). Menyediakan HTTP API ringkas untuk mengirim pesan, memeriksa kontak, dan menjalankan health check.
 
 ## API
 
 | Method | Path | Auth | Deskripsi |
 |--------|------|------|-----------|
 | `POST` | `/send` | Bearer | Mengirim pesan WhatsApp |
-| `GET` | `/contacts` | Bearer | Menampilkan daftar kontak yang tersinkronisasi |
+| `GET` | `/contacts` | Bearer | Daftar kontak yang tersinkronisasi |
 | `GET` | `/messages` | Bearer | Cache pesan terbaru (runtime memory) |
 | `GET` | `/healthz` | — | Selalu mengembalikan `200 OK` |
-| `GET` | `/readyz` | — | `200` ketika WA terhubung, `503` jika tidak |
+| `GET` | `/readyz` | — | `200` saat WA terhubung, `503` jika tidak |
 
 ### POST /send
+
+
+![Alur permintaan POST /send dari klien ke WhatsApp melalui layanan](/images/inline/project-wa-bot-notif-1.svg)
 
 Request body:
 
@@ -33,7 +36,7 @@ Request body:
 { "message": "hello", "userId": "628xxx", "groupId": "120363...@g.us" }
 ```
 
-Prioritas penentuan target: `userId` → `groupId` → fallback env `GROUP_JID`.
+Prioritas penentuan target: `userId` → `groupId` → fallback ke env `GROUP_JID`.
 
 Response:
 
@@ -45,14 +48,14 @@ Response:
 
 | Variabel | Default | Wajib | Deskripsi |
 |----------|---------|-------|-----------|
-| `AUTH_TOKEN` | — | ✅ | Bearer token untuk semua endpoint yang memerlukan autentikasi |
+| `AUTH_TOKEN` | — | ✅ | Bearer token untuk seluruh endpoint berautentikasi |
 | `PORT` | `5000` | — | Port listen HTTP (1–65535) |
-| `GROUP_JID` | — | — | Target pengiriman default ketika request tidak menyertakan `userId`/`groupId` |
+| `GROUP_JID` | — | — | Target pengiriman default saat request tidak menyertakan `userId`/`groupId` |
 | `AUTH_DB_DSN` | `file:auth.db?_foreign_keys=on` | — | DSN SQLite untuk sesi WhatsApp |
 | `LOGS_DB_DSN` | `file:logs.db?_foreign_keys=on` | — | DSN SQLite untuk audit log |
 | `LOG_LEVEL` | `info` | — | Level Zerolog: `trace`, `debug`, `info`, `warn`, `error` |
 
-> Salin `.env.example` menjadi `.env` lalu isi `AUTH_TOKEN` dan `GROUP_JID` sebelum menjalankan untuk pertama kali.
+> Salin `.env.example` menjadi `.env`, lalu isi `AUTH_TOKEN` dan `GROUP_JID` sebelum menjalankan untuk pertama kali.
 
 ## Menjalankan Secara Lokal
 
@@ -88,19 +91,22 @@ docker compose -f deploy/docker-compose.yml up --build -d
 docker compose -f deploy/docker-compose.yml logs -f api
 ```
 
-File SQLite disimpan secara persisten di Docker volume `wa_bot_notif_data`.
+File SQLite dipersistensikan melalui Docker volume `wa_bot_notif_data`.
 
 ### Deployment shared-network
 
-Untuk deployment shared-network, layanan dapat diakses di `http://wa-bot-notif-api:5000` pada network `homelab_integration`:
+Pada deployment shared-network, layanan dapat diakses di `http://wa-bot-notif-api:5000` melalui network `homelab_integration`:
 
 ```bash
 docker network create homelab_integration
 ```
 
-Kemudian atur `INTEGRATION_NETWORK=homelab_integration` di `.env`.
+Selanjutnya, atur `INTEGRATION_NETWORK=homelab_integration` di `.env`.
 
 ## Struktur Proyek
+
+
+![Struktur komponen layanan wa-bot-notif dan dependensinya](/images/inline/project-wa-bot-notif-2.svg)
 
 ```
 .

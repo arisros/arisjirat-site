@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-label="Struktur komponen layanan wa-bot-notif dan dependensinya">
+<g font-family="sans-serif" font-size="14" fill="#525252">
+
+<rect x="40" y="60" width="180" height="200" rx="6" fill="none" stroke="#525252" stroke-width="2"/>
+<text x="130" y="86" text-anchor="middle" font-size="16" fill="#F37338">.env config</text>
+<text x="56" y="116">• BEARER_TOKEN</text>
+<text x="56" y="138">• PORT</text>
+<text x="56" y="160">• DEFAULT_TARGET</text>
+<text x="56" y="182">• WA_SESSION_DSN</text>
+<text x="56" y="204">• AUDIT_DSN</text>
+<text x="56" y="226">• LOG_LEVEL</text>
+
+<path d="M220 160 L320 160" stroke="#525252" stroke-width="2" fill="none" marker-end="url(#a)"/>
+<text x="270" y="152" text-anchor="middle" font-size="12">loads</text>
+
+<rect x="320" y="60" width="560" height="280" rx="8" fill="none" stroke="#525252" stroke-width="3"/>
+<text x="600" y="90" text-anchor="middle" font-size="18" fill="#F37338">Go HTTP Server (wa-bot-notif)</text>
+
+<rect x="350" y="110" width="500" height="60" rx="4" fill="none" stroke="#525252" stroke-width="2" stroke-dasharray="6 4"/>
+<text x="600" y="146" text-anchor="middle" font-size="15">Auth Middleware — Bearer token</text>
+
+<rect x="360" y="200" width="140" height="60" rx="4" fill="none" stroke="#525252" stroke-width="2"/>
+<text x="430" y="226" text-anchor="middle" font-size="14" fill="#F37338">POST</text>
+<text x="430" y="246" text-anchor="middle">/send</text>
+
+<rect x="530" y="200" width="140" height="60" rx="4" fill="none" stroke="#525252" stroke-width="2"/>
+<text x="600" y="226" text-anchor="middle" font-size="14" fill="#F37338">GET</text>
+<text x="600" y="246" text-anchor="middle">/contacts</text>
+
+<rect x="700" y="200" width="140" height="60" rx="4" fill="none" stroke="#525252" stroke-width="2"/>
+<text x="770" y="226" text-anchor="middle" font-size="14" fill="#F37338">GET</text>
+<text x="770" y="246" text-anchor="middle">/health</text>
+
+<rect x="930" y="170" width="220" height="90" rx="6" fill="none" stroke="#525252" stroke-width="2"/>
+<text x="1040" y="200" text-anchor="middle" font-size="15">In-memory</text>
+<text x="1040" y="222" text-anchor="middle">message cache</text>
+<text x="1040" y="244" text-anchor="middle" font-size="12">(runtime)</text>
+
+<path d="M880 215 L930 215" stroke="#525252" stroke-width="2" fill="none" marker-end="url(#a)"/>
+<path d="M930 235 L880 235" stroke="#525252" stroke-width="2" fill="none" marker-end="url(#a)"/>
+
+<rect x="430" y="400" width="340" height="80" rx="6" fill="none" stroke="#525252" stroke-width="3"/>
+<text x="600" y="430" text-anchor="middle" font-size="16" fill="#F37338">whatsmeow client</text>
+<text x="600" y="454" text-anchor="middle">session, pairing, message I/O</text>
+
+<path d="M600 340 L600 400" stroke="#525252" stroke-width="2" fill="none" marker-end="url(#a)"/>
+<text x="612" y="376">dispatch</text>
+
+<g stroke="#525252" stroke-width="2" fill="none">
+<ellipse cx="180" cy="500" rx="90" ry="18"/>
+<path d="M90 500 L90 590"/>
+<path d="M270 500 L270 590"/>
+<ellipse cx="180" cy="590" rx="90" ry="18"/>
+</g>
+<text x="180" y="540" text-anchor="middle" font-size="14">WA session</text>
+<text x="180" y="562" text-anchor="middle" font-size="12">WA_SESSION_DSN</text>
+<text x="180" y="620" text-anchor="middle" font-size="12">SQLite</text>
+
+<g stroke="#525252" stroke-width="2" fill="none">
+<ellipse cx="1020" cy="500" rx="90" ry="18"/>
+<path d="M930 500 L930 590"/>
+<path d="M1110 500 L1110 590"/>
+<ellipse cx="1020" cy="590" rx="90" ry="18"/>
+</g>
+<text x="1020" y="540" text-anchor="middle" font-size="14">Audit log</text>
+<text x="1020" y="562" text-anchor="middle" font-size="12">AUDIT_DSN</text>
+<text x="1020" y="620" text-anchor="middle" font-size="12">SQLite</text>
+
+<path d="M430 440 L270 500" stroke="#525252" stroke-width="2" fill="none" marker-end="url(#a)"/>
+<text x="320" y="460" font-size="12">read/write</text>
+
+<path d="M770 440 L930 500" stroke="#525252" stroke-width="2" fill="none" marker-end="url(#a)"/>
+<text x="830" y="460" font-size="12">append</text>
+
+<rect x="460" y="680" width="280" height="70" rx="6" fill="none" stroke="#F37338" stroke-width="3"/>
+<text x="600" y="710" text-anchor="middle" font-size="16" fill="#F37338">WhatsApp servers</text>
+<text x="600" y="732" text-anchor="middle" font-size="12">(external)</text>
+
+<path d="M600 480 L600 680" stroke="#F37338" stroke-width="2" fill="none" marker-end="url(#b)"/>
+<text x="612" y="590" fill="#F37338" font-size="12">TLS websocket</text>
+
+<defs>
+<marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+<path d="M0 0 L10 5 L0 10 z" fill="#525252"/>
+</marker>
+<marker id="b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+<path d="M0 0 L10 5 L0 10 z" fill="#F37338"/>
+</marker>
+</defs>
+</g>
+</svg>

@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-label="Diagram peran Karyawan dan Manager beserta fitur masing-masing">
+<rect x="450" y="40" width="300" height="70" rx="6" fill="none" stroke="#F37338" stroke-width="3"/>
+<text x="600" y="72" font-family="sans-serif" font-size="20" fill="#F37338" text-anchor="middle" font-weight="bold">Aplikasi Absen</text>
+<text x="600" y="95" font-family="sans-serif" font-size="14" fill="#525252" text-anchor="middle">root</text>
+<path d="M 600 110 L 600 150 L 280 150 L 280 200" fill="none" stroke="#525252" stroke-width="2"/>
+<path d="M 600 110 L 600 150 L 920 150 L 920 200" fill="none" stroke="#525252" stroke-width="2"/>
+<polygon points="280,210 274,198 286,198" fill="#525252"/>
+<polygon points="920,210 914,198 926,198" fill="#525252"/>
+<rect x="140" y="210" width="280" height="70" rx="6" fill="none" stroke="#525252" stroke-width="3"/>
+<text x="280" y="240" font-family="sans-serif" font-size="20" fill="#525252" text-anchor="middle" font-weight="bold">Karyawan</text>
+<text x="280" y="263" font-family="sans-serif" font-size="14" fill="#525252" text-anchor="middle">role</text>
+<rect x="780" y="210" width="280" height="70" rx="6" fill="none" stroke="#525252" stroke-width="3"/>
+<text x="920" y="240" font-family="sans-serif" font-size="20" fill="#525252" text-anchor="middle" font-weight="bold">Manager</text>
+<text x="920" y="263" font-family="sans-serif" font-size="14" fill="#525252" text-anchor="middle">role</text>
+<path d="M 280 280 L 280 370" fill="none" stroke="#525252" stroke-width="2"/>
+<path d="M 280 400 L 280 490" fill="none" stroke="#525252" stroke-width="2"/>
+<path d="M 280 520 L 280 610" fill="none" stroke="#525252" stroke-width="2"/>
+<polygon points="280,380 274,368 286,368" fill="#525252"/>
+<polygon points="280,500 274,488 286,488" fill="#525252"/>
+<polygon points="280,620 274,608 286,608" fill="#525252"/>
+<rect x="100" y="380" width="360" height="60" rx="6" fill="none" stroke="#525252" stroke-width="2"/>
+<text x="280" y="408" font-family="sans-serif" font-size="17" fill="#525252" text-anchor="middle">Login</text>
+<text x="280" y="428" font-family="sans-serif" font-size="14" fill="#525252" text-anchor="middle">NIK &amp; password</text>
+<rect x="100" y="500" width="360" height="60" rx="6" fill="none" stroke="#525252" stroke-width="2"/>
+<text x="280" y="528" font-family="sans-serif" font-size="17" fill="#525252" text-anchor="middle">Clock In</text>
+<text x="280" y="548" font-family="sans-serif" font-size="14" fill="#525252" text-anchor="middle">catat jam masuk</text>
+<rect x="100" y="620" width="360" height="60" rx="6" fill="none" stroke="#525252" stroke-width="2"/>
+<text x="280" y="648" font-family="sans-serif" font-size="17" fill="#525252" text-anchor="middle">Clock Out</text>
+<text x="280" y="668" font-family="sans-serif" font-size="14" fill="#525252" text-anchor="middle">catat jam pulang</text>
+<path d="M 920 280 L 920 370" fill="none" stroke="#525252" stroke-width="2"/>
+<path d="M 920 400 L 920 490" fill="none" stroke="#525252" stroke-width="2"/>
+<polygon points="920,380 914,368 926,368" fill="#525252"/>
+<polygon points="920,500 914,488 926,488" fill="#525252"/>
+<rect x="740" y="380" width="360" height="60" rx="6" fill="none" stroke="#525252" stroke-width="2"/>
+<text x="920" y="408" font-family="sans-serif" font-size="17" fill="#525252" text-anchor="middle">Login</text>
+<text x="920" y="428" font-family="sans-serif" font-size="14" fill="#525252" text-anchor="middle">akun manager</text>
+<rect x="740" y="500" width="360" height="80" rx="6" fill="none" stroke="#525252" stroke-width="2"/>
+<text x="920" y="530" font-family="sans-serif" font-size="17" fill="#525252" text-anchor="middle">Dashboard</text>
+<text x="920" y="552" font-family="sans-serif" font-size="14" fill="#525252" text-anchor="middle">Rekap Absen</text>
+<text x="920" y="570" font-family="sans-serif" font-size="14" fill="#525252" text-anchor="middle">Karyawan</text>
+<text x="600" y="740" font-family="sans-serif" font-size="14" fill="#525252" text-anchor="middle" font-style="italic">App → Role → Features</text>
+</svg>

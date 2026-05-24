@@ -10,7 +10,7 @@ lang: "id"
 translationKey: "project-pcd"
 ---
 
-Proyek ini bertujuan membedakan kondisi lantai keramik **bersih** dan **kotor** menggunakan teknik pengolahan citra digital. Pendekatan yang digunakan berbasis analisis intensitas piksel dan variasi tekstur, tanpa melibatkan pembelajaran mesin.
+Proyek ini bertujuan membedakan kondisi lantai keramik **bersih** dan **kotor** menggunakan teknik pengolahan citra digital. Pendekatan yang dipakai berbasis analisis intensitas piksel dan variasi tekstur, tanpa melibatkan pembelajaran mesin.
 
 ## Kebutuhan
 
@@ -21,7 +21,7 @@ Proyek ini bertujuan membedakan kondisi lantai keramik **bersih** dan **kotor** 
 | NumPy | terbaru |
 | Matplotlib | terbaru |
 
-> Semua dependensi dapat dipasang melalui `requirements.txt`.
+> Seluruh dependensi dapat dipasang melalui `requirements.txt`.
 
 ## Struktur Proyek
 
@@ -36,19 +36,25 @@ Proyek ini bertujuan membedakan kondisi lantai keramik **bersih** dan **kotor** 
 
 ## Alur Sistem
 
+
+![Diagram alur lima tahap deteksi lantai keramik kotor](/images/inline/project-pcd-1.svg)
+
 <!-- TODO: add sequence_diagram.png -->
 
-Secara ringkas, sistem bekerja melalui lima tahapan berikut:
+Secara ringkas, sistem bekerja melalui lima tahap:
 
 1. Membaca citra lantai keramik.
-2. Mengonversi citra ke grayscale dan melakukan reduksi noise.
+2. Mengonversi citra ke grayscale dan mereduksi noise.
 3. Mengekstraksi fitur statistik berupa **mean** dan **standar deviasi**.
 4. Membandingkan nilai standar deviasi terhadap *threshold*.
 5. Menentukan kondisi lantai: **bersih** atau **kotor**.
 
 ### Dasar Pengambilan Keputusan
 
-Keputusan klasifikasi didasarkan pada nilai standar deviasi intensitas piksel:
+
+![Ilustrasi perbandingan standar deviasi piksel lantai bersih vs kotor](/images/inline/project-pcd-2.svg)
+
+Keputusan klasifikasi bertumpu pada nilai standar deviasi intensitas piksel:
 
 $$\sigma = \sqrt{\frac{1}{N}\sum_{i=1}^{N}(x_i - \mu)^2}$$
 

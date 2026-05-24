@@ -2,21 +2,27 @@
 title: "Workspacebook Mobile Flutter"
 description: "Create a `.env` file at the root of your project and add the following variables:"
 category: "study"
-tags: ["flutter", "mobile", "dart"]
-status: "completed"
-draft: false
-repo: "https://gitlab.com/kuliah-mobile1/workspace-mobile-kampus"
 lang: "en"
 translationKey: "project-workspace-mobile-kampus"
+repo: "https://gitlab.com/kuliah-mobile1/workspace-mobile-kampus"
+status: "completed"
+draft: false
+tags: ["flutter", "mobile", "dart"]
 ---
 
 ## Overview
 
-Workspacebook Mobile Flutter is a mobile client built with Flutter and powered by Supabase for authentication and backend services. Before running the app, configure the required environment variables.
 
-## 🔐 Environment Variables Configuration
+![Arsitektur Workspacebook Mobile: Flutter klien dengan Supabase backend](/images/inline/project-workspace-mobile-kampus-1.svg)
 
-Create a `.env` file at the root of your project and add the following variables:
+Workspacebook Mobile Flutter is a mobile client built with Flutter and powered by Supabase for authentication and backend services. Before running the app, configure the required environment variables first.
+
+## 🔐 Environment Variable Configuration
+
+
+![Alur konfigurasi environment variable dari file .env ke aplikasi Flutter](/images/inline/project-workspace-mobile-kampus-2.svg)
+
+Create a `.env` file at the project root, then add the following variables:
 
 ```
 SUPABASE_URL=
@@ -29,19 +35,10 @@ SUPABASE_REDIRECT_URL=
 
 | Variable | Purpose | Where to find it |
 | --- | --- | --- |
-| `SUPABASE_URL` | Base URL of your Supabase project. | `Project Settings → API → Project URL` |
-| `SUPABASE_ANON_KEY` | Public anonymous API key used to access Supabase from the frontend. | `Project Settings → API → anon public` |
-| `SUPABASE_REDIRECT_URL` | Redirect URL used after login or OAuth sign-in (e.g., Google Sign-In). | `Authentication → URL Configuration → Site URL` |
+| `SUPABASE_URL` | The base URL of your Supabase project. | `Project Settings → API → Project URL` |
+| `SUPABASE_ANON_KEY` | The public anonymous API key used to access Supabase from the frontend. | `Project Settings → API → anon public` |
+| `SUPABASE_REDIRECT_URL` | The redirect URL used after login or OAuth sign-in (e.g. Google Sign-In). | `Authentication → URL Configuration → Site URL` |
 
-### Details
+### Local Development Notes
 
-- **`SUPABASE_URL`** — the base URL of your Supabase project.
-  📍 Found in: `Project Settings → API → Project URL`
-
-- **`SUPABASE_ANON_KEY`** — the public anonymous API key used by the frontend to talk to Supabase.
-  📍 Found in: `Project Settings → API → anon public`
-
-- **`SUPABASE_REDIRECT_URL`** — the redirect URL used after login or OAuth sign-in (such as Google Sign-In).
-  📍 Set in: `Authentication → URL Configuration → Site URL`
-
-> 💡 For local development, point `SUPABASE_REDIRECT_URL` at your local app scheme or `http://localhost` callback so OAuth flows return to the running app.
+> 💡 For local development, point `SUPABASE_REDIRECT_URL` to your local app scheme or an `http://localhost` callback so the OAuth flow returns to the running app.

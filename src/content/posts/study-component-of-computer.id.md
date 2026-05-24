@@ -13,19 +13,22 @@ translationKey: "study-component-of-computer"
 
 ## Komponen Komputer dalam Casing
 
-Casing komputer berperan sebagai wadah dan pelindung bagi berbagai komponen elektronik di dalam komputer atau perangkat seluler. Di dalamnya terdapat sejumlah komponen utama yang bekerja sama agar sistem dapat berjalan.
+
+![Diagram komponen utama di dalam casing komputer dan hubungannya](/images/inline/study-component-of-computer-1.svg)
+
+Casing komputer berfungsi sebagai wadah sekaligus pelindung bagi berbagai komponen elektronik di dalam komputer atau perangkat seluler. Di dalamnya terdapat sejumlah komponen utama yang saling bekerja sama agar sistem dapat berjalan dengan baik.
 
 | Komponen | Fungsi |
 | --- | --- |
 | **Motherboard** | Papan sirkuit utama yang mengintegrasikan komponen seperti RAM, prosesor, dan lainnya. |
 | **Processor (CPU)** | Otak komputer yang mengeksekusi instruksi dasar untuk mengoperasikan sistem. |
-| **Memory** | Menyimpan instruksi yang menunggu dieksekusi oleh prosesor beserta data yang diperlukannya. |
+| **Memory** | Menyimpan instruksi yang menunggu dieksekusi oleh prosesor beserta data yang diperlukan. |
 | **Adapter** | Menghubungkan komputer dengan perangkat lain, seperti kartu suara atau kartu video. |
 | **Baterai & Power Supply** | Mengubah arus listrik dari AC menjadi DC dan mendistribusikan daya ke setiap komponen. |
 
 ## Representasi Data
 
-Komputer menggunakan sistem bilangan biner (basis 2) sebagai bahasa alaminya. Namun, dalam praktiknya beberapa basis bilangan lain juga sering digunakan untuk merepresentasikan data.
+Komputer menggunakan sistem bilangan biner (basis 2) sebagai bahasa alaminya. Meski demikian, dalam praktiknya beberapa basis bilangan lain juga sering digunakan untuk merepresentasikan data.
 
 ### Basis Bilangan yang Umum Dipakai
 
@@ -36,7 +39,10 @@ Komputer menggunakan sistem bilangan biner (basis 2) sebagai bahasa alaminya. Na
 
 ### Konversi Antar Basis
 
-Artikel ini juga membahas konversi antar basis bilangan, antara lain:
+
+![Diagram konversi antar basis bilangan: biner, oktal, desimal, heksadesimal](/images/inline/study-component-of-computer-2.svg)
+
+Beberapa konversi yang umum dipelajari antara lain:
 
 - Biner ↔ Desimal
 - Oktal ↔ Desimal
@@ -56,9 +62,9 @@ Artikel ini juga membahas konversi antar basis bilangan, antara lain:
 
 ## Analogi: Nomor Identitas Sekolah
 
-Bayangkan Anda memiliki sebuah sekolah, dan setiap siswa memiliki nomor unik yang disebut **Nomor Identitas Sekolah (NIS)** dalam bentuk desimal. Anda ingin membuat sistem identifikasi baru yang hanya menggunakan angka `0` dan `1` — yaitu dalam bentuk biner.
+Bayangkan Anda mengelola sebuah sekolah, dan setiap siswa memiliki nomor unik yang disebut **Nomor Identitas Sekolah (NIS)** dalam bentuk desimal. Anda ingin membuat sistem identifikasi baru yang hanya menggunakan angka `0` dan `1` — yaitu dalam bentuk biner.
 
 1. **Desimal → Biner.** Siswa dengan NIS $45$ ingin mengganti nomor identifikasinya ke bentuk biner. Anda mengonversi $45_{(10)}$ menjadi $101101_{(2)}$.
-2. **Biner → Desimal.** Sebaliknya, jika Anda melihat nomor biner $10011_{(2)}$, Anda mengonversinya kembali menjadi $19_{(10)}$ untuk mengidentifikasi siswa tersebut.
+2. **Biner → Desimal.** Sebaliknya, ketika melihat nomor biner $10011_{(2)}$, Anda mengonversinya kembali menjadi $19_{(10)}$ untuk mengidentifikasi siswa tersebut.
 
 > Analogi ini menggambarkan secara sederhana proses konversi antara basis desimal dan biner, yang banyak dipakai dalam pemrograman dan sistem komputer.

@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-label="Alur operasi CRUD antara browser, PHP, dan database MySQL">
+<title>Alur CRUD Browser - PHP - MySQL</title>
+<defs>
+<marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#525252"/></marker>
+<marker id="o" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#F37338"/></marker>
+</defs>
+
+<g font-family="sans-serif" fill="#525252">
+
+<rect x="40" y="200" width="240" height="360" rx="8" fill="none" stroke="#525252" stroke-width="3"/>
+<text x="160" y="180" font-size="20" text-anchor="middle" font-weight="bold">Browser</text>
+<text x="160" y="240" font-size="14" text-anchor="middle" fill="#A3A3A3">User Interface</text>
+<rect x="70" y="270" width="180" height="80" rx="4" fill="none" stroke="#A3A3A3" stroke-width="2"/>
+<text x="160" y="300" font-size="15" text-anchor="middle">HTML Form</text>
+<text x="160" y="325" font-size="13" text-anchor="middle" fill="#A3A3A3">input, button</text>
+<rect x="70" y="380" width="180" height="60" rx="4" fill="none" stroke="#A3A3A3" stroke-width="2"/>
+<text x="160" y="415" font-size="15" text-anchor="middle">Tailwind CSS</text>
+<text x="160" y="500" font-size="13" text-anchor="middle" fill="#A3A3A3">HTTP request</text>
+<text x="160" y="520" font-size="13" text-anchor="middle" fill="#A3A3A3">(POST / GET)</text>
+
+<rect x="480" y="200" width="240" height="360" rx="8" fill="none" stroke="#525252" stroke-width="3"/>
+<text x="600" y="180" font-size="20" text-anchor="middle" font-weight="bold">PHP Server</text>
+<text x="600" y="240" font-size="14" text-anchor="middle" fill="#A3A3A3">native PHP</text>
+<rect x="510" y="270" width="180" height="60" rx="4" fill="none" stroke="#A3A3A3" stroke-width="2"/>
+<text x="600" y="305" font-size="15" text-anchor="middle">Router / Handler</text>
+<rect x="510" y="360" width="180" height="80" rx="4" fill="none" stroke="#F37338" stroke-width="2"/>
+<text x="600" y="390" font-size="15" text-anchor="middle" fill="#F37338">Prepared Stmt</text>
+<text x="600" y="415" font-size="13" text-anchor="middle" fill="#F37338">bind_param()</text>
+<rect x="510" y="470" width="180" height="60" rx="4" fill="none" stroke="#A3A3A3" stroke-width="2"/>
+<text x="600" y="505" font-size="15" text-anchor="middle">Response JSON / HTML</text>
+
+<rect x="920" y="200" width="240" height="360" rx="8" fill="none" stroke="#525252" stroke-width="3"/>
+<text x="1040" y="180" font-size="20" text-anchor="middle" font-weight="bold">MySQL Database</text>
+<ellipse cx="1040" cy="280" rx="80" ry="18" fill="none" stroke="#A3A3A3" stroke-width="2"/>
+<path d="M960,280 V380 a80,18 0 0 0 160,0 V280" fill="none" stroke="#A3A3A3" stroke-width="2"/>
+<path d="M960,320 a80,18 0 0 0 160,0 M960,360 a80,18 0 0 0 160,0" fill="none" stroke="#A3A3A3" stroke-width="2"/>
+<text x="1040" y="430" font-size="15" text-anchor="middle">Tables</text>
+<text x="1040" y="455" font-size="13" text-anchor="middle" fill="#A3A3A3">rows + indexes</text>
+
+<g font-size="14">
+<line x1="280" y1="285" x2="478" y2="285" stroke="#525252" stroke-width="2" marker-end="url(#a)"/>
+<text x="379" y="278" text-anchor="middle">Create</text>
+<line x1="720" y1="285" x2="918" y2="285" stroke="#F37338" stroke-width="2" marker-end="url(#o)"/>
+<text x="819" y="278" text-anchor="middle" fill="#F37338">INSERT</text>
+
+<line x1="280" y1="335" x2="478" y2="335" stroke="#525252" stroke-width="2" marker-end="url(#a)"/>
+<text x="379" y="328" text-anchor="middle">Read</text>
+<line x1="720" y1="335" x2="918" y2="335" stroke="#F37338" stroke-width="2" marker-end="url(#o)"/>
+<text x="819" y="328" text-anchor="middle" fill="#F37338">SELECT</text>
+
+<line x1="280" y1="395" x2="478" y2="395" stroke="#525252" stroke-width="2" marker-end="url(#a)"/>
+<text x="379" y="388" text-anchor="middle">Update</text>
+<line x1="720" y1="395" x2="918" y2="395" stroke="#F37338" stroke-width="2" marker-end="url(#o)"/>
+<text x="819" y="388" text-anchor="middle" fill="#F37338">UPDATE</text>
+
+<line x1="280" y1="445" x2="478" y2="445" stroke="#525252" stroke-width="2" marker-end="url(#a)"/>
+<text x="379" y="438" text-anchor="middle">Delete</text>
+<line x1="720" y1="445" x2="918" y2="445" stroke="#F37338" stroke-width="2" marker-end="url(#o)"/>
+<text x="819" y="438" text-anchor="middle" fill="#F37338">DELETE</text>
+</g>
+
+<text x="819" y="475" font-size="12" text-anchor="middle" fill="#F37338" font-style="italic">prepared statement / bind param</text>
+
+<g font-size="13">
+<path d="M918,510 L720,510" stroke="#525252" stroke-width="2" stroke-dasharray="5,4" marker-end="url(#a)"/>
+<text x="819" y="503" text-anchor="middle">result set / affected rows</text>
+
+<path d="M478,540 L280,540" stroke="#525252" stroke-width="2" stroke-dasharray="5,4" marker-end="url(#a)"/>
+<text x="379" y="533" text-anchor="middle">response data / confirmation</text>
+</g>
+
+<text x="600" y="620" font-size="14" text-anchor="middle" fill="#A3A3A3">Alur CRUD: request mengalir kiri ke kanan, respons kembali ke kiri</text>
+<text x="600" y="645" font-size="13" text-anchor="middle" fill="#F37338">jalur oranye menggunakan prepared statement untuk mencegah SQL injection</text>
+
+</g>
+</svg>

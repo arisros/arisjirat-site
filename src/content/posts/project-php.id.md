@@ -14,9 +14,9 @@ Aplikasi web sederhana untuk mengelola data mata kuliah menggunakan **PHP** dan 
 
 ## Fitur
 
-- Menambahkan data mata kuliah
+- Menambah data mata kuliah
 - Melihat daftar mata kuliah
-- Mengedit data mata kuliah
+- Mengubah data mata kuliah
 - Menghapus data mata kuliah
 - Tampilan sederhana dan responsif
 
@@ -29,6 +29,9 @@ Aplikasi web sederhana untuk mengelola data mata kuliah menggunakan **PHP** dan 
 | Frontend | HTML + Tailwind CSS |
 
 ## Struktur Folder
+
+
+![Struktur folder proyek CRUD PHP dengan pemisahan logika dan komponen tampilan](/images/inline/project-php-1.svg)
 
 ```
 📁 config/
@@ -44,9 +47,12 @@ form.php
 index.php
 ```
 
-> Logika CRUD dipisah ke dalam folder `feature/`, sementara bagian tampilan yang dapat digunakan ulang (header dan footer) berada di folder `template/`.
+> Logika CRUD dipisah ke folder `feature/`, sementara komponen tampilan yang dapat digunakan ulang — yakni header dan footer — berada di folder `template/`.
 
 ## Snippet Kode
+
+
+![Alur operasi CRUD antara browser, PHP, dan database MySQL](/images/inline/project-php-2.svg)
 
 ### 1. Create — Tambah Data
 
@@ -65,7 +71,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 ?>
 ```
 
-### 2. Read — Tampil Data
+### 2. Read — Tampilkan Data
 
 ```php
 <?php
@@ -78,7 +84,7 @@ while ($row = $result->fetch_assoc()) {
 ?>
 ```
 
-### 3. Update
+### 3. Update — Ubah Data
 
 ```php
 <?php
@@ -95,7 +101,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 ?>
 ```
 
-### 4. Delete
+### 4. Delete — Hapus Data
 
 ```php
 <?php
@@ -110,7 +116,7 @@ if (isset($_GET['kd'])) {
 ?>
 ```
 
-> Seluruh query menggunakan **prepared statements** dengan `bind_param`, sehingga input pengguna tidak digabung langsung ke string SQL.
+> Setiap query dijalankan dengan **prepared statements** dan `bind_param`, sehingga input pengguna tidak pernah digabungkan langsung ke string SQL.
 
 ## Screenshot
 
@@ -130,9 +136,9 @@ git clone https://github.com/arisos/pwtm.git
 cd pwtm
 ```
 
-### 2. Import database
+### 2. Impor database
 
-Import file `db.sql` melalui phpMyAdmin atau MySQL CLI:
+Impor file `db.sql` melalui phpMyAdmin atau MySQL CLI:
 
 ```bash
 mysql -u root -p nama_database < db.sql

@@ -11,22 +11,25 @@ lang: "id"
 translationKey: "study-computer-devices"
 ---
 
-Di tengah dunia yang semakin terhubung secara digital, pemilihan perangkat teknologi yang tepat menjadi langkah krusial untuk memenuhi beragam kebutuhan kita. Modul ini akan memandu Anda memahami karakteristik dan pedoman pembelian berbagai jenis perangkat, mulai dari yang sederhana hingga yang paling canggih.
+Di tengah dunia yang semakin terhubung secara digital, pemilihan perangkat teknologi yang tepat menjadi langkah krusial untuk memenuhi beragam kebutuhan kita. Modul ini memandu Anda memahami karakteristik dan pedoman pembelian berbagai jenis perangkat, mulai dari yang sederhana hingga yang paling canggih.
 
 ## Pemilihan Perangkat: Karakteristik dan Pertimbangan
 
-Dalam memilih perangkat teknologi, tidak ada solusi *one-size-fits-all*. Karakteristik perangkat harus selaras dengan kebutuhan dan preferensi masing-masing pengguna. Beberapa pertimbangan utama meliputi:
+Dalam memilih perangkat teknologi, tidak ada solusi *one-size-fits-all*. Karakteristik perangkat harus selaras dengan kebutuhan dan preferensi masing-masing pengguna.
 
 | Aspek | Pertanyaan Kunci |
 |---|---|
 | **Kinerja** | Apakah Anda memerlukan perangkat berperforma tinggi untuk tugas berat, atau cukup yang standar? |
 | **Mobilitas** | Apakah portabilitas penting, atau perangkat akan menetap di satu lokasi? |
-| **Kualitas Layar & Resolusi** | Sangat krusial untuk perangkat seperti laptop dan tablet. |
-| **Harga & Anggaran** | Sesuaikan pilihan dengan anggaran yang tersedia. |
+| **Kualitas Layar & Resolusi** | Seberapa krusial ketajaman dan ukuran layar — terutama untuk laptop dan tablet? |
+| **Harga & Anggaran** | Berapa anggaran yang tersedia, dan bagaimana menyeimbangkannya dengan fitur? |
 
 ## Jenis-Jenis Perangkat
 
-Berikut adalah ragam perangkat yang akan kita bahas:
+
+![Peta kategori perangkat teknologi konsumen dan karakteristik utamanya](/images/inline/study-computer-devices-1.svg)
+
+Ragam perangkat yang akan dibahas:
 
 - **Laptop** — portabel dan serbaguna, ideal untuk pengguna yang mobile.
 - **Tablet** — perpaduan antara smartphone dan laptop, dilengkapi layar sentuh.
@@ -46,17 +49,20 @@ Berikut adalah ragam perangkat yang akan kita bahas:
 
 ### Kios Swalayan dan ATM
 
-Kita juga akan menelusuri peran teknologi pada kios swalayan dan ATM, yang merevolusi pengalaman berbelanja serta layanan perbankan modern.
+Kios swalayan dan ATM merevolusi pengalaman berbelanja serta layanan perbankan modern, menghadirkan otomatisasi yang mempercepat transaksi sehari-hari.
 
 ### Perangkat Pembaca E-book dan Wearable Devices
 
-Bagi pecinta buku, perangkat pembaca e-book memungkinkan Anda membawa seluruh perpustakaan ke mana saja. Selain itu, teknologi *wearable* seperti jam tangan pintar dan pelacak kebugaran kini menjadi bagian integral dari gaya hidup digital.
+Bagi pecinta buku, perangkat pembaca e-book memungkinkan Anda membawa seluruh perpustakaan ke mana saja. Sementara itu, teknologi *wearable* seperti jam tangan pintar dan pelacak kebugaran kini menjadi bagian integral dari gaya hidup digital.
 
 ### Perangkat Game
 
-Bagi para gamer, kita akan mengulas berbagai opsi perangkat — mulai dari konsol hingga PC gaming khusus.
+Bagi para gamer, pilihannya beragam — mulai dari konsol hingga PC gaming khusus, masing-masing dengan kelebihan tersendiri.
 
 ## Komputer Tertanam dan Komputasi Awan
+
+
+![Spektrum komputasi dari perangkat tertanam hingga komputasi awan](/images/inline/study-computer-devices-2.svg)
 
 Di era digital, komputer tidak hanya hadir dalam bentuk perangkat yang kita pegang.
 
@@ -66,7 +72,7 @@ Di era digital, komputer tidak hanya hadir dalam bentuk perangkat yang kita pega
 
 ### Port dan Koneksi
 
-Port dan jenis koneksi merupakan aspek teknis penting yang menentukan kompatibilitas dan fleksibilitas perangkat. Kita akan membahas variasi port yang perlu Anda kenali.
+Port dan jenis koneksi merupakan aspek teknis penting yang menentukan kompatibilitas dan fleksibilitas perangkat. Mengenali variasi port membantu Anda memastikan perangkat dapat terhubung dengan aksesori dan periferal yang dibutuhkan.
 
 ### Pemeliharaan Perangkat
 

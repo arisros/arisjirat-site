@@ -1,31 +1,34 @@
 ---
 title: "test_presence"
-description: "Presence management app with:"
+description: "Attendance management app with:"
 category: "project"
-tags: ["auto-imported"]
-tech: ["flutter", "dart"]
-status: "completed"
-draft: false
 lang: "en"
 translationKey: "project-test_presence"
+status: "completed"
+draft: false
+tags: ["auto-imported"]
+tech: ["flutter", "dart"]
 ---
 
 ## Overview
 
-A presence management application for tracking employee attendance with GPS-based check-ins and holiday request workflows.
+Attendance management app for tracking employee presence with GPS-based check-in and a leave request flow.
 
 - **Backend**: Go with SQLite database
 - **Frontend**: React with GPS check-in flow
 
 ## Features
 
-- Attendance validated against office geolocation and a configurable radius
-- Holiday request submission for employees
-- Admin dashboard for reports and holiday request approval/rejection
+- Attendance validation based on office geolocation and a configurable radius
+- Leave request submission for employees
+- Admin dashboard for reports and for approving or rejecting leave requests
 - Role-based authentication for employees and admins
-- Map preview showing office center, allowed radius, and the employee's current GPS position
+- Map preview showing the office center point, allowed radius, and the employee's current GPS position
 
 ## Project Structure
+
+
+![Struktur proyek test_presence: backend Go/SQLite dan frontend React/Vite](/images/inline/project-test_presence-1.svg)
 
 | Directory | Description |
 |-----------|-------------|
@@ -40,7 +43,7 @@ go mod tidy
 go run .
 ```
 
-The backend listens on `http://localhost:8080`.
+The backend runs at `http://localhost:8080`.
 
 ### Default Users
 
@@ -60,13 +63,16 @@ npm run dev
 
 The frontend is available at `http://localhost:5173`.
 
-> By default, the FE uses `/api` with a Vite proxy. To override the API endpoint, set:
+> By default, the FE uses `/api` through the Vite proxy. To change the API endpoint, set:
 
 ```bash
 VITE_API_BASE=http://localhost:8080/api
 ```
 
 ## API Endpoints
+
+
+![Alur check-in GPS: validasi lokasi karyawan terhadap radius kantor](/images/inline/project-test_presence-2.svg)
 
 ### Public
 
@@ -77,7 +83,7 @@ VITE_API_BASE=http://localhost:8080/api
 - `GET /api/config`
 - `POST /api/presence`
 - `POST /api/holiday-requests`
-- `GET /api/holiday-requests` — employees see only their own requests
+- `GET /api/holiday-requests` — employees only see their own requests
 
 ### Admin Only
 
@@ -87,7 +93,7 @@ VITE_API_BASE=http://localhost:8080/api
 
 ## Docker Setup
 
-Start the entire stack with a single command:
+Run the entire stack with a single command:
 
 ```bash
 docker compose up --build
@@ -98,5 +104,5 @@ docker compose up --build
 
 ### Notes
 
-- The Docker FE proxies `/api` to the backend container internally, avoiding browser CORS issues.
+- The Dockerized FE proxies `/api` to the backend container internally, avoiding CORS issues in the browser.
 - The local Vite dev server also proxies `/api` to `http://localhost:8080`.

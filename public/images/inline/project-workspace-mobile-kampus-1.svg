@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-label="Arsitektur Workspacebook Mobile: Flutter klien dengan Supabase backend">
+<g fill="none" stroke="#525252" stroke-width="2">
+<rect x="120" y="240" width="280" height="320" rx="8"/>
+<rect x="800" y="240" width="280" height="320" rx="8"/>
+<rect x="60" y="80" width="260" height="120" rx="6" stroke-dasharray="6 4"/>
+<rect x="500" y="60" width="200" height="80" rx="40" stroke="#F37338" stroke-width="3"/>
+</g>
+
+<text x="260" y="225" font-family="sans-serif" font-size="18" fill="#525252" text-anchor="middle" font-weight="bold">Workspacebook Mobile</text>
+<text x="260" y="320" font-family="sans-serif" font-size="16" fill="#525252" text-anchor="middle">Flutter Client</text>
+<g fill="none" stroke="#525252" stroke-width="2">
+<rect x="180" y="360" width="160" height="50" rx="4"/>
+<rect x="180" y="425" width="160" height="50" rx="4"/>
+<rect x="180" y="490" width="160" height="50" rx="4"/>
+</g>
+<text x="260" y="390" font-family="sans-serif" font-size="14" fill="#525252" text-anchor="middle">UI Layer</text>
+<text x="260" y="455" font-family="sans-serif" font-size="14" fill="#525252" text-anchor="middle">Auth Service</text>
+<text x="260" y="520" font-family="sans-serif" font-size="14" fill="#525252" text-anchor="middle">Data Repository</text>
+
+<text x="940" y="225" font-family="sans-serif" font-size="18" fill="#525252" text-anchor="middle" font-weight="bold">Supabase</text>
+<text x="940" y="320" font-family="sans-serif" font-size="16" fill="#525252" text-anchor="middle">Backend</text>
+<g fill="none" stroke="#525252" stroke-width="2">
+<rect x="860" y="360" width="160" height="50" rx="4"/>
+<rect x="860" y="425" width="160" height="50" rx="4"/>
+<rect x="860" y="490" width="160" height="50" rx="4"/>
+</g>
+<text x="940" y="390" font-family="sans-serif" font-size="14" fill="#525252" text-anchor="middle">GoTrue Auth</text>
+<text x="940" y="455" font-family="sans-serif" font-size="14" fill="#525252" text-anchor="middle">Postgres DB</text>
+<text x="940" y="520" font-family="sans-serif" font-size="14" fill="#525252" text-anchor="middle">Storage / RLS</text>
+
+<text x="190" y="105" font-family="sans-serif" font-size="14" fill="#525252" font-weight="bold">.env config</text>
+<text x="80" y="130" font-family="sans-serif" font-size="13" fill="#525252">SUPABASE_URL</text>
+<text x="80" y="150" font-family="sans-serif" font-size="13" fill="#525252">SUPABASE_ANON_KEY</text>
+<text x="80" y="170" font-family="sans-serif" font-size="13" fill="#525252">REDIRECT_URL</text>
+<g fill="none" stroke="#525252" stroke-width="2" marker-end="url(#a)">
+<path d="M 220 200 L 240 240"/>
+</g>
+
+<text x="600" y="110" font-family="sans-serif" font-size="15" fill="#F37338" text-anchor="middle" font-weight="bold">External OAuth Provider</text>
+<text x="600" y="130" font-family="sans-serif" font-size="13" fill="#525252" text-anchor="middle">(Google Sign-In)</text>
+
+<defs>
+<marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+<path d="M 0 0 L 10 5 L 0 10 z" fill="#525252"/>
+</marker>
+<marker id="b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+<path d="M 0 0 L 10 5 L 0 10 z" fill="#F37338"/>
+</marker>
+</defs>
+
+<g fill="none" stroke="#525252" stroke-width="3" marker-end="url(#a)">
+<path d="M 400 385 L 855 385"/>
+<path d="M 400 450 L 855 450"/>
+</g>
+<text x="627" y="375" font-family="sans-serif" font-size="14" fill="#525252" text-anchor="middle">Authentication</text>
+<text x="627" y="395" font-family="sans-serif" font-size="12" fill="#525252" text-anchor="middle">JWT / session</text>
+<text x="627" y="440" font-family="sans-serif" font-size="14" fill="#525252" text-anchor="middle">Database / Backend Services</text>
+<text x="627" y="475" font-family="sans-serif" font-size="12" fill="#525252" text-anchor="middle">CRUD via REST / Realtime</text>
+
+<g fill="none" stroke="#525252" stroke-width="2">
+<circle cx="610" cy="380" r="10"/>
+<rect x="603" y="380" width="14" height="10" rx="2" fill="#FCFBFA"/>
+<path d="M 606 380 L 606 376 a 4 4 0 0 1 8 0 L 614 380"/>
+</g>
+
+<g fill="none" stroke="#F37338" stroke-width="3" marker-end="url(#b)">
+<path d="M 340 600 Q 500 680 580 140"/>
+<path d="M 700 140 Q 820 480 870 600"/>
+<path d="M 870 620 Q 600 720 340 620"/>
+</g>
+<text x="600" y="760" font-family="sans-serif" font-size="14" fill="#F37338" text-anchor="middle" font-weight="bold">OAuth Redirect Flow</text>
+<text x="430" y="700" font-family="sans-serif" font-size="13" fill="#525252">1. app launches</text>
+<text x="430" y="718" font-family="sans-serif" font-size="13" fill="#525252">   provider URL</text>
+<text x="740" y="700" font-family="sans-serif" font-size="13" fill="#525252">2. Supabase issues</text>
+<text x="740" y="718" font-family="sans-serif" font-size="13" fill="#525252">   session token</text>
+<text x="500" y="660" font-family="sans-serif" font-size="13" fill="#525252">3. redirect → app via REDIRECT_URL</text>
+</svg>

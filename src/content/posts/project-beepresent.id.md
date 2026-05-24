@@ -28,6 +28,9 @@ Proyek ini adalah CLI dan API untuk berinteraksi dengan data mata kuliah — men
 
 ## CLI
 
+
+![Pemetaan endpoint API ke perintah CLI beepresent](/images/inline/project-beepresent-1.svg)
+
 CLI mencerminkan permukaan API:
 
 - `bl courses` — menampilkan daftar mata kuliah
@@ -41,23 +44,26 @@ Pengiriman kehadiran sebaiknya berjalan pada jadwal tetap:
 - **Senin – Jumat:** 19.00 – 20.00
 - **Sabtu:** 09.00, 11.00, 14.00, 16.00
 
-> Pertanyaan terbuka: apakah scheduler sebaiknya berada di dalam proyek ini, atau menjadi concern terpisah?
+> Pertanyaan terbuka: apakah scheduler sebaiknya berada di dalam proyek ini, atau menjadi *concern* terpisah?
 
 ## Caching & Invalidasi
 
-Data mata kuliah jarang berubah, jadi caching yang agresif tidak masalah.
+
+![Alur caching dan invalidasi data mata kuliah dengan TTL satu minggu](/images/inline/project-beepresent-2.svg)
+
+Data mata kuliah jarang berubah, jadi caching yang agresif tidak menjadi masalah.
 
 - Entri cache kedaluwarsa setelah **satu minggu**
-- Lakukan crawl ulang hanya ketika data cache sudah kedaluwarsa
-- Hindari invalidasi pada setiap akses — itu bukan prioritas
+- Crawl ulang hanya dilakukan ketika data cache sudah kedaluwarsa
+- Invalidasi pada setiap akses dihindari — itu bukan prioritas
 
 ## Implementasi
 
 ### Tech Stack
 
 - TypeScript
-- Bun.js runtime
-- Cheerio (HTML parsing)
+- Runtime Bun.js
+- Cheerio untuk *parsing* HTML
 
 ### Struktur Proyek
 

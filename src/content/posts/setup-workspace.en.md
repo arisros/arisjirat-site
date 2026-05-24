@@ -1,12 +1,12 @@
 ---
-title: "Workspace & Dev Environment"
-description: "My development workspace, tools, and daily setup"
+title: "Workspace & Development Environment"
+description: "My development workspace, devices, and daily setup"
 category: "setup"
-tags: ["workspace", "developer-tools", "environment"]
-status: "in-progress"
-draft: true
 lang: "en"
 translationKey: "setup-workspace"
+status: "in-progress"
+draft: true
+tags: ["workspace", "developer-tools", "environment"]
 ---
 
 Coming soon — workspace setup documentation.

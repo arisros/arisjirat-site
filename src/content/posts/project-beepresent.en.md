@@ -1,86 +1,35 @@
 ---
 title: "beepresent"
-description: "README for ## Build present project
-
-API
-
-- get list course
-- get detail by course {id}
-- get assignments {course_id}
-- get quizes {course_id}
-- post present {course_id} {present_id}
-
-CLI from those
-
-- bl courses - get list course
-- bl courses {id} - get detail course
-- present
-
-Scheduler presen will be on this project??
-
-- at 7pm to 8pm monday to friday
-- saturday on 9am, 11am, 2pm, 4pm
-
-because data will not always changes, I think we can update
-perweek
-
-I think this no priority 0
-database invalidation for every access, we can invalidate per week
-
-- set expired data a week
-- when data expired than need to crawl
-
-## Implemenation
-
-### Tech Stack
-
-- Typescript
-- Bun.js Runtime
-- Cheerio
-
-### Project Structure
-
-- src
-  - services
-    - get courses
-    - get courses detail
-    - get presention list
-    - post present
-  - repository
-    - courses
-    - assignments
-    - quiz
-  - utils
-    - log
-  - config
-    - creds
-"
+description: "\"README for ## Build present project"
 category: "project"
-tags: ["auto-imported"]
-tech: ["mobile"]
-status: "completed"
-draft: false
-repo: "https://github.com/arisros/beepresent"
-image: "/images/banners/project-beepresent.png"
 lang: "en"
 translationKey: "project-beepresent"
+image: "/images/banners/project-beepresent.png"
+repo: "https://github.com/arisros/beepresent"
+status: "completed"
+draft: false
+tags: ["auto-imported"]
+tech: ["mobile"]
 ---
 
 ## Overview
 
-This project is a CLI and API for interacting with course data — listing courses, fetching details, retrieving assignments and quizzes, and submitting attendance ("present") records.
+This project is a CLI and API for interacting with course data — listing courses, fetching details, retrieving assignments and quizzes, and submitting attendance records ("present").
 
 ## API
 
 | Endpoint | Description |
 | --- | --- |
 | `GET /courses` | List all courses |
-| `GET /courses/{id}` | Get course details |
+| `GET /courses/{id}` | Fetch course details |
 | `GET /courses/{course_id}/assignments` | List assignments for a course |
 | `GET /courses/{course_id}/quizzes` | List quizzes for a course |
 | `POST /courses/{course_id}/present/{present_id}` | Submit attendance |
 
 ## CLI
+
+
+![Pemetaan endpoint API ke perintah CLI beepresent](/images/inline/project-beepresent-1.svg)
 
 The CLI mirrors the API surface:
 
@@ -90,20 +39,23 @@ The CLI mirrors the API surface:
 
 ## Scheduling
 
-Attendance submission should run on a fixed schedule:
+Attendance submissions should run on a fixed schedule:
 
-- **Monday – Friday:** 7 PM – 8 PM
-- **Saturday:** 9 AM, 11 AM, 2 PM, 4 PM
+- **Monday – Friday:** 7:00 PM – 8:00 PM
+- **Saturday:** 9:00 AM, 11:00 AM, 2:00 PM, 4:00 PM
 
-> Open question: should the scheduler live inside this project, or be a separate concern?
+> Open question: should the scheduler live inside this project, or be a separate *concern*?
 
 ## Caching & Invalidation
 
-Course data rarely changes, so aggressive caching is fine.
+
+![Alur caching dan invalidasi data mata kuliah dengan TTL satu minggu](/images/inline/project-beepresent-2.svg)
+
+Course data rarely changes, so aggressive caching isn't a problem.
 
 - Cache entries expire after **one week**
-- Re-crawl only when the cached data is expired
-- Avoid invalidating on every access — that's not a priority
+- Re-crawling only happens when cached data has expired
+- Invalidation on every access is avoided — it's not a priority
 
 ## Implementation
 
@@ -111,7 +63,7 @@ Course data rarely changes, so aggressive caching is fine.
 
 - TypeScript
 - Bun.js runtime
-- Cheerio (HTML parsing)
+- Cheerio for HTML *parsing*
 
 ### Project Structure
 

@@ -19,13 +19,16 @@ Aplikasi manajemen presensi untuk melacak kehadiran karyawan dengan check-in ber
 
 ## Fitur
 
-- Kehadiran divalidasi berdasarkan geolokasi kantor dan radius yang dapat dikonfigurasi
+- Validasi kehadiran berdasarkan geolokasi kantor dan radius yang dapat dikonfigurasi
 - Pengajuan permintaan cuti untuk karyawan
-- Dashboard admin untuk laporan dan persetujuan/penolakan permintaan cuti
+- Dashboard admin untuk laporan serta persetujuan atau penolakan permintaan cuti
 - Autentikasi berbasis peran untuk karyawan dan admin
 - Pratinjau peta yang menampilkan titik pusat kantor, radius yang diizinkan, dan posisi GPS karyawan saat ini
 
 ## Struktur Proyek
+
+
+![Struktur proyek test_presence: backend Go/SQLite dan frontend React/Vite](/images/inline/project-test_presence-1.svg)
 
 | Direktori | Deskripsi |
 |-----------|-------------|
@@ -60,13 +63,16 @@ npm run dev
 
 Frontend tersedia di `http://localhost:5173`.
 
-> Secara default, FE menggunakan `/api` dengan proxy Vite. Untuk mengganti endpoint API, atur:
+> Secara default, FE menggunakan `/api` melalui proxy Vite. Untuk mengganti endpoint API, atur:
 
 ```bash
 VITE_API_BASE=http://localhost:8080/api
 ```
 
 ## Endpoint API
+
+
+![Alur check-in GPS: validasi lokasi karyawan terhadap radius kantor](/images/inline/project-test_presence-2.svg)
 
 ### Publik
 

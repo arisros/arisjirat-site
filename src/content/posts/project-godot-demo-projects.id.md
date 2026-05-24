@@ -25,22 +25,22 @@ Pilih branch yang sesuai dengan instalasi Godot Anda:
 | [`2.1`](https://github.com/godotengine/godot-demo-projects/tree/2.1) | Godot 2.1.x |
 | Branch stabil lainnya | Versi Godot stabil yang sesuai |
 
-Lihat [daftar lengkap branch](https://github.com/godotengine/godot-demo-projects/branches) untuk setiap versi yang tersedia.
+Lihat [daftar lengkap branch](https://github.com/godotengine/godot-demo-projects/branches) untuk semua versi yang tersedia.
 
 ## Mengimpor Semua Demo
 
-Untuk mengimpor semua demo sekaligus dari project manager Godot:
+Untuk mengimpor seluruh demo sekaligus dari project manager Godot:
 
 1. Clone repositori ini, atau [unduh arsip ZIP](https://github.com/godotengine/godot-demo-projects/archive/master.zip) lalu ekstrak.
-2. Buka project manager Godot dan klik tombol **Scan** di sebelah kanan.
-3. Pilih folder yang berisi semua demo.
+2. Buka project manager Godot, lalu klik tombol **Scan** di sisi kanan.
+3. Pilih folder yang berisi seluruh demo.
 4. Semua demo kini akan muncul di project manager.
 
-## Coba Demo di Browser Anda
+## Mencoba Demo di Browser
 
-Sebagian besar demo telah diekspor ke GitHub Pages dan dapat dilihat [di sini](https://godotengine.github.io/godot-demo-projects/).
+Sebagian besar demo telah diekspor ke GitHub Pages dan dapat dijalankan langsung [di sini](https://godotengine.github.io/godot-demo-projects/).
 
-> **Catatan:** Performa Godot di browser lebih rendah dibandingkan menjalankannya secara native di desktop. Untuk pengalaman terbaik, unduh demo dan jalankan secara lokal.
+> **Catatan:** Performa Godot di browser lebih rendah dibandingkan eksekusi native di desktop. Untuk pengalaman terbaik, unduh demo dan jalankan secara lokal.
 
 ## Tautan Berguna
 
@@ -52,4 +52,4 @@ Sebagian besar demo telah diekspor ke GitHub Pages dan dapat dilihat [di sini](h
 
 ## Lisensi
 
-Demo-demo ini didistribusikan di bawah ketentuan lisensi MIT. Lihat file [LICENSE.md](LICENSE.md) untuk detail lengkapnya.
+Demo-demo ini didistribusikan di bawah ketentuan lisensi MIT. Lihat file [LICENSE.md](LICENSE.md) untuk detail selengkapnya.

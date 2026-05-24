@@ -11,7 +11,7 @@ lang: "id"
 translationKey: "project-lemme"
 ---
 
-Lemme adalah aplikasi kuis berbantuan AI. Pengguna mengunggah tangkapan layar kuis; OCR mengekstrak teks pertanyaan, dan beberapa penyedia LLM menghasilkan kandidat jawaban beserta penalarannya.
+Lemme adalah aplikasi kuis berbantuan AI. Pengguna mengunggah tangkapan layar kuis; OCR mengekstrak teks pertanyaan, lalu beberapa penyedia LLM menghasilkan kandidat jawaban beserta penalarannya.
 
 ## Stack
 
@@ -24,6 +24,9 @@ Lemme adalah aplikasi kuis berbantuan AI. Pengguna mengunggah tangkapan layar ku
 
 ## Arsitektur
 
+
+![Diagram arsitektur Lemme: Caddy di depan UI Nginx dan API Go Fiber](/images/inline/project-lemme-1.svg)
+
 ```text
 Browser
   -> Caddy (80/443, TLS termination)
@@ -34,14 +37,17 @@ Browser
            -> OCR + LLM providers (OpenAI/Anthropic/Gemini)
 ```
 
-Caddy berada di depan semuanya dan menangani terminasi TLS. Di belakangnya:
+Caddy berada di depan seluruh stack dan menangani terminasi TLS. Di belakangnya:
 
 - **UI** — build Solid statis yang disajikan oleh Nginx.
-- **API** — layanan Go Fiber yang berbicara dengan MySQL, Redis, serta penyedia OCR/LLM eksternal.
+- **API** — layanan Go Fiber yang berkomunikasi dengan MySQL, Redis, serta penyedia OCR/LLM eksternal.
 
 ## Pengembangan Lokal
 
-Seluruh stack dijalankan menggunakan Docker Compose.
+
+![Alur pengembangan lokal Lemme dengan Docker Compose](/images/inline/project-lemme-2.svg)
+
+Seluruh stack dijalankan dengan Docker Compose.
 
 ### 1. Konfigurasi environment
 
@@ -83,7 +89,7 @@ Pada server Debian, jalankan script setup:
 
 ### 2. Clone dan konfigurasi
 
-Clone repository ke `/opt/lemme` lalu buat file env:
+Clone repository ke `/opt/lemme`, lalu buat file env berikut:
 
 - `/opt/lemme/.env`
 - `/opt/lemme/lemme_service/.env`
