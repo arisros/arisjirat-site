@@ -2,7 +2,7 @@
 title: "Dactyl Manuform: Handwired Ergonomic Split Keyboard"
 description: "Building a Dactyl Manuform ergonomic split keyboard from scratch — manual wiring, QMK firmware, and flashing it yourself."
 date: "2026-01-15"
-category: "setup"
+category: "tool"
 lang: "en"
 translationKey: "setup-dactyl-manuform-keyboard"
 repo: "https://github.com/arisros/dactyl-manuform-keyboard"

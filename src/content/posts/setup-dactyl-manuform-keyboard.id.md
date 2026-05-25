@@ -2,7 +2,7 @@
 title: "Dactyl Manuform: Keyboard Split Ergonomis Handwired"
 description: "Membangun keyboard split ergonomis Dactyl Manuform dari nol — wiring manual, firmware QMK, dan flashing sendiri."
 date: 2026-01-15
-category: "setup"
+category: "tool"
 lang: "id"
 translationKey: "setup-dactyl-manuform-keyboard"
 tags: ["keyboard", "qmk", "handwired", "ergonomic", "dactyl-manuform", "pro-micro", "split-keyboard"]

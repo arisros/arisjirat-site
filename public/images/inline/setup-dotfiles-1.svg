@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img">
+<title>Diagram symlink GNU Stow dari direktori repo ke lokasi config di home directory</title>
+<g font-family="sans-serif" fill="#525252">
+
+<text x="180" y="60" font-size="20" font-weight="bold">dotfiles repo</text>
+<rect x="80" y="80" width="340" height="640" stroke="#525252" stroke-width="3" fill="none" rx="6"/>
+
+<rect x="110" y="110" width="280" height="100" stroke="#525252" stroke-width="2" fill="none" rx="4"/>
+<text x="125" y="135" font-size="16" font-weight="bold">nvim/</text>
+<text x="140" y="170" font-size="14">.config/</text>
+<text x="160" y="190" font-size="14">nvim/init.lua</text>
+
+<rect x="110" y="225" width="280" height="80" stroke="#525252" stroke-width="2" fill="none" rx="4"/>
+<text x="125" y="250" font-size="16" font-weight="bold">tmux/</text>
+<text x="140" y="285" font-size="14">.config/tmux/tmux.conf</text>
+
+<rect x="110" y="320" width="280" height="80" stroke="#525252" stroke-width="2" fill="none" rx="4"/>
+<text x="125" y="345" font-size="16" font-weight="bold">zsh/</text>
+<text x="140" y="380" font-size="14">.zshrc</text>
+
+<rect x="110" y="415" width="280" height="80" stroke="#525252" stroke-width="2" fill="none" rx="4"/>
+<text x="125" y="440" font-size="16" font-weight="bold">ghostty/</text>
+<text x="140" y="475" font-size="14">.config/ghostty/config</text>
+
+<rect x="110" y="510" width="280" height="80" stroke="#525252" stroke-width="2" fill="none" rx="4"/>
+<text x="125" y="535" font-size="16" font-weight="bold">aerospace/</text>
+<text x="140" y="570" font-size="14">.config/aerospace/...</text>
+
+<text x="860" y="60" font-size="20" font-weight="bold">~/  (home)</text>
+<rect x="780" y="80" width="340" height="640" stroke="#525252" stroke-width="3" fill="none" rx="6"/>
+
+<rect x="810" y="320" width="280" height="80" stroke="#525252" stroke-width="2" stroke-dasharray="6,4" fill="none" rx="4"/>
+<text x="825" y="345" font-size="16" font-weight="bold">.zshrc</text>
+<text x="825" y="380" font-size="13" fill="#F37338">→ link</text>
+
+<rect x="810" y="110" width="280" height="200" stroke="#525252" stroke-width="2" fill="none" rx="4"/>
+<text x="825" y="135" font-size="16" font-weight="bold">.config/</text>
+
+<rect x="830" y="150" width="240" height="34" stroke="#525252" stroke-width="2" stroke-dasharray="6,4" fill="none" rx="3"/>
+<text x="845" y="172" font-size="14">nvim/</text>
+
+<rect x="830" y="190" width="240" height="34" stroke="#525252" stroke-width="2" stroke-dasharray="6,4" fill="none" rx="3"/>
+<text x="845" y="212" font-size="14">tmux/</text>
+
+<rect x="830" y="230" width="240" height="34" stroke="#525252" stroke-width="2" stroke-dasharray="6,4" fill="none" rx="3"/>
+<text x="845" y="252" font-size="14">ghostty/</text>
+
+<rect x="830" y="270" width="240" height="34" stroke="#525252" stroke-width="2" stroke-dasharray="6,4" fill="none" rx="3"/>
+<text x="845" y="292" font-size="14">aerospace/</text>
+
+<defs>
+<marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+<path d="M0,0 L10,5 L0,10 z" fill="#F37338"/>
+</marker>
+</defs>
+
+<path d="M830,167 C700,167 540,160 390,160" stroke="#F37338" stroke-width="2" fill="none" marker-end="url(#a)"/>
+<text x="500" y="125" font-size="14" fill="#F37338" font-weight="bold">stow nvim</text>
+<text x="560" y="155" font-size="13" fill="#F37338">symlink</text>
+
+<path d="M830,207 C700,207 540,265 390,265" stroke="#525252" stroke-width="2" fill="none" marker-end="url(#a)"/>
+<text x="560" y="225" font-size="13">symlink</text>
+
+<path d="M830,350 C700,350 540,360 390,360" stroke="#525252" stroke-width="2" fill="none" marker-end="url(#a)"/>
+<text x="560" y="345" font-size="13">symlink</text>
+
+<path d="M830,247 C700,247 540,455 390,455" stroke="#525252" stroke-width="2" fill="none" marker-end="url(#a)"/>
+<text x="560" y="385" font-size="13">symlink</text>
+
+<path d="M830,287 C700,287 540,550 390,550" stroke="#525252" stroke-width="2" fill="none" marker-end="url(#a)"/>
+<text x="560" y="425" font-size="13">symlink</text>
+
+<text x="600" y="710" font-size="15" text-anchor="middle">entri di ~/ adalah pointer, bukan salinan</text>
+
+</g>
+</svg>
