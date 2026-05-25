@@ -1,4 +1,9 @@
-name: Build & Deploy
+name: Build & Push
+
+# Deploys are handled by ArgoCD Image Updater on the homelab cluster:
+# it polls GHCR for new :latest digests, SHA-pins the kustomization in
+# arisros/homelab-platform, and ArgoCD syncs the change into the pod.
+# This workflow only needs to build and push.
 
 on:
   push:
@@ -30,8 +35,6 @@ jobs:
         uses: docker/metadata-action@v5
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
-          # `format=long,prefix=` emits the full 40-char SHA so the deploy step's
-          # `${{ github.sha }}` reference matches an actual tag in GHCR.
           tags: |
             type=sha,format=long,prefix=
             type=sha,prefix=
@@ -44,45 +47,4 @@ jobs:
           push: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
-
-  deploy:
-    needs: build-and-push
-    runs-on: ubuntu-latest
-
-    # Required GitHub repository secrets:
-    #   VPS_HOST      - VPS public IP (159.65.15.126)
-    #   VPS_USER      - VPS SSH user (root)
-    #   VPS_SSH_KEY   - SSH private key with access to VPS
-    #   HOMELAB_USER  - Homelab SSH user (root)
-    #   HOMELAB_HOST  - Homelab WireGuard IP (10.10.0.1)
-    #
-    # SSH chain: GitHub Actions → VPS (159.65.15.126) → Homelab (10.10.0.1)
-    # Deploy flow: docker pull → k3d image import → kubectl set image -n apps → rollout status
-    #
-    # If this step times out with "Connection timed out", the VPS firewall (UFW) is blocking
-    # GitHub Actions IP ranges on port 22. Fix on VPS:
-    #   ufw allow from <github-actions-ip-range> to any port 22
-    # GitHub Actions IP ranges: https://api.github.com/meta (look for "actions" key)
-    steps:
-      - name: Deploy to homelab via VPS
-        uses: appleboy/ssh-action@v1
-        with:
-          host: ${{ secrets.VPS_HOST }}
-          username: ${{ secrets.VPS_USER }}
-          key: ${{ secrets.VPS_SSH_KEY }}
-          # Increase timeout for docker pull + k3d import which can be slow
-          command_timeout: 15m
-          script: |
-            IMAGE="${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ github.sha }}"
-            ssh ${{ secrets.HOMELAB_USER }}@${{ secrets.HOMELAB_HOST }} "
-              set -e
-              echo '--- Pulling image from GHCR ---'
-              docker pull ${IMAGE}
-              echo '--- Importing image into k3d cluster ---'
-              k3d image import ${IMAGE} -c homelab
-              echo '--- Rolling out deployment ---'
-              kubectl set image deployment/arisjirat-site site=${IMAGE} -n apps
-              kubectl rollout status deployment/arisjirat-site -n apps --timeout=120s
-              echo '--- Deploy complete ---'
-            "
 
