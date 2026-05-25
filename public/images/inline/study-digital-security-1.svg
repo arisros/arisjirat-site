@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-label="Diagram jenis-jenis malware dan karakteristiknya">
+<g font-family="sans-serif" fill="#525252">
+<rect x="500" y="60" width="200" height="70" rx="6" fill="none" stroke="#F37338" stroke-width="3"/>
+<text x="600" y="95" text-anchor="middle" font-size="22" font-weight="bold" fill="#F37338">Malware</text>
+<text x="600" y="118" text-anchor="middle" font-size="14">perangkat lunak berbahaya</text>
+
+<g stroke="#525252" stroke-width="2" fill="none">
+<path d="M600 130 L600 200"/>
+<path d="M100 200 L1100 200"/>
+<path d="M100 200 L100 260"/>
+<path d="M300 200 L300 260"/>
+<path d="M500 200 L500 260"/>
+<path d="M700 200 L700 260"/>
+<path d="M900 200 L900 260"/>
+<path d="M1100 200 L1100 260"/>
+</g>
+
+<g stroke="#525252" stroke-width="2">
+<rect x="20" y="260" width="160" height="60" rx="6" fill="none"/>
+<rect x="220" y="260" width="160" height="60" rx="6" fill="none"/>
+<rect x="420" y="260" width="160" height="60" rx="6" fill="none"/>
+<rect x="620" y="260" width="160" height="60" rx="6" fill="none"/>
+<rect x="820" y="260" width="160" height="60" rx="6" fill="none"/>
+<rect x="1020" y="260" width="160" height="60" rx="6" fill="none"/>
+</g>
+
+<g font-size="18" text-anchor="middle" font-weight="bold">
+<text x="100" y="298">Virus</text>
+<text x="300" y="298">Worm</text>
+<text x="500" y="298">Trojan Horse</text>
+<text x="700" y="298">Rootkit</text>
+<text x="900" y="298">Spyware</text>
+<text x="1100" y="298">Adware</text>
+</g>
+
+<g font-size="14" text-anchor="middle" fill="#525252">
+<text x="100" y="360">menempel</text>
+<text x="100" y="378">pada file</text>
+
+<text x="300" y="360">menyebar</text>
+<text x="300" y="378">via jaringan</text>
+
+<text x="500" y="360">menyamar</text>
+<text x="500" y="378">program sah</text>
+
+<text x="700" y="360">menyembunyikan</text>
+<text x="700" y="378">diri</text>
+
+<text x="900" y="360">memata-matai</text>
+<text x="900" y="378">pengguna</text>
+
+<text x="1100" y="360">menampilkan</text>
+<text x="1100" y="378">iklan</text>
+</g>
+
+<g stroke="#A3A3A3" stroke-width="2" stroke-dasharray="4 4" fill="none">
+<rect x="20" y="420" width="1160" height="340" rx="8"/>
+</g>
+
+<text x="600" y="450" text-anchor="middle" font-size="16" font-weight="bold" fill="#525252">Karakteristik Utama</text>
+
+<g font-size="14" fill="#525252">
+<g transform="translate(60,480)">
+<circle cx="0" cy="0" r="6" fill="#F37338"/>
+<text x="16" y="5" font-weight="bold">Virus</text>
+<text x="0" y="28">Butuh host file untuk</text>
+<text x="0" y="46">aktif &amp; menggandakan diri.</text>
+</g>
+
+<g transform="translate(260,480)">
+<circle cx="0" cy="0" r="6" fill="#F37338"/>
+<text x="16" y="5" font-weight="bold">Worm</text>
+<text x="0" y="28">Mandiri, mereplikasi diri</text>
+<text x="0" y="46">lewat koneksi jaringan.</text>
+</g>
+
+<g transform="translate(460,480)">
+<circle cx="0" cy="0" r="6" fill="#F37338"/>
+<text x="16" y="5" font-weight="bold">Trojan Horse</text>
+<text x="0" y="28">Berpura-pura berguna,</text>
+<text x="0" y="46">membuka pintu belakang.</text>
+</g>
+
+<g transform="translate(660,480)">
+<circle cx="0" cy="0" r="6" fill="#F37338"/>
+<text x="16" y="5" font-weight="bold">Rootkit</text>
+<text x="0" y="28">Mengakar di sistem,</text>
+<text x="0" y="46">sulit dideteksi antivirus.</text>
+</g>
+
+<g transform="translate(860,480)">
+<circle cx="0" cy="0" r="6" fill="#F37338"/>
+<text x="16" y="5" font-weight="bold">Spyware</text>
+<text x="0" y="28">Mencuri data &amp; merekam</text>
+<text x="0" y="46">aktivitas tanpa izin.</text>
+</g>
+
+<g transform="translate(1060,480)">
+<circle cx="0" cy="0" r="6" fill="#F37338"/>
+<text x="16" y="5" font-weight="bold">Adware</text>
+<text x="0" y="28">Memunculkan iklan</text>
+<text x="0" y="46">paksa di perangkat.</text>
+</g>
+</g>
+
+<g font-size="14" fill="#525252">
+<text x="60" y="600" font-weight="bold">Tujuan umum:</text>
+<text x="60" y="624">• Mengganggu operasi sistem</text>
+<text x="60" y="646">• Mencuri informasi sensitif</text>
+<text x="60" y="668">• Mendapatkan akses tidak sah</text>
+<text x="60" y="690">• Menghasilkan keuntungan ilegal</text>
+
+<text x="640" y="600" font-weight="bold">Vektor penyebaran:</text>
+<text x="640" y="624">• Lampiran email &amp; tautan phishing</text>
+<text x="640" y="646">• Unduhan dari situs tidak tepercaya</text>
+<text x="640" y="668">• Media penyimpanan terinfeksi</text>
+<text x="640" y="690">• Celah keamanan perangkat lunak</text>
+</g>
+</g>
+</svg>

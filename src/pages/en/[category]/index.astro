@@ -1,0 +1,48 @@
+---
+import SectionLayout from '@layouts/SectionLayout.astro';
+import Card from '@components/Card.astro';
+import {
+  CATEGORIES,
+  CATEGORY_DESCRIPTIONS,
+  CATEGORY_LABELS,
+  CATEGORY_TO_PATH,
+  PATH_TO_CATEGORY,
+  UI_STRINGS,
+  getPosts,
+  postHref,
+} from '@/lib/content';
+
+export async function getStaticPaths() {
+  return CATEGORIES.map(cat => ({ params: { category: CATEGORY_TO_PATH[cat] } }));
+}
+
+const { category: urlCat } = Astro.params;
+const cat = PATH_TO_CATEGORY[urlCat as keyof typeof PATH_TO_CATEGORY];
+const lang = 'en' as const;
+
+const posts = (await getPosts({ category: cat, lang }))
+  .sort((a, b) => (b.data.date?.getTime() ?? 0) - (a.data.date?.getTime() ?? 0));
+
+const title = CATEGORY_LABELS[cat][lang];
+const description = CATEGORY_DESCRIPTIONS[cat][lang];
+---
+
+<SectionLayout title={title} description={description} lang={lang}>
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+    {posts.map(post => (
+      <Card
+        title={post.data.title}
+        description={post.data.description}
+        href={postHref(post, lang)}
+        tags={post.data.tags}
+        date={post.data.date}
+        category={post.data.category}
+        status={post.data.status}
+        lang={lang}
+      />
+    ))}
+  </div>
+  {posts.length === 0 && (
+    <p class="text-ink-muted text-center py-12">{UI_STRINGS.noPosts[lang]}</p>
+  )}
+</SectionLayout>

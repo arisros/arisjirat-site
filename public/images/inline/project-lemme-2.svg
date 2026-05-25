@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-label="Alur pengembangan lokal Lemme dengan Docker Compose">
+<text x="600" y="60" font-family="sans-serif" font-size="22" fill="#525252" text-anchor="middle" font-weight="bold">Alur pengembangan lokal Lemme dengan Docker Compose</text>
+
+<g>
+<rect x="60" y="140" width="240" height="280" rx="8" fill="none" stroke="#525252" stroke-width="3"/>
+<circle cx="100" cy="180" r="22" fill="#F37338" stroke="none"/>
+<text x="100" y="187" font-family="sans-serif" font-size="20" fill="#FCFBFA" text-anchor="middle" font-weight="bold">1</text>
+<text x="180" y="187" font-family="sans-serif" font-size="16" fill="#525252" font-weight="bold">Konfigurasi</text>
+<text x="180" y="206" font-family="sans-serif" font-size="16" fill="#525252">environment</text>
+
+<rect x="90" y="240" width="70" height="90" rx="4" fill="none" stroke="#525252" stroke-width="2"/>
+<text x="125" y="270" font-family="sans-serif" font-size="14" fill="#525252" text-anchor="middle">.env</text>
+<text x="125" y="290" font-family="sans-serif" font-size="14" fill="#525252" text-anchor="middle">.example</text>
+<path d="M170 285 L210 285" stroke="#F37338" stroke-width="3" fill="none" marker-end="url(#arr)"/>
+<rect x="220" y="240" width="70" height="90" rx="4" fill="none" stroke="#525252" stroke-width="2"/>
+<text x="255" y="285" font-family="sans-serif" font-size="14" fill="#525252" text-anchor="middle">.env</text>
+<text x="180" y="380" font-family="sans-serif" font-size="14" fill="#525252" text-anchor="middle">cp template</text>
+</g>
+
+<g>
+<rect x="340" y="140" width="240" height="280" rx="8" fill="none" stroke="#525252" stroke-width="3"/>
+<circle cx="380" cy="180" r="22" fill="#F37338" stroke="none"/>
+<text x="380" y="187" font-family="sans-serif" font-size="20" fill="#FCFBFA" text-anchor="middle" font-weight="bold">2</text>
+<text x="460" y="187" font-family="sans-serif" font-size="16" fill="#525252" font-weight="bold">Jalankan</text>
+<text x="460" y="206" font-family="sans-serif" font-size="16" fill="#525252">service</text>
+
+<rect x="365" y="235" width="90" height="40" rx="4" fill="none" stroke="#525252" stroke-width="2"/>
+<text x="410" y="260" font-family="sans-serif" font-size="14" fill="#525252" text-anchor="middle">UI</text>
+<rect x="465" y="235" width="90" height="40" rx="4" fill="none" stroke="#525252" stroke-width="2"/>
+<text x="510" y="260" font-family="sans-serif" font-size="14" fill="#525252" text-anchor="middle">API</text>
+<rect x="365" y="285" width="90" height="40" rx="4" fill="none" stroke="#525252" stroke-width="2"/>
+<text x="410" y="310" font-family="sans-serif" font-size="14" fill="#525252" text-anchor="middle">MySQL</text>
+<rect x="465" y="285" width="90" height="40" rx="4" fill="none" stroke="#525252" stroke-width="2"/>
+<text x="510" y="310" font-family="sans-serif" font-size="14" fill="#525252" text-anchor="middle">Redis</text>
+<text x="460" y="380" font-family="sans-serif" font-size="14" fill="#525252" text-anchor="middle">docker compose up</text>
+</g>
+
+<g>
+<rect x="620" y="140" width="240" height="280" rx="8" fill="none" stroke="#525252" stroke-width="3"/>
+<circle cx="660" cy="180" r="22" fill="#F37338" stroke="none"/>
+<text x="660" y="187" font-family="sans-serif" font-size="20" fill="#FCFBFA" text-anchor="middle" font-weight="bold">3</text>
+<text x="740" y="187" font-family="sans-serif" font-size="16" fill="#525252" font-weight="bold">Jalankan</text>
+<text x="740" y="206" font-family="sans-serif" font-size="16" fill="#525252">migrasi</text>
+
+<rect x="660" y="245" width="80" height="60" rx="4" fill="none" stroke="#525252" stroke-width="2"/>
+<text x="700" y="270" font-family="sans-serif" font-size="13" fill="#525252" text-anchor="middle">schema</text>
+<text x="700" y="290" font-family="sans-serif" font-size="13" fill="#525252" text-anchor="middle">.sql</text>
+<path d="M745 275 L785 275" stroke="#F37338" stroke-width="3" fill="none" marker-end="url(#arr)"/>
+<ellipse cx="810" cy="260" rx="25" ry="8" fill="none" stroke="#525252" stroke-width="2"/>
+<path d="M785 260 L785 290 Q810 300 835 290 L835 260" fill="none" stroke="#525252" stroke-width="2"/>
+<ellipse cx="810" cy="290" rx="25" ry="8" fill="none" stroke="#525252" stroke-width="2"/>
+<text x="810" y="330" font-family="sans-serif" font-size="14" fill="#525252" text-anchor="middle">MySQL</text>
+<text x="740" y="380" font-family="sans-serif" font-size="14" fill="#525252" text-anchor="middle">apply migrations</text>
+</g>
+
+<g>
+<rect x="900" y="140" width="240" height="280" rx="8" fill="none" stroke="#525252" stroke-width="3"/>
+<circle cx="940" cy="180" r="22" fill="#F37338" stroke="none"/>
+<text x="940" y="187" font-family="sans-serif" font-size="20" fill="#FCFBFA" text-anchor="middle" font-weight="bold">4</text>
+<text x="1020" y="187" font-family="sans-serif" font-size="16" fill="#525252" font-weight="bold">Verifikasi</text>
+
+<rect x="925" y="240" width="100" height="50" rx="4" fill="none" stroke="#525252" stroke-width="2"/>
+<text x="975" y="260" font-family="sans-serif" font-size="13" fill="#525252" text-anchor="middle">UI</text>
+<text x="975" y="278" font-family="sans-serif" font-size="13" fill="#F37338" text-anchor="middle">/health ✓</text>
+<rect x="1035" y="240" width="100" height="50" rx="4" fill="none" stroke="#525252" stroke-width="2"/>
+<text x="1085" y="260" font-family="sans-serif" font-size="13" fill="#525252" text-anchor="middle">API</text>
+<text x="1085" y="278" font-family="sans-serif" font-size="13" fill="#F37338" text-anchor="middle">/health ✓</text>
+<path d="M950 320 L985 305" stroke="#525252" stroke-width="2" fill="none"/>
+<path d="M985 305 L1000 330 L970 330 Z" fill="none" stroke="#525252" stroke-width="2"/>
+<text x="1020" y="380" font-family="sans-serif" font-size="14" fill="#525252" text-anchor="middle">curl health endpoints</text>
+</g>
+
+<defs>
+<marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+<path d="M0 0 L10 5 L0 10 z" fill="#525252"/>
+</marker>
+</defs>
+
+<path d="M300 500 L340 500" stroke="#525252" stroke-width="3" fill="none" marker-end="url(#arr)"/>
+<path d="M580 500 L620 500" stroke="#525252" stroke-width="3" fill="none" marker-end="url(#arr)"/>
+<path d="M860 500 L900 500" stroke="#525252" stroke-width="3" fill="none" marker-end="url(#arr)"/>
+
+<path d="M180 440 L180 500 L300 500" stroke="#525252" stroke-width="3" fill="none"/>
+<path d="M460 440 L460 500" stroke="#525252" stroke-width="3" fill="none"/>
+<path d="M740 440 L740 500" stroke="#525252" stroke-width="3" fill="none"/>
+<path d="M1020 440 L1020 500" stroke="#525252" stroke-width="3" fill="none"/>
+
+<text x="600" y="600" font-family="sans-serif" font-size="16" fill="#525252" text-anchor="middle" font-style="italic">Workflow sekuensial: konfigurasi → service → migrasi → verifikasi</text>
+</svg>

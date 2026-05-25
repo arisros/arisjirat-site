@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-label="Diagram alur lima tahap deteksi lantai keramik kotor">
+<defs>
+<marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+<path d="M0,0 L10,5 L0,10 z" fill="#525252"/>
+</marker>
+</defs>
+<g font-family="sans-serif" fill="#525252">
+<rect x="40" y="180" width="200" height="110" rx="6" fill="none" stroke="#525252" stroke-width="2"/>
+<text x="140" y="225" text-anchor="middle" font-size="16" font-weight="bold">Tahap 1</text>
+<text x="140" y="252" text-anchor="middle" font-size="15">Baca citra</text>
+<text x="140" y="272" text-anchor="middle" font-size="15">lantai</text>
+<rect x="290" y="180" width="200" height="110" rx="6" fill="none" stroke="#525252" stroke-width="2"/>
+<text x="390" y="218" text-anchor="middle" font-size="16" font-weight="bold">Tahap 2</text>
+<text x="390" y="243" text-anchor="middle" font-size="15">Konversi grayscale</text>
+<text x="390" y="263" text-anchor="middle" font-size="15">&amp; reduksi noise</text>
+<rect x="540" y="180" width="220" height="110" rx="6" fill="none" stroke="#525252" stroke-width="2"/>
+<text x="650" y="215" text-anchor="middle" font-size="16" font-weight="bold">Tahap 3</text>
+<text x="650" y="240" text-anchor="middle" font-size="15">Ekstraksi fitur:</text>
+<text x="650" y="260" text-anchor="middle" font-size="15">mean (μ) &amp; std (σ)</text>
+<polygon points="930,140 1080,235 930,330 780,235" fill="none" stroke="#525252" stroke-width="2"/>
+<text x="930" y="218" text-anchor="middle" font-size="16" font-weight="bold">Tahap 4</text>
+<text x="930" y="242" text-anchor="middle" font-size="15">σ vs threshold ?</text>
+<rect x="820" y="490" width="200" height="90" rx="6" fill="none" stroke="#525252" stroke-width="3"/>
+<text x="920" y="525" text-anchor="middle" font-size="16" font-weight="bold">Tahap 5a</text>
+<text x="920" y="552" text-anchor="middle" font-size="17" fill="#525252">Bersih</text>
+<rect x="1040" y="490" width="140" height="90" rx="6" fill="none" stroke="#F37338" stroke-width="3"/>
+<text x="1110" y="525" text-anchor="middle" font-size="16" font-weight="bold" fill="#F37338">Tahap 5b</text>
+<text x="1110" y="552" text-anchor="middle" font-size="17" fill="#F37338">Kotor</text>
+<line x1="240" y1="235" x2="285" y2="235" stroke="#525252" stroke-width="2" marker-end="url(#a)"/>
+<text x="262" y="222" text-anchor="middle" font-size="12">RGB</text>
+<line x1="490" y1="235" x2="535" y2="235" stroke="#525252" stroke-width="2" marker-end="url(#a)"/>
+<text x="512" y="222" text-anchor="middle" font-size="12">matriks</text>
+<text x="512" y="258" text-anchor="middle" font-size="12">gray</text>
+<line x1="760" y1="235" x2="778" y2="235" stroke="#525252" stroke-width="2" marker-end="url(#a)"/>
+<text x="770" y="222" text-anchor="middle" font-size="12">μ,σ</text>
+<path d="M 880 295 Q 880 440 920 485" fill="none" stroke="#525252" stroke-width="2" marker-end="url(#a)"/>
+<text x="838" y="400" font-size="13">σ ≤ thr</text>
+<path d="M 980 295 Q 1060 400 1110 485" fill="none" stroke="#F37338" stroke-width="2" marker-end="url(#a)"/>
+<text x="1075" y="400" font-size="13" fill="#F37338">σ &gt; thr</text>
+<text x="40" y="120" font-size="13" fill="#A3A3A3">input</text>
+<line x1="40" y1="130" x2="240" y2="130" stroke="#A3A3A3" stroke-width="2"/>
+<text x="290" y="120" font-size="13" fill="#A3A3A3">preprocessing</text>
+<line x1="290" y1="130" x2="490" y2="130" stroke="#A3A3A3" stroke-width="2"/>
+<text x="540" y="120" font-size="13" fill="#A3A3A3">ekstraksi</text>
+<line x1="540" y1="130" x2="760" y2="130" stroke="#A3A3A3" stroke-width="2"/>
+<text x="780" y="120" font-size="13" fill="#A3A3A3">keputusan</text>
+<line x1="780" y1="130" x2="1080" y2="130" stroke="#A3A3A3" stroke-width="2"/>
+<text x="600" y="700" text-anchor="middle" font-size="14" fill="#A3A3A3">aliran data: citra RGB → matriks grayscale → fitur numerik (μ, σ) → keputusan boolean</text>
+</g>
+</svg>

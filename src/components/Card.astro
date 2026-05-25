@@ -1,0 +1,63 @@
+---
+import type { Lang } from '@/lib/content';
+import { DEFAULT_LANG } from '@/lib/content';
+
+interface Props {
+  title: string;
+  description?: string;
+  href: string;
+  tags?: string[];
+  date?: Date;
+  category?: string;
+  status?: string;
+  lang?: Lang;
+}
+
+const { title, description, href, tags = [], date, category, status, lang = DEFAULT_LANG } = Astro.props;
+
+// Category accent — re-tuned to read cleanly on both cream and dark backgrounds.
+const categoryAccent: Record<string, { text: string; border: string; bar: string }> = {
+  study:    { text: 'text-sky-600 dark:text-sky-300',     border: 'border-sky-500/40',     bar: 'before:bg-sky-500' },
+  project:  { text: 'text-accent',                        border: 'border-accent/40',      bar: 'before:bg-accent' },
+  research: { text: 'text-violet-600 dark:text-violet-300', border: 'border-violet-500/40', bar: 'before:bg-violet-500' },
+  tool:     { text: 'text-orange-600 dark:text-orange-300', border: 'border-orange-500/40', bar: 'before:bg-orange-500' },
+  setup:    { text: 'text-teal-600 dark:text-teal-300',   border: 'border-teal-500/40',    bar: 'before:bg-teal-500' },
+};
+const acc = categoryAccent[category || ''] ?? { text: 'text-ink-muted', border: 'border-border', bar: 'before:bg-border' };
+const dateLocale = lang === 'id' ? 'id-ID' : 'en-US';
+---
+
+<a href={href} class:list={[
+  'group relative block rounded-card border border-border bg-surface p-5 transition-all duration-200 hover:bg-surface-alt hover:-translate-y-0.5 hover:shadow-sm',
+  "before:absolute before:left-0 before:top-4 before:bottom-4 before:w-[3px] before:rounded-r-pill",
+  acc.bar,
+]}>
+  <div class="flex items-start justify-between gap-3 pl-2">
+    <h3 class="text-[15px] font-bold text-ink group-hover:text-accent transition-colors line-clamp-2 leading-snug">
+      {title}
+    </h3>
+    {category && (
+      <span class:list={[
+        'shrink-0 font-mono text-[10px] uppercase tracking-wider border rounded-pill px-2 py-0.5',
+        acc.text, acc.border,
+      ]}>
+        {category}
+      </span>
+    )}
+  </div>
+  {description && (
+    <p class="mt-2 pl-2 text-sm text-ink-muted line-clamp-2 leading-relaxed">{description}</p>
+  )}
+  <div class="mt-3 pl-2 flex flex-wrap items-center gap-2">
+    {tags.slice(0, 3).map(tag => (
+      <span class="font-mono text-[10px] px-2 py-0.5 rounded-pill bg-surface-alt border border-border text-ink-muted">
+        {tag}
+      </span>
+    ))}
+    {date && (
+      <time datetime={date.toISOString()} class="ml-auto font-mono text-[10px] text-ink-muted/70 tracking-wider">
+        {date.toLocaleDateString(dateLocale, { year: 'numeric', month: 'short' })}
+      </time>
+    )}
+  </div>
+</a>

@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-label="Diagram alur tiga langkah verifikasi berita untuk menghindari hoax">
+<defs>
+<marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#525252"/></marker>
+<marker id="b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#F37338"/></marker>
+</defs>
+<g font-family="sans-serif" fill="#525252">
+<rect x="40" y="150" width="170" height="80" rx="40" fill="none" stroke="#525252" stroke-width="3"/>
+<text x="125" y="195" text-anchor="middle" font-size="18">Berita Diterima</text>
+<line x1="210" y1="190" x2="270" y2="190" stroke="#525252" stroke-width="3" marker-end="url(#a)"/>
+<g>
+<rect x="270" y="120" width="200" height="140" rx="8" fill="none" stroke="#525252" stroke-width="3"/>
+<circle cx="295" cy="145" r="16" fill="#F37338"/>
+<text x="295" y="151" text-anchor="middle" font-size="16" fill="#FCFBFA" font-weight="bold">1</text>
+<rect x="325" y="155" width="90" height="55" fill="none" stroke="#A3A3A3" stroke-width="2"/>
+<line x1="325" y1="170" x2="415" y2="170" stroke="#A3A3A3" stroke-width="2"/>
+<circle cx="332" cy="163" r="2" fill="#A3A3A3"/>
+<circle cx="340" cy="163" r="2" fill="#A3A3A3"/>
+<line x1="335" y1="183" x2="405" y2="183" stroke="#A3A3A3" stroke-width="2"/>
+<line x1="335" y1="195" x2="395" y2="195" stroke="#A3A3A3" stroke-width="2"/>
+<text x="370" y="240" text-anchor="middle" font-size="18" font-weight="bold">Periksa Sumber</text>
+</g>
+<line x1="470" y1="190" x2="530" y2="190" stroke="#525252" stroke-width="3" marker-end="url(#a)"/>
+<g>
+<rect x="530" y="120" width="200" height="140" rx="8" fill="none" stroke="#525252" stroke-width="3"/>
+<circle cx="555" cy="145" r="16" fill="#F37338"/>
+<text x="555" y="151" text-anchor="middle" font-size="16" fill="#FCFBFA" font-weight="bold">2</text>
+<rect x="585" y="155" width="70" height="55" fill="none" stroke="#A3A3A3" stroke-width="2"/>
+<line x1="592" y1="170" x2="648" y2="170" stroke="#A3A3A3" stroke-width="2"/>
+<line x1="592" y1="182" x2="648" y2="182" stroke="#A3A3A3" stroke-width="2"/>
+<line x1="592" y1="194" x2="630" y2="194" stroke="#A3A3A3" stroke-width="2"/>
+<circle cx="665" cy="195" r="14" fill="none" stroke="#525252" stroke-width="2"/>
+<line x1="675" y1="205" x2="685" y2="215" stroke="#525252" stroke-width="3"/>
+<text x="630" y="240" text-anchor="middle" font-size="18" font-weight="bold">Cek Fakta</text>
+</g>
+<line x1="730" y1="190" x2="790" y2="190" stroke="#525252" stroke-width="3" marker-end="url(#a)"/>
+<g>
+<rect x="790" y="120" width="200" height="140" rx="8" fill="none" stroke="#525252" stroke-width="3"/>
+<circle cx="815" cy="145" r="16" fill="#F37338"/>
+<text x="815" y="151" text-anchor="middle" font-size="16" fill="#FCFBFA" font-weight="bold">3</text>
+<path d="M845,155 L885,150 L885,210 L845,215 Z" fill="none" stroke="#A3A3A3" stroke-width="2"/>
+<path d="M935,155 L895,150 L895,210 L935,215 Z" fill="none" stroke="#A3A3A3" stroke-width="2"/>
+<line x1="852" y1="170" x2="878" y2="167" stroke="#A3A3A3" stroke-width="2"/>
+<line x1="852" y1="182" x2="878" y2="180" stroke="#A3A3A3" stroke-width="2"/>
+<line x1="902" y1="167" x2="928" y2="170" stroke="#A3A3A3" stroke-width="2"/>
+<line x1="902" y1="180" x2="928" y2="182" stroke="#A3A3A3" stroke-width="2"/>
+<text x="890" y="240" text-anchor="middle" font-size="18" font-weight="bold">Baca Utuh</text>
+</g>
+<path d="M890,260 L890,320" stroke="#525252" stroke-width="3" fill="none" marker-end="url(#a)"/>
+<polygon points="890,340 1080,440 890,540 700,440" fill="none" stroke="#525252" stroke-width="3"/>
+<text x="890" y="435" text-anchor="middle" font-size="18" font-weight="bold">Kredibel &amp;</text>
+<text x="890" y="458" text-anchor="middle" font-size="18" font-weight="bold">Masuk Akal?</text>
+<line x1="1080" y1="440" x2="1140" y2="440" stroke="#F37338" stroke-width="3" marker-end="url(#b)"/>
+<text x="1110" y="430" text-anchor="middle" font-size="14" fill="#F37338">Ya</text>
+<rect x="980" y="600" width="200" height="70" rx="8" fill="none" stroke="#F37338" stroke-width="3"/>
+<text x="1080" y="642" text-anchor="middle" font-size="18" fill="#F37338" font-weight="bold">Bagikan</text>
+<path d="M1140,440 L1140,600 L1180,600" stroke="#F37338" stroke-width="3" fill="none" marker-end="url(#b)"/>
+<line x1="700" y1="440" x2="640" y2="440" stroke="#525252" stroke-width="3" marker-end="url(#a)"/>
+<text x="670" y="430" text-anchor="middle" font-size="14">Tidak</text>
+<rect x="40" y="600" width="240" height="70" rx="8" fill="none" stroke="#525252" stroke-width="3"/>
+<text x="160" y="642" text-anchor="middle" font-size="18" font-weight="bold">Jangan Sebarkan</text>
+<path d="M640,440 L640,635 L280,635" stroke="#525252" stroke-width="3" fill="none" marker-end="url(#a)"/>
+</g>
+</svg>

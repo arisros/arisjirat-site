@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* =====================================================================
+   Theme tokens — Mastercard-inspired warm cream (light, default)
+   + dark counterpart. RGB triplets so Tailwind alpha syntax works.
+   ===================================================================== */
+:root {
+  --bg:            243 240 238;  /* #F3F0EE  Canvas Cream */
+  --surface:       252 251 250;  /* #FCFBFA  Lifted Cream */
+  --surface-alt:   234 230 225;  /* warm panel / inline code bg */
+  --ink:            20  20  19;  /* #141413  Ink Black */
+  --ink-muted:     105 105 105;  /* #696969  Slate Gray */
+  --border:        209 205 199;  /* #D1CDC7  Dust Taupe */
+  --accent:        243 115  56;  /* #F37338  Light Signal Orange */
+  --accent-strong: 207  69   0;  /* #CF4500  Signal Orange (deeper, used on hover) */
+}
+
+html.dark {
+  --bg:             20  20  19;  /* #141413  warm ink as the dark canvas */
+  --surface:        29  29  27;  /* #1D1D1B */
+  --surface-alt:    38  38  39;  /* #262627  Charcoal */
+  --ink:           243 240 238;  /* Canvas Cream as text on dark */
+  --ink-muted:     160 156 150;
+  --border:         63  61  58;
+  --accent:        247 158  27;  /* #F79E1B  warmer Mastercard yellow pops on dark */
+  --accent-strong: 243 115  56;  /* #F37338  Light Signal Orange */
+}
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+  body {
+    @apply bg-bg text-ink-muted antialiased;
+  }
+  ::selection {
+    background-color: rgb(var(--accent) / 0.35);
+    color: rgb(var(--ink));
+  }
+}
+
+/* Subtle grid background — uses the accent at very low alpha so it works on
+   both cream and dark themes. */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgb(var(--accent) / 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(var(--accent) / 0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Hide the default horizontal scrollbar on the header's nav strip. */
+.scrollbar-none::-webkit-scrollbar { display: none; }
+.scrollbar-none { scrollbar-width: none; }
+
+/* =====================================================================
+   Shiki dual-theme: light is the default, dark uses CSS-var swap from
+   `themes: { light, dark }` in astro.config.mjs.
+   ===================================================================== */
+html.dark .astro-code,
+html.dark .astro-code span {
+  color: var(--shiki-dark) !important;
+  background-color: var(--shiki-dark-bg) !important;
+  font-style: var(--shiki-dark-font-style) !important;
+  font-weight: var(--shiki-dark-font-weight) !important;
+  text-decoration: var(--shiki-dark-text-decoration) !important;
+}
+
+/* =====================================================================
+   KaTeX — inherit ink color and let display math scroll on mobile.
+   ===================================================================== */
+.katex { color: rgb(var(--ink)); }
+.katex-display {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0.25rem 0;
+}
+
+/* =====================================================================
+   Animations
+   ===================================================================== */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-up { animation: fadeUp 0.5s ease both; }
+.animate-fade-up-delay-1 { animation: fadeUp 0.5s 0.1s ease both; }
+.animate-fade-up-delay-2 { animation: fadeUp 0.5s 0.2s ease both; }
+.animate-fade-up-delay-3 { animation: fadeUp 0.5s 0.3s ease both; }
+.animate-fade-up-delay-4 { animation: fadeUp 0.5s 0.4s ease both; }

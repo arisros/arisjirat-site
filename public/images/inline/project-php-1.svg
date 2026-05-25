@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-label="Struktur folder proyek CRUD PHP dengan pemisahan logika dan komponen tampilan">
+  <g font-family="sans-serif" font-size="18" fill="#525252">
+    <text x="60" y="70" font-size="20" font-weight="bold">proyek-crud/</text>
+
+    <path d="M 90 90 L 90 680" stroke="#525252" stroke-width="2" fill="none"/>
+
+    <g>
+      <path d="M 90 130 L 140 130" stroke="#525252" stroke-width="2" fill="none"/>
+      <text x="150" y="135" font-weight="bold" fill="#F37338">crud/</text>
+      <path d="M 180 145 L 180 320" stroke="#A3A3A3" stroke-width="2" fill="none"/>
+      <path d="M 180 180 L 230 180" stroke="#A3A3A3" stroke-width="2" fill="none"/>
+      <text x="240" y="185">create.php</text>
+      <path d="M 180 220 L 230 220" stroke="#A3A3A3" stroke-width="2" fill="none"/>
+      <text x="240" y="225">read.php</text>
+      <path d="M 180 260 L 230 260" stroke="#A3A3A3" stroke-width="2" fill="none"/>
+      <text x="240" y="265">update.php</text>
+      <path d="M 180 300 L 230 300" stroke="#A3A3A3" stroke-width="2" fill="none"/>
+      <text x="240" y="305">delete.php</text>
+    </g>
+
+    <g>
+      <path d="M 90 370 L 140 370" stroke="#525252" stroke-width="2" fill="none"/>
+      <text x="150" y="375" font-weight="bold" fill="#F37338">components/</text>
+      <path d="M 200 385 L 200 460" stroke="#A3A3A3" stroke-width="2" fill="none"/>
+      <path d="M 200 420 L 250 420" stroke="#A3A3A3" stroke-width="2" fill="none"/>
+      <text x="260" y="425">header.php</text>
+      <path d="M 200 460 L 250 460" stroke="#A3A3A3" stroke-width="2" fill="none"/>
+      <text x="260" y="465">footer.php</text>
+    </g>
+
+    <g>
+      <path d="M 90 520 L 140 520" stroke="#525252" stroke-width="2" fill="none"/>
+      <text x="150" y="525" font-weight="bold">config/</text>
+      <path d="M 175 535 L 175 570" stroke="#A3A3A3" stroke-width="2" fill="none"/>
+      <path d="M 175 570 L 225 570" stroke="#A3A3A3" stroke-width="2" fill="none"/>
+      <text x="235" y="575">koneksi.php</text>
+    </g>
+
+    <g>
+      <path d="M 90 625 L 140 625" stroke="#525252" stroke-width="2" fill="none"/>
+      <text x="150" y="630">index.php</text>
+    </g>
+
+    <g>
+      <path d="M 90 680 L 140 680" stroke="#525252" stroke-width="2" fill="none"/>
+      <text x="150" y="685">database.sql</text>
+    </g>
+  </g>
+
+  <g font-family="sans-serif" font-size="16" fill="#F37338">
+    <g>
+      <rect x="720" y="195" width="220" height="60" rx="6" stroke="#F37338" stroke-width="2" fill="none"/>
+      <text x="830" y="222" text-anchor="middle" font-weight="bold">Logika CRUD</text>
+      <text x="830" y="244" text-anchor="middle" font-size="13" fill="#525252">operasi data</text>
+      <path d="M 720 225 L 470 225" stroke="#F37338" stroke-width="2" fill="none" stroke-dasharray="6 4"/>
+      <path d="M 478 220 L 470 225 L 478 230" stroke="#F37338" stroke-width="2" fill="none"/>
+    </g>
+
+    <g>
+      <rect x="720" y="412" width="220" height="60" rx="6" stroke="#F37338" stroke-width="2" fill="none"/>
+      <text x="830" y="439" text-anchor="middle" font-weight="bold">Komponen Tampilan</text>
+      <text x="830" y="461" text-anchor="middle" font-size="13" fill="#525252">bagian UI dipakai ulang</text>
+      <path d="M 720 442 L 490 442" stroke="#F37338" stroke-width="2" fill="none" stroke-dasharray="6 4"/>
+      <path d="M 498 437 L 490 442 L 498 447" stroke="#F37338" stroke-width="2" fill="none"/>
+    </g>
+  </g>
+
+  <g font-family="sans-serif" font-size="14" fill="#A3A3A3">
+    <text x="60" y="750">Pemisahan tanggung jawab: data, tampilan, konfigurasi, entry point</text>
+  </g>
+</svg>

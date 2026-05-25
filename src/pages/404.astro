@@ -1,0 +1,28 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import Header from '@components/Header.astro';
+import Footer from '@components/Footer.astro';
+import { langFromPath } from '@/lib/content';
+
+const lang = langFromPath(Astro.url.pathname);
+const copy = {
+  id: { title: '404 — Halaman tidak ditemukan', heading: 'Halaman tidak ditemukan', body: 'Halaman yang Anda cari tidak ada atau telah dipindahkan.', back: '← Kembali ke Beranda' },
+  en: { title: '404 — Not Found', heading: 'Page not found', body: "The page you're looking for doesn't exist or has been moved.", back: '← Back to Home' },
+}[lang];
+const home = lang === 'en' ? '/en' : '/';
+---
+
+<BaseLayout title={copy.title} lang={lang}>
+  <Header lang={lang} />
+  <main class="flex-1 flex items-center justify-center px-4">
+    <div class="text-center py-20 animate-fade-up">
+      <p class="font-mono text-8xl sm:text-[10rem] font-bold text-accent/15 leading-none">404</p>
+      <h1 class="mt-4 text-xl font-bold text-ink">{copy.heading}</h1>
+      <p class="mt-2 text-sm text-ink-muted">{copy.body}</p>
+      <a href={home} class="mt-8 inline-flex items-center gap-2 px-5 py-2.5 rounded-pill bg-accent hover:bg-accent-strong text-bg text-sm font-medium transition-all hover:translate-x-0.5">
+        {copy.back}
+      </a>
+    </div>
+  </main>
+  <Footer />
+</BaseLayout>

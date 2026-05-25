@@ -1,0 +1,33 @@
+---
+import ArticleLayout from '@layouts/ArticleLayout.astro';
+import { CATEGORY_TO_PATH, getPosts, keyOf } from '@/lib/content';
+
+export async function getStaticPaths() {
+  const posts = await getPosts({ lang: 'id' });
+  return posts.map(entry => ({
+    params: {
+      category: CATEGORY_TO_PATH[entry.data.category as keyof typeof CATEGORY_TO_PATH],
+      slug: keyOf(entry),
+    },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+const lang = 'id' as const;
+---
+
+<ArticleLayout
+  title={entry.data.title}
+  description={entry.data.description}
+  date={entry.data.date}
+  tags={entry.data.tags}
+  category={entry.data.category}
+  image={entry.data.image}
+  repo={entry.data.repo}
+  lang={lang}
+  translationKey={keyOf(entry)}
+>
+  <Content />
+</ArticleLayout>

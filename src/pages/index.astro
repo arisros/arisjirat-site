@@ -1,0 +1,16 @@
+---
+import BaseLayout from '@layouts/BaseLayout.astro';
+import HomePage from '@components/HomePage.astro';
+
+const lang = 'id' as const;
+const alternates = { id: '/', en: '/en' };
+---
+
+<BaseLayout
+  title="Beranda"
+  description="Aris Kurniawan — Software Engineer. Studi, proyek, riset, alat, dan setup."
+  lang={lang}
+  alternates={alternates}
+>
+  <HomePage lang={lang} />
+</BaseLayout>

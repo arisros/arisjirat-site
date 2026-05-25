@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-label="Diagram jalur request dari client melalui Cloudflare, VPS, WireGuard ke cluster k3d">
+<defs>
+<marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#525252"/></marker>
+<marker id="b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#F37338"/></marker>
+</defs>
+
+<text x="600" y="40" font-family="sans-serif" font-size="20" fill="#525252" text-anchor="middle" font-weight="bold">Jalur Request: Client → Cloudflare → VPS → WireGuard → k3d</text>
+
+<g>
+<rect x="40" y="280" width="140" height="100" rx="6" fill="none" stroke="#525252" stroke-width="2"/>
+<text x="110" y="320" font-family="sans-serif" font-size="16" fill="#525252" text-anchor="middle">Client</text>
+<text x="110" y="345" font-family="sans-serif" font-size="14" fill="#525252" text-anchor="middle">Browser</text>
+<text x="110" y="395" font-family="sans-serif" font-size="12" fill="#525252" text-anchor="middle">HTTPS request</text>
+</g>
+
+<line x1="180" y1="330" x2="240" y2="330" stroke="#525252" stroke-width="2" marker-end="url(#a)"/>
+
+<g>
+<rect x="240" y="260" width="180" height="140" rx="6" fill="none" stroke="#F37338" stroke-width="3"/>
+<text x="330" y="295" font-family="sans-serif" font-size="16" fill="#F37338" text-anchor="middle" font-weight="bold">Cloudflare</text>
+<text x="330" y="320" font-family="sans-serif" font-size="13" fill="#525252" text-anchor="middle">Edge (proxy mode)</text>
+<text x="330" y="345" font-family="sans-serif" font-size="13" fill="#525252" text-anchor="middle">TLS termination</text>
+<text x="330" y="370" font-family="sans-serif" font-size="13" fill="#525252" text-anchor="middle">DNS + WAF</text>
+<text x="330" y="425" font-family="sans-serif" font-size="12" fill="#525252" text-anchor="middle">HTTPS → origin</text>
+</g>
+
+<line x1="420" y1="330" x2="480" y2="330" stroke="#525252" stroke-width="2" marker-end="url(#a)"/>
+
+<g>
+<rect x="480" y="260" width="180" height="140" rx="6" fill="none" stroke="#525252" stroke-width="2"/>
+<text x="570" y="295" font-family="sans-serif" font-size="16" fill="#525252" text-anchor="middle" font-weight="bold">VPS</text>
+<text x="570" y="320" font-family="sans-serif" font-size="13" fill="#525252" text-anchor="middle">Caddy</text>
+<text x="570" y="345" font-family="sans-serif" font-size="13" fill="#525252" text-anchor="middle">reverse proxy</text>
+<text x="570" y="370" font-family="sans-serif" font-size="13" fill="#525252" text-anchor="middle">public IP</text>
+<text x="570" y="425" font-family="sans-serif" font-size="12" fill="#525252" text-anchor="middle">forward via tunnel</text>
+</g>
+
+<line x1="660" y1="330" x2="740" y2="330" stroke="#F37338" stroke-width="3" stroke-dasharray="6 4" marker-end="url(#b)"/>
+<text x="700" y="320" font-family="sans-serif" font-size="12" fill="#F37338" text-anchor="middle">WireGuard</text>
+<text x="700" y="355" font-family="sans-serif" font-size="11" fill="#F37338" text-anchor="middle">encrypted</text>
+
+<g>
+<rect x="740" y="140" width="420" height="500" rx="8" fill="none" stroke="#525252" stroke-width="3" stroke-dasharray="2 4"/>
+<text x="950" y="170" font-family="sans-serif" font-size="16" fill="#525252" text-anchor="middle" font-weight="bold">Homelab (isolated)</text>
+<text x="950" y="190" font-family="sans-serif" font-size="12" fill="#525252" text-anchor="middle">no public ingress · only via WG</text>
+
+<g>
+<rect x="770" y="220" width="120" height="60" rx="4" fill="none" stroke="#525252" stroke-width="2"/>
+<text x="830" y="245" font-family="sans-serif" font-size="13" fill="#525252" text-anchor="middle">WG peer</text>
+<text x="830" y="265" font-family="sans-serif" font-size="11" fill="#525252" text-anchor="middle">10.0.0.2</text>
+</g>
+
+<line x1="830" y1="280" x2="830" y2="330" stroke="#525252" stroke-width="2" marker-end="url(#a)"/>
+
+<g>
+<rect x="770" y="330" width="360" height="280" rx="6" fill="none" stroke="#525252" stroke-width="2"/>
+<text x="950" y="360" font-family="sans-serif" font-size="15" fill="#525252" text-anchor="middle" font-weight="bold">k3d Kubernetes cluster</text>
+
+<rect x="790" y="380" width="320" height="60" rx="4" fill="none" stroke="#525252" stroke-width="2"/>
+<text x="950" y="405" font-family="sans-serif" font-size="13" fill="#525252" text-anchor="middle">Ingress / Service</text>
+<text x="950" y="425" font-family="sans-serif" font-size="11" fill="#525252" text-anchor="middle">ClusterIP → pods</text>
+
+<line x1="870" y1="440" x2="870" y2="475" stroke="#525252" stroke-width="2" marker-end="url(#a)"/>
+<line x1="950" y1="440" x2="950" y2="475" stroke="#525252" stroke-width="2" marker-end="url(#a)"/>
+<line x1="1030" y1="440" x2="1030" y2="475" stroke="#525252" stroke-width="2" marker-end="url(#a)"/>
+
+<rect x="820" y="480" width="100" height="110" rx="4" fill="none" stroke="#525252" stroke-width="2"/>
+<text x="870" y="510" font-family="sans-serif" font-size="13" fill="#525252" text-anchor="middle">Pod A</text>
+<circle cx="870" cy="545" r="14" fill="none" stroke="#525252" stroke-width="2"/>
+<text x="870" y="580" font-family="sans-serif" font-size="11" fill="#525252" text-anchor="middle">app</text>
+
+<rect x="900" y="480" width="100" height="110" rx="4" fill="none" stroke="#525252" stroke-width="2"/>
+<text x="950" y="510" font-family="sans-serif" font-size="13" fill="#525252" text-anchor="middle">Pod B</text>
+<circle cx="950" cy="545" r="14" fill="none" stroke="#525252" stroke-width="2"/>
+<text x="950" y="580" font-family="sans-serif" font-size="11" fill="#525252" text-anchor="middle">api</text>
+
+<rect x="980" y="480" width="100" height="110" rx="4" fill="none" stroke="#525252" stroke-width="2"/>
+<text x="1030" y="510" font-family="sans-serif" font-size="13" fill="#525252" text-anchor="middle">Pod C</text>
+<circle cx="1030" cy="545" r="14" fill="none" stroke="#525252" stroke-width="2"/>
+<text x="1030" y="580" font-family="sans-serif" font-size="11" fill="#525252" text-anchor="middle">svc</text>
+</g>
+</g>
+
+<g>
+<line x1="60" y1="700" x2="100" y2="700" stroke="#525252" stroke-width="2" marker-end="url(#a)"/>
+<text x="110" y="705" font-family="sans-serif" font-size="12" fill="#525252">request flow (HTTPS)</text>
+<line x1="320" y1="700" x2="360" y2="700" stroke="#F37338" stroke-width="3" stroke-dasharray="6 4" marker-end="url(#b)"/>
+<text x="370" y="705" font-family="sans-serif" font-size="12" fill="#F37338">WireGuard tunnel (encrypted)</text>
+<rect x="600" y="690" width="20" height="20" rx="3" fill="none" stroke="#525252" stroke-width="2" stroke-dasharray="2 4"/>
+<text x="630" y="705" font-family="sans-serif" font-size="12" fill="#525252">isolated network boundary</text>
+</g>
+</svg>
